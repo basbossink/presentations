@@ -1,0 +1,29 @@
+.PS
+maxpswid=22
+maxpsht=17
+linewid=6;
+lineht=0.15;
+firstlineoffset = -0.25
+lineoffset = 0.15
+vertstart = 0.075
+define spot {
+line at $2 <Time.start, Time.end> + (0,vertstart); 
+$1 at $2 <Time.start,Time.end> + (0, firstlineoffset - ($4*lineoffset));
+$3 at $2 <Time.start,Time.end> + (0, firstlineoffset - (($4+1)*lineoffset));
+}
+
+Time: line;
+down;
+spot("Lambda Calculus", 0, "1936", 0);
+spot("LISP", 3/10, "1958", 0);
+spot("\fIC\fP", 0.48, "1972", 0);
+spot("ML", 5/10, "1973", 2);
+spot("Scheme", 0.53, "1975",4);
+spot("Erlang", 0.68, "1986",0);
+spot("Haskell", 0.73, "1990",2);
+spot("OCaml", 0.81, "1996",0);
+spot("F#", 0.88, "2002", 0);
+spot("Scala", 0.91, "2003",2);
+spot("Clojure", 0.96, "2007", 4);
+spot("" ,1, "2010",0);
+.PE
