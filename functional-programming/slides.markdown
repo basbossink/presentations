@@ -3,8 +3,8 @@
 % March 2010
 
 # Contents
-- History
 - What is it?
+- History
 - What is it good at?
 - What is it bad at?
 - Purity in Haskell

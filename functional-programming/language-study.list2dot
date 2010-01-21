@@ -84,9 +84,9 @@ while (<>) {
 
 print '
 digraph dd {
+    rankdir=LR;
+    node [ shape=plaintext,fontsize=40 ];
   {
-    node [ shape=plaintext,fontsize=25 ];
-
 ';
 
 my $bloated = $ENV{BLOATED};
@@ -102,7 +102,6 @@ for ($date = $min; $date <= $max; $date += $step) {
 print '
   }
 
-node [ fontsize=30, style=filled ];
 ';
 
 if (!$bloated) {
@@ -145,7 +144,6 @@ while (my ($date, $langs) = each %d) {
     foreach (@$langs) {
 	print " ; ";
 	print qq("$_");
-	print " [ fontsize=40 ]" if $importance{$_};
     }
     print " }\n";
 }
@@ -155,7 +153,6 @@ print "\n";
 while (my ($lang, $links) = each %links) {
     foreach (uniq(@$links)) {
 	print qq("$_" -> "$lang");
-	print " [weight=3]" if $is_evolution{$lang} && $_ eq $links->[0];
 	print "\n";
     }
 }
