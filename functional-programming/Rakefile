@@ -4,6 +4,10 @@ CLEAN.include(FileList['*.html','*.pdf','*.png'])
 
 task :default => ['slides.html','notes.pdf']
 
+rule '.png' => '.gnu' do |t|
+    sh "gnuplot #{t.source}"
+end
+
 file 'slides.html' => 'slides.markdown' do
     sh "pandoc -w s5 -s slides.markdown > slides.html"
 end
@@ -16,5 +20,5 @@ file 'notes.pdf' => 'notes.markdown' do
     sh "markdown2pdf -N -o notes.pdf notes.markdown"
 end
 
-file 'slides.markdown' => ['languages.png']
+file 'slides.markdown' => ['languages.png', 'parabola.png']
 file 'notes.markdown' => []
