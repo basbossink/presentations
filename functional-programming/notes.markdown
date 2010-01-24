@@ -14,6 +14,7 @@
 
 - Opensource GFDL
 - On github 
+- Cross platform
 - Tools used:
     + pandoc (Haskell markup 2 markup transformer)
     + dot (graph layout engine)
@@ -21,6 +22,8 @@
     + git (source control)
     + vim (ide)
     + gnuplot (plotting graphs)
+    + perl
+    + Miktex/latex 
 
 ## What is it?
 

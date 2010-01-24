@@ -64,17 +64,17 @@
 
 # Features
 
+- Read Eval Print Loop (REPL)
 - Type inference (var on steroids)
 - Pattern matching
 - Algabraic data types
-- Tuples
 - Anonymous functions (lambda's)
-- List comprehensions
+- Local functions
 
 # Features
 
+- List comprehensions
 - Partial function applycation (currying)
 - High order functions map, fold, filter
-- Read Eval Print Loop (REPL)
 - Monads
 
