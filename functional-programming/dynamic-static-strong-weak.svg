@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1000px" height="700px" version="1.1"
+     xmlns="http://www.w3.org/2000/svg">
+  <desc>Taxanomy of a few functional languages with respect to static vs. dynamic typing and lazy vs. eager</desc>
+  <g fill="none" stroke="black" stroke-width="3" >
+    <line x1="0" y1="351.5" x2="1000" y2="351.5" />
+    <line x1="501.5" y1="0" x2="501.5" y2="700" />
+  </g>
+  <g font-size="20" font-family="Verdana" >
+    <text x="0" y="370">dynamically typed</text>
+    <text x="840" y="370">statically typed</text>
+    <g transform="translate(480,0)" >
+        <g transform="rotate(90)" >
+            <text x="0" y="0">weak</text>
+        </g>
+    </g>
+    <g transform="translate(480,630)" >
+        <g transform="rotate(90)" >
+            <text x="0" y="0">strong</text>
+        </g>
+    </g>
+  </g>
+  <g font-size="30" font-family="Arial" 
+      transform="translate(500,350)">
+      <text x="300" y="200">Haskell</text>
+      <text x="250" y="-120">C</text>
+      <text x="-250" y="-200">Javascript</text>
+      <text x="250" y="120">Scala</text>
+      <text x="-300" y="200">Erlang</text>
+      <text x="-250" y="120">Lisp</text>
+      <text x="-150" y="100">Clojure</text>
+      <text x="150" y="150">F#</text>
+  </g>
+</svg>
+

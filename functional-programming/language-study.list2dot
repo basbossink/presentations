@@ -85,6 +85,8 @@ while (<>) {
 print '
 digraph dd {
     rankdir=LR;
+    size="15,10";
+    ranksep=.3;
     node [ shape=plaintext,fontsize=40 ];
   {
 ';
