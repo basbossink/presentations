@@ -2,7 +2,14 @@
 
 //- Type inference 
 
+let f a b = a*a + b*b
+
+let g a b = sqrt (a*a + b*b)
+
+let g (a : double) (b : double) = (a*a + b*b) |> sqrt 
+
 //
+
 
 //- Pattern matching
 
@@ -12,13 +19,20 @@ let rec fib n =
     | _ -> fib (n - 1) + fib (n - 2)
 //
 
+
 //- Algebraic datatypes
 
 type Color = 
     | Red
     | Yellow
     | Blue
+
+type Tree<'a>  = 
+    | Tree of 'a * Tree<'a> * Tree<'a>
+    | Empty
+
 //
+
 
 //- Partial application
 
@@ -26,12 +40,6 @@ let timespi = (*) 3
 
 //
 
-
-let test c = 
-    match c with 
-    | Red -> "yummi"
-    | Yellow -> "yugh"
-    | Blue -> "delicious"
 
 //- Local functions
 

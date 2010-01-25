@@ -6,13 +6,12 @@
 
 - Introduction
 - What is it?
-- Features of functional languages
 - History
 - Taxonomy
+- Features of functional languages
+- Functional concepts
 - What is it good at?
 - What is it bad at?
-- Purity in Haskell
-- Examples in C#,F#, Haskell
 
 # Introduction
 
@@ -68,6 +67,7 @@
 - Type inference (var on steroids)
 - Pattern matching
 - Algabraic data types
+- Function composition
 - Anonymous functions (lambda's)
 - Local functions
 
@@ -78,3 +78,11 @@
 - High order functions map, fold, filter
 - Monads
 
+# Funtional concepts
+
+- Tail Recursion
+- Continuation passing style
+- Closure
+- Memoization
+- Functors
+- Monoids
