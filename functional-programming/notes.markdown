@@ -51,8 +51,6 @@
 
 - Research in foundations of mathematics
 - formalise function definition, application, recursion
-- untyped was shown to be logically inconsistent 
-  due to Kleene-Rosser paradox
 - typed is computationally weaker but logically consistent
 
 ### Timeline
@@ -71,3 +69,45 @@
     + Haskell was designed to focus research of typed, lazy functional
       languages
 - Clojure a Lisp on the JVM
+
+## Taxonomy
+
+- Languages can be classified in different ways
+- Next is rough sketch, no scale
+- To see who your friends are
+
+### Static/Dynamic, Strong/Weak
+
+- Functional languages are mostly strongly typed
+- Two basic camps still exist
+
+### Lazy/Eager, Single/Multi-paradigm
+
+- Erlang, really functional, Armstrong says: "Concurrency Oriented"
+- Common Lisp, CLOS, Common Lisp Object System
+- F#:
+    + Funtional
+    + Imperative
+    + Object-Oriented
+    + Language-Oriented
+- Scala:
+    + Functional
+    + Object-Oriented
+
+## Features
+
+### Read Eval Print Loop (REPL)
+
+- Also found in:
+    + Python
+    + Ruby
+    + Haskell
+    + LISP
+    + Scala
+    + Emacs
+
+### Type inference
+
+- Lately mostly doing haskell, preperation a bit disappointing
+  F# inference does not use info about signature sqrt
+  Haskell does

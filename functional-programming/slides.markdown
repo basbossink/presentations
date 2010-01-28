@@ -24,7 +24,7 @@
 
 # What is it?
 
-- Functions are first class citizen
+- Functions are central construct
 - Functions are mathematical  
 
 ![simple function](/parabola.png "A simple function")

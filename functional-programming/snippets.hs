@@ -1,31 +1,34 @@
 {-- Type inference --}
 
-f a b = a*a + b*b
-g a b = sqrt (a*a + b*b)
-h a b = sqrt $ a*a + b*b
-l a b = sqrt $ a**2 + b**2
+let f a b = a^2 + b^2
 
+let g a b = sqrt (a^2 + b^2)
 
+let h a b = sqrt $ a^2 + b^2
+
+let square = flip (^) 2
+
+let hypo = sqrt . sum . map square
 --\\
 
 
 {-- Pattern matching --}
 
-fib 0 = 0
-fib 1 = 1
-fib n = fib (n-2) + fib (n-1)
+let fib 0 = 0
+let fib 1 = 1
+let fib n = fib (n-2) + fib (n-1)
 
---\
+--\\
 
 
 {-- Algebraic datatypes --}
 
-data Color = 
+let data Color = 
       Red
     | Yellow
     | Blue
 
-data Tree a = Node a (Tree a) (Tree a)
+let data Tree a = Node a (Tree a) (Tree a)
             | Empty
             deriving (Show)
 --\
@@ -33,7 +36,7 @@ data Tree a = Node a (Tree a) (Tree a)
 
 {-- Partial application --}
 
-timesPi = (*) 3
+let timesPi = (*) 3
 
 --\
 
