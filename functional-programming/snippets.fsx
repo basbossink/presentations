@@ -33,6 +33,25 @@ type Tree<'a>  =
 
 //
 
+//- Function composition
+
+let f = sqrt >> sum 
+
+//
+
+//- Anonymous functions
+
+let cubes = List.map (fun n -> n * n * n)
+
+//
+
+//- Local functions
+
+let root a b c = 
+    let discriminant = b*b - 4 * a * c
+    (-b + sqrt (discriminant))/2 * a
+
+//
 
 //- Partial application
 
