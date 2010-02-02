@@ -47,8 +47,6 @@ let cubes = map (\n -> n * n * n)
 
 {-- Local functions --}
 
-let root a b c = (-b) + sqrt discriminant / 2 * a
-                 where discriminant = b^2 - 4 * a * c
 
 --\
 
