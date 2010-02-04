@@ -12,6 +12,7 @@
 - Functional concepts
 - What is it good at?
 - What is it bad at?
+- Resources
 
 # Introduction
 
@@ -68,15 +69,14 @@
 - Pattern matching
 - Algabraic data types
 - Function composition
-- Anonymous functions (lambda's)
-- Local functions
+- Anonymous functions (lambda expressions) 
 
 # Features
 
-- List comprehensions
+- Sequence Expressions (List Comprehensions)
 - Partial function applycation (currying)
-- High order functions map, fold, filter
-- Monads
+- High order functions (map, fold, filter)
+- Computation Expressions (Monads)
 
 # Funtional concepts
 

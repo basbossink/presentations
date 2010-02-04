@@ -24,6 +24,3 @@ public static IEnumerable<T> Cubes(IEnumerable<T> source) >
 
 #endregion
 
-#region Local functions
-
-#endregion

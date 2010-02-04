@@ -1,10 +1,8 @@
-#light
-
 //- Type inference 
 
 let f a b = a*a + b*b
 
-//let g a b = sqrt (a*a + b*b)
+let g a b = sqrt (a*a + b*b)
 
 let g (a : double) (b : double) = (a*a + b*b) |> sqrt 
 
@@ -42,21 +40,14 @@ let f = sqrt >> (*3.14)
 
 //- Anonymous functions
 
+let adder a = fun n -> a + n
+
 let cubes = List.map (fun n -> n * n * n)
-
-//
-
-//- Local functions
-
-let primes max =
-    let rec sieve (p :: tail) = 
-        p :: (sieve (List.filter (fun x -> x % p <> 0) tail))
-    sieve [ 2 .. max]
 
 //
 
 //- Partial application
 
-//let timespi = (*) 3 
+let timespi = (*) 3 
 
 //

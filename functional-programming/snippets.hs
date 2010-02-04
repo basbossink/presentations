@@ -45,12 +45,6 @@ let cubes = map (\n -> n * n * n)
 
 --\
 
-{-- Local functions --}
-
-
---\
-
-
 {-- Partial application --}
 
 let timesPi = (*) 3

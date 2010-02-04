@@ -104,10 +104,28 @@
     + Haskell
     + LISP
     + Scala
-    + Emacs
 
 ### Type inference
 
-- Lately mostly doing haskell, preperation a bit disappointing
+- Lately mostly doing Haskell, preperation a bit disappointing
   F# inference does not use info about signature sqrt
-  Haskell does
+  Haskell does.
+
+### Pattern matching
+- Examples
+- F# supports *Active Patterns* functions to be run as part of pattern matching
+  Makes it possible to match over arbitrary types and paremeterize pattern 
+  matching.
+
+### Algabraic data types
+- What's in a name
+
+### Function Composition
+
+### Anonymous function (lamdba expressions)
+
+#### Closure
+ 
+>In computer science, a closure is a first-class function with free 
+>variables that are bound in the lexical environment. Such a function is 
+>said to be "closed over" its free variables. 
