@@ -74,8 +74,8 @@
 # Features
 
 - Sequence Expressions (List Comprehensions)
-- Partial function applycation (currying)
-- High order functions (map, fold, filter)
+- Partial function application (currying)
+- Higher order functions (map, fold, filter)
 - Computation Expressions (Monads)
 
 # Funtional concepts
