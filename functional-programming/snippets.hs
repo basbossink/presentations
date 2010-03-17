@@ -39,9 +39,12 @@ let f = sqrt . sum
 
 --\
 
-{-- Ananymous functions --}
+{-- Anonymous functions --}
 
 let cubes = map (\n -> n * n * n)
+let adder n = \m -> n + m
+let add37 = adder 37
+add37 42
 
 --\
 
@@ -51,4 +54,6 @@ let timesPi = (*) 3
 
 --\
 
+{-- List Comprehensions --}
 
+sort $ nub [ a^2 + b^2 | a <- [1..5], b <- [1..5] ]

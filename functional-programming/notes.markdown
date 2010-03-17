@@ -129,3 +129,8 @@
 >In computer science, a closure is a first-class function with free 
 >variables that are bound in the lexical environment. Such a function is 
 >said to be "closed over" its free variables. 
+
+### Sequence Expressions (List Comprehensions)
+- Think PowerShell ranges on steriods
+- Also available in Python and Erlang
+- F# generalizes list comprehensions to Sequence Expressions with syntactic sugar for seq, list and array
