@@ -134,3 +134,6 @@
 - Think PowerShell ranges on steriods
 - Also available in Python and Erlang
 - F# generalizes list comprehensions to Sequence Expressions with syntactic sugar for seq, list and array
+
+### Higher order functions
+- functions that take functions as arguments or return functions

@@ -57,3 +57,12 @@ let timesPi = (*) 3
 {-- List Comprehensions --}
 
 sort $ nub [ a^2 + b^2 | a <- [1..5], b <- [1..5] ]
+
+--\
+
+{-- Higher order functions --}
+
+map (\x -> x * x ) [1..10]
+:type flip
+
+--\

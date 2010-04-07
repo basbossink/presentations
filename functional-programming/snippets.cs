@@ -31,3 +31,8 @@ public static Add37(int m) { return Adder(37); }
 
 #endregion
 
+#region Higher order functions
+
+IEnumerable<int> squares = Enumerable.Range(1, 10).Select(x => x * x);
+
+#endregion

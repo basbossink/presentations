@@ -60,3 +60,11 @@ let timespi = (*) 3
 seq { for i in 1..5 -> (i, i*i) }
 [ for i in 1..5 -> i * i ]
 [| for i in 1..5 -> i * i |]
+
+//
+
+//- Higher order functions
+
+List.map (fun x -> x * x) [1..10]
+
+//
