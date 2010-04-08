@@ -101,8 +101,6 @@
 - Also found in:
     + Python
     + Ruby
-    + Haskell
-    + LISP
     + Scala
 
 ### Type inference
@@ -119,6 +117,7 @@
 
 ### Algabraic data types
 - What's in a name
+- Somewhat similar to `union`
 
 ### Function Composition
 
