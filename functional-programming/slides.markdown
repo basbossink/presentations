@@ -5,9 +5,9 @@
 # Contents
 
 - Introduction
-- What is it?
+- Definition
 - History
-- Taxonomy
+- Taxonomy of functional languages
 - Features of functional languages
 - Functional concepts
 - What is it good at?
@@ -16,6 +16,7 @@
 
 # Introduction
 
+- Anecdote
 - Disclaimer
 - About this presentation
     + opensource under GFDL
@@ -23,19 +24,33 @@
 
 [gh]: http://github.com/basbossink/presentations "Presentations on github"
 
-# What is it?
+# Definition
 
 - Functions are central construct
+- Functions are *regular* values
+    + passed around
+    + returned 
+    + composed
+    + (partially) applied
+- No *variables* but *binding* of values
+    + all *variables* are __immutable__
+
+# Definition of a Function
+
 - Functions are mathematical  
+
+# Example 
 
 ![simple function](/parabola.png "A simple function")
 
-# What is it?
+# Non-example
+
+![curve](/curve.png "A simple curve")
+
+# Definition of a Function
 
 - Same input -> same output
-- No side effects
-- No (global) state
-- No *variables* but *binding* of values
+- No side effects, *pure*
 
 # History
 
@@ -73,10 +88,24 @@
 
 # Features
 
-- Sequence Expressions (List Comprehensions)
+- Sequence Epressions (List Comprehensions)
 - Partial function application (currying)
 - Higher order functions (map, fold, filter)
 - Computation Expressions (Monads)
+
+# Monads
+
+- Concept from mathematics, Category theory
+- A triple:
+    + type constructor
+    + bind aka chain operation
+    + return aka inject operation
+
+# Monads
+
+    class Monad m where
+        (>>=) :: m a -> (a -> m b) -> m b
+        return :: a -> m a
 
 # Funtional concepts
 

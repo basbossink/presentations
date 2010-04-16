@@ -20,5 +20,5 @@ file 'notes.pdf' => 'notes.markdown' do
     sh "markdown2pdf -N -o notes.pdf notes.markdown"
 end
 
-file 'slides.markdown' => ['languages.png', 'parabola.png']
+file 'slides.markdown' => ['languages.png', 'parabola.png', 'curve.png']
 file 'notes.markdown' => []

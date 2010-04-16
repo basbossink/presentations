@@ -1,9 +1,19 @@
-# Notes concerning Functional Programming Presentation
+% Notes Functional Programming Presentation
+% Bas Bossink
+% March 2010
 
 ## Contents
 - Taxonomy = classification
 
 ## Introduction
+
+### Anecdote
+
+- Euclid greek mathematician 300 BC known for:
+    + Elements, 13 books containing from the ground up geometry and number theory Euclidean algorithm
+    + Euclidean algorithm, efficient algorithm to calculate gcd 
+
+> When Ptolemy the First asked Euclid if there was no shorter road to geometry than the Elements, he replied, "there is no royal road to geometry." 
 
 ### Disclaimer
 
@@ -25,7 +35,7 @@
     + perl
     + Miktex/latex 
 
-## What is it?
+## Definition
 
 ### first class citizen
 
@@ -42,8 +52,15 @@
 ### functions are mathematical
 
 - same input, same output
+
+## Example 
+
 - for each x there's 0 or 1 y value, never 2
   several x's can have the same y
+
+## Non-example
+
+- same input x, can have multiple y values 
 
 ## History
 
@@ -111,7 +128,7 @@
 
 ### Pattern matching
 - Examples
-- F# supports *Active Patterns* functions to be run as part of pattern matching
+- F# supports **Active Patterns** functions to be run as part of pattern matching
   Makes it possible to match over arbitrary types and paremeterize pattern 
   matching.
 
@@ -129,10 +146,20 @@
 >variables that are bound in the lexical environment. Such a function is 
 >said to be "closed over" its free variables. 
 
+Java JSE 7 proposed syntax quite ugly
+
 ### Sequence Expressions (List Comprehensions)
+
 - Think PowerShell ranges on steriods
 - Also available in Python and Erlang
 - F# generalizes list comprehensions to Sequence Expressions with syntactic sugar for seq, list and array
 
 ### Higher order functions
+
 - functions that take functions as arguments or return functions
+
+# Monads
+
+- hiding complexity 
+- think control structures
+- chaining computations
