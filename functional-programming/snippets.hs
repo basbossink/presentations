@@ -66,3 +66,15 @@ map (\x -> x * x ) [1..10]
 :type flip
 
 --\
+
+{-- Monads --}
+
+instance Monad Maybe where
+    Just x >>= k = k x
+    Nothing >>= _ = Nothing
+
+    return x = Just x
+
+    Just _ >> k = k
+    Nothing >> _ = Nothing 
+    fail _ = Nothing

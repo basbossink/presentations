@@ -36,3 +36,19 @@ public static Add37(int m) { return Adder(37); }
 IEnumerable<int> squares = Enumerable.Range(1, 10).Select(x => x * x);
 
 #endregion
+
+#region Monads
+
+PetOwner[] petOwners = 
+                    { new PetOwner { Name="Higa, Sidney", 
+                          Pets = new List<string>{ "Scruffy", "Sam" } },
+                      new PetOwner { Name="Ashkenazi, Ronen", 
+                          Pets = new List<string>{ "Walker", "Sugar" } },
+                      new PetOwner { Name="Price, Vernette", 
+                          Pets = new List<string>{ "Scratches", "Diesel" } } };
+
+IEnumerable<string> query1 = petOwners.SelectMany(petOwner => petOwner.Pets);
+//alternative
+IEnumerable<string> query2 = from petOwner in petOwners
+                             from pet in petOwner.Pets
+                             select pet

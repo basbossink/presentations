@@ -71,6 +71,9 @@ List.map (fun x -> x * x) [1..10]
 
 //- Workflows
 
+type 'a option = 
+    | None
+    | Some of 'a
 
 #light
 type Attempt<'a> = (unit -> 'a option)

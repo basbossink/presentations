@@ -41,11 +41,11 @@
 
 # Example 
 
-![simple function](/parabola.png "A simple function")
+![](/parabola.png "A simple function")
 
 # Non-example
 
-![curve](/curve.png "A simple curve")
+![](/curve.png "A simple curve")
 
 # Definition of a Function
 
@@ -59,7 +59,7 @@
     + untyped lambda calculus
     + simply typed lambda calculus  
 
-![timeline](/languages.png "Abbreviated genealogy of functional programming languages")
+![](/languages.png "Abbreviated genealogy of functional programming languages")
 
 # Taxonomy
 
@@ -100,6 +100,27 @@
     + type constructor
     + bind aka chain operation
     + return aka inject operation
+
+# Category 
+
+- a collection of elements
+- a collection of morphisms (think function)
+- a notion of composition of these morphisms
+- Example **Grp**, **Set**, **Hask**
+
+# Functor 
+
+- Transformation between categories
+- Given categorie C, D, functor F 
+     + F : C -> D
+     + f: A -> B then F(f) -> F(A) -> F(B)
+- Examples: F: **Grp** -> **Set**, forgetful functor
+
+# Monad 
+
+- Funtor: M: C -> C
+- unit: X -> M(X)
+- join: M(M(X)) -> M(X)
 
 # Monads
 

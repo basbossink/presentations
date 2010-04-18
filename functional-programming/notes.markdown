@@ -163,3 +163,5 @@ Java JSE 7 proposed syntax quite ugly
 - hiding complexity 
 - think control structures
 - chaining computations
+
+
