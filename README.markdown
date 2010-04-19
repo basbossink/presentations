@@ -10,6 +10,7 @@ the GNU Free Documentation License Version 1.3.
 - [gnuplot](http://www.gnuplot.info/)
 - [dot](http://www.graphviz.org/)
 - [perl](http://www.perl.org/)
+- [convert](http://http://www.imagemagick.org/script/index.php)
 - Any webserver of choice to host the generated html output.  
   The resulting presentation uses [S5][S5].
   [S5][S5] is a slide show format based entirely on XHTML, CSS, and JavaScript.

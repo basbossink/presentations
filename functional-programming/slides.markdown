@@ -71,11 +71,11 @@
 
 # Taxonomy
 
-<object data="/dynamic-static-strong-weak.svg" type="image/svg+xml"/>
+![](/dynamic-static-strong-weak.png "dynamic vs. static and strong vs. weak typing") 
 
 # Taxonomy 
 
-<object data="/lazy-eager-single-multi.svg" type="image/svg+xml"/>
+![](/lazy-eager-single-multi.png "lazy vs eager evaluation and single vs multi-paradigm" )
 
 # Features
 

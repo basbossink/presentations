@@ -8,6 +8,10 @@ rule '.png' => '.gnu' do |t|
     sh "gnuplot #{t.source}"
 end
 
+rule '.png' => '.svg' do |t|
+    sh "\"#{ENV['CONVERT']}\" #{t.source} #{t.name}"
+end
+
 file 'slides.html' => 'slides.markdown' do
     sh "pandoc -w s5 -s slides.markdown > slides.html"
 end
@@ -20,5 +24,11 @@ file 'notes.pdf' => 'notes.markdown' do
     sh "markdown2pdf -N -o notes.pdf notes.markdown"
 end
 
-file 'slides.markdown' => ['languages.png', 'parabola.png', 'curve.png']
+file 'slides.markdown' => [ 
+    'lazy-eager-single-multi.png',
+    'dynamic-static-strong-weak.png',
+    'languages.png', 
+    'parabola.png', 
+    'curve.png'
+]
 file 'notes.markdown' => []
