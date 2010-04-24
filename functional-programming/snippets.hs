@@ -67,6 +67,14 @@ map (\x -> x * x ) [1..10]
 
 --\
 
+{-- Tail recursion --}
+
+let fact n = 
+    let factaux 1 acc = acc
+        factaux i acc = fact (i-1) (i*acc)
+    in factaux n 1
+
+--\
 {-- Monads --}
 
 instance Monad Maybe where

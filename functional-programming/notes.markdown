@@ -158,10 +158,23 @@ Java JSE 7 proposed syntax quite ugly
 
 - functions that take functions as arguments or return functions
 
+# Functional Concepts
+
+## Tail Recursion
+
+- example
+- needed optimization for arbitrary length recursion
+
+## Continuation passing style
+
 # Monads
 
 - hiding complexity 
 - think control structures
 - chaining computations
 
+# What is it good at?
+
+## Stateless
+- web
 

@@ -85,6 +85,7 @@
 - Algabraic data types
 - Function composition
 - Anonymous functions (lambda expressions) 
+    + Closure
 
 # Features
 
@@ -92,6 +93,14 @@
 - Partial function application (currying)
 - Higher order functions (map, fold, filter)
 - Computation Expressions (Monads)
+
+# Funtional concepts
+
+- Tail Recursion
+- Continuation passing style
+- Memoization
+- Functors
+- Monoids
 
 # Monads
 
@@ -128,11 +137,49 @@
         (>>=) :: m a -> (a -> m b) -> m b
         return :: a -> m a
 
-# Funtional concepts
+# What is it good at?
 
-- Tail Recursion
-- Continuation passing style
-- Closure
-- Memoization
-- Functors
-- Monoids
+- stateless
+- data-transformations
+- calculation /scientific computing
+- parrallellism
+
+# What is it bad at?
+
+- a lotta state
+- gui's
+
+# Resources
+
+- F#
+    + [Expert F#][exp]
+    + [Wikibook][wikib]
+    + [Developer Center][devc]
+    + [HubFs][hubfs] 
+    
+- Haskell
+    + [Real World Haskell (book)][rwh]
+    + [Real World Haskell online][rwho]
+    + [Haskell.org][org]
+    + [Haskell lectures Erik Meijer][mei]
+    + [Yet another Haskell tutorial][yaht]
+
+[devc]: http://msdn.microsoft.com/nl-nl/fsharp/default(en-us).aspx
+[exp]: http://www.apress.com/book/view/1590598504
+[wikib]: http://en.wikibooks.org/wiki/F_Sharp_Programming
+[hubfs]: http://cs.hubfs.net/
+[rwh]: http://oreilly.com/catalog/9780596514983/
+[rwho]: http://book.realworldhaskell.org/read/index.html
+[org]: http://www.haskell.org
+[mei]: http://www.cs.nott.ac.uk/~gmh/book.html#videos
+[yaht]: http://en.wikibooks.org/wiki/Haskell/YAHT
+
+# Labs
+
+- Haskell 
+- F#
+- fix code such that quickcheck/fscheck succeeds
+- solutions on solution branch
+- try [euler project][eul]
+
+[eul]: http://projecteuler.net/

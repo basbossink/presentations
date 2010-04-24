@@ -2,6 +2,13 @@ require 'rake/clean'
 
 CLEAN.include(FileList['*.html','*.pdf','*.png'])
 
+# Windows has a name clash with builtin dos convert command
+cov = if ENV.has_key? 'CONVERT' then 
+          "\"#{ENV['CONVERT']}\"" 
+      else 
+          "convert" 
+      end
+
 task :default => ['slides.html','notes.pdf']
 
 rule '.png' => '.gnu' do |t|
@@ -9,7 +16,7 @@ rule '.png' => '.gnu' do |t|
 end
 
 rule '.png' => '.svg' do |t|
-    sh "\"#{ENV['CONVERT']}\" #{t.source} #{t.name}"
+    sh "#{cov} #{t.source} #{t.name}"
 end
 
 file 'slides.html' => 'slides.markdown' do

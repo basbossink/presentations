@@ -69,6 +69,15 @@ List.map (fun x -> x * x) [1..10]
 
 //
 
+//- Tail Recursion
+
+let rec fact n = if n = 1 then 1 else n* (fact n-1)  
+
+let rec fact n = 
+    let rec aux i acc = if i = 0 then acc
+                          else aux i-1 i*acc
+    aux n 1
+
 //- Workflows
 
 type 'a option = 
