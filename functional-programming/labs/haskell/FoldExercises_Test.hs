@@ -4,16 +4,16 @@ where
 import Test.QuickCheck
 import Data.List(groupBy)
 
-import FoldExercises
+import qualified FoldExercises as F
 
-prop_concat xs = concat xs == fconcat xs
+prop_concat xs = concat xs == F.concat xs
     where types = xs ::[[Int]]
 
 predicate x = x < 37
-prop_takeWhile xs = takeWhile predicate xs == ftakeWhile predicate xs
+prop_takeWhile xs = takeWhile predicate xs == F.takeWhile predicate xs
     where types = xs::[Int] 
 
-prop_groupBy predicate xs = groupBy predicate xs == fgroupBy predicate xs
+prop_groupBy predicate xs = groupBy predicate xs == F.groupBy predicate xs
     where types = xs::[Int]
 
 equal x y = (y `mod` 3) == 0 

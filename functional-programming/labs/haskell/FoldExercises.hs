@@ -4,8 +4,8 @@ where
 write alternatives to the standard concat, takeWhile and groupBy functions
 using a fold 
 --} 
-fconcat = undefined
+concat = undefined
 
-ftakeWhile = undefined
+takeWhile = undefined
 
-fgroupBy = undefined
+groupBy = undefined
