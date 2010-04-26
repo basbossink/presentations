@@ -6,28 +6,30 @@ let g a b = sqrt (a^2 + b^2)
 
 let h a b = sqrt $ a^2 + b^2
 
+:type flip (^) 2
+
 let square = flip (^) 2
 
-let norm = sqrt . sum . map square
+let norm = sqrt . fromIntegral . sum . map square
 
 --\
 
 {-- Pattern matching --}
 
-let fib 0 = 0
-let fib 1 = 1
-let fib n = fib (n-2) + fib (n-1)
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n-2) + fib (n-1)
 
 --\
 
 {-- Algebraic datatypes --}
 
-let data Color = 
+data Color = 
       Red
     | Yellow
     | Blue
 
-let data Tree a = Node a (Tree a) (Tree a)
+data Tree a = Node a (Tree a) (Tree a)
             | Empty
             deriving (Show)
 --\
@@ -55,7 +57,7 @@ let timesPi = (*) 3
 
 {-- List Comprehensions --}
 
-sort $ nub [ a^2 + b^2 | a <- [1..5], b <- [1..5] ]
+[ (a,b,c) | a <- [1..25], b <- [a..25], c <- [b..25], a^2 + b^2 == c^2 ]
 
 --\
 
@@ -68,8 +70,8 @@ map (\x -> x * x ) [1..10]
 
 {-- Tail recursion --}
 
-let fact n = 
-    let factaux 1 acc = acc
+fact n = 
+    factaux 1 acc = acc
         factaux i acc = fact (i-1) (i*acc)
     in factaux n 1
 

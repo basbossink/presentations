@@ -27,7 +27,7 @@ public static Func<int, Func<int,int> > Adder(int n)
     return m => m + n;
 }
 
-public static Add37(int m) { return Adder(37); }
+public static int Add37(int m) { return Adder(37)(m); }
 
 #endregion
 

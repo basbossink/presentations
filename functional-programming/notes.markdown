@@ -1,11 +1,22 @@
 % Notes Functional Programming Presentation
 % Bas Bossink
-% March 2010
+% April 2010
 
 ## Contents
 - Taxonomy = classification
 
 ## Introduction
+
+### Disclaimer
+
+- No *real* project experience with FP
+- Just read some books and did a few excercises
+
+### Inventory
+
+- How has used a functional language?
+- How has used a functional language after completing their education?
+- How has written a LINQ query?
 
 ### Anecdote
 
@@ -15,11 +26,6 @@
 
 > When Ptolemy the First asked Euclid if there was no shorter road to geometry than the Elements, he replied, "there is no royal road to geometry." 
 
-### Disclaimer
-
-- No *real* project experience with FP
-- Just read some books and did a few excercises
-
 ### About
 
 - Opensource GFDL
@@ -27,13 +33,18 @@
 - Cross platform
 - Tools used:
     + pandoc (Haskell markup 2 markup transformer)
+        - S5 (requires firefox)
+        - just HTML, CSS, javascript
     + dot (graph layout engine)
     + Rake (ruby build automation)
     + git (source control)
     + vim (ide)
     + gnuplot (plotting graphs)
     + perl
-    + Miktex/latex 
+    + Miktex/latex (generate notes in pdf) 
+    + imagemagick (svg to png conversion)
+        - native svg in firefox ok on linux
+          but broken on windows
 
 ## Definition
 
@@ -85,7 +96,7 @@
     + Haskell is designed by committee
     + Haskell was designed to focus research of typed, lazy functional
       languages
-- Clojure a Lisp on the JVM
+- Clojure a Lisp on the JVM and .Net
 
 ## Taxonomy
 
@@ -97,6 +108,7 @@
 
 - Functional languages are mostly strongly typed
 - Two basic camps still exist
+    + no equivalent of Duck Typing, no *objects* to recieve the message
 
 ### Lazy/Eager, Single/Multi-paradigm
 
@@ -110,6 +122,7 @@
 - Scala:
     + Functional
     + Object-Oriented
+- Lazy here means by default, F# and Scala support lazy with special syntax
 
 ## Features
 
@@ -119,26 +132,38 @@
     + Python
     + Ruby
     + Scala
+- F# no interpreter on the fly compilation
 
 ### Type inference
 
 - Lately mostly doing Haskell, preperation a bit disappointing
   F# inference does not use info about signature sqrt
   Haskell does.
+- Haskell :type ghci is different from type of bound expression
 
 ### Pattern matching
+
 - Examples
 - F# supports **Active Patterns** functions to be run as part of pattern matching
   Makes it possible to match over arbitrary types and paremeterize pattern 
   matching.
 
 ### Algabraic data types
+
 - What's in a name
+- Abstraction of tuple/enum
+
+> an algebraic data type (sometimes also called a variant type[1]) is a datatype each of whose values is data from other datatypes wrapped in one of the constructors of the datatype. Any wrapped datum is an argument to the constructor
+
 - Somewhat similar to `union`
 
 ### Function Composition
 
+- Examples
+
 ### Anonymous function (lamdba expressions)
+
+- Examples
 
 #### Closure
  
@@ -153,6 +178,11 @@ Java JSE 7 proposed syntax quite ugly
 - Think PowerShell ranges on steriods
 - Also available in Python and Erlang
 - F# generalizes list comprehensions to Sequence Expressions with syntactic sugar for seq, list and array
+
+### Partial function application
+
+- Also known as Currying
+- show arrows in types
 
 ### Higher order functions
 
@@ -174,6 +204,7 @@ Java JSE 7 proposed syntax quite ugly
 - both sizeCont left (fun leftSize -> .. are tail recursive
 
 ## Memoization
+
 - think caching in a closure
 - example
 - caching in a local function
@@ -188,5 +219,6 @@ Java JSE 7 proposed syntax quite ugly
 # What is it good at?
 
 ## Stateless
+
 - web/REST
 

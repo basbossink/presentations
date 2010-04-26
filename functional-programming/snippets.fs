@@ -51,21 +51,29 @@ cubes [3;4;5]
 
 //
 
-//- Partial application
-
-let timespi = (*) 3 
-
-timespi 4
-
-//
-
 //- Sequence Expressions
 
 let ienumerable = seq { for i in 1..5 -> (i, i*i) }
 
+ienumerable
+
 let list = [ for i in 1..5 -> i * i ]
 
+list
+
 let array = [| for i in 1..5 -> i * i |]
+
+array
+
+//
+
+//- Partial application
+
+let times = (*)
+
+let timespi = (*) 3 
+
+timespi 4
 
 //
 

@@ -1,26 +1,28 @@
 % Functional Programming
 % Bas Bossink
-% March 2010
+% April 2010
 
 # Contents
 
 - Introduction
 - Definition
 - History
-- Taxonomy of functional languages
-- Features of functional languages
+- Taxonomy 
+- Features
 - Functional concepts
-- What is it good at?
-- What is it bad at?
+- When to use it?
+- When not to use it?
 - Resources
 
 # Introduction
 
-- Anecdote
 - Disclaimer
-- About this presentation
-    + opensource under GFDL
+- Inventory
+- Anecdote
+- About
+    + GFDL
     + on [github][gh]
+    + *libre* tools
 
 [gh]: http://github.com/basbossink/presentations "Presentations on github"
 
@@ -134,14 +136,18 @@
         (>>=) :: m a -> (a -> m b) -> m b
         return :: a -> m a
 
-# What is it good at?
+    instance Monad [] where
+        return x = [x]
+        xs >>= f = concat (map f xs)
+
+# When to use it?
 
 - stateless
 - data-transformations
 - calculation /scientific computing
 - parrallellism
 
-# What is it bad at?
+# When not to use it?
 
 - a lotta state
 - gui's
