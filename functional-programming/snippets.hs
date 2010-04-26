@@ -10,8 +10,7 @@ let square = flip (^) 2
 
 let norm = sqrt . sum . map square
 
---\\
-
+--\
 
 {-- Pattern matching --}
 
@@ -19,8 +18,7 @@ let fib 0 = 0
 let fib 1 = 1
 let fib n = fib (n-2) + fib (n-1)
 
---\\
-
+--\
 
 {-- Algebraic datatypes --}
 
