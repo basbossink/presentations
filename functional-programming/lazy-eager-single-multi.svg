@@ -25,7 +25,7 @@
   <g font-size="30" font-family="Arial" 
       transform="translate(500,350)">
       <text x="-300" y="200">Haskell</text>
-      <text x="250" y="120">Scala</text>
+      <text x="250" y="-220">Scala</text>
       <text x="100" y="-200">Erlang</text>
       <text x="250" y="-120">Common Lisp</text>
       <text x="-150" y="-100">Clojure</text>
