@@ -1,3 +1,5 @@
+#light
+
 //- Type inference 
 
 let f a b = a*a + b*b
@@ -8,7 +10,6 @@ let g (a : double) (b : double) = (a*a + b*b) |> sqrt
 
 //
 
-
 //- Pattern matching
 
 let rec fib n =
@@ -16,9 +17,7 @@ let rec fib n =
     | 0 | 1 -> n
     | _ -> fib (n - 1) + fib (n - 2)
 
-open Microsoft.FSharp.Math
 //
-
 
 //- Algebraic datatypes
 
@@ -35,7 +34,7 @@ type Tree<'a>  =
 
 //- Function composition
 
-let f = sqrt >> (*3.14)
+let f = sqrt >> ((*) 3.14)
 
 //
 
@@ -43,9 +42,12 @@ let f = sqrt >> (*3.14)
 
 let adder a = fun n -> a + n
 let add37 = adder 37
+
 add37 42 
+
 let cubes = List.map (fun n -> n * n * n)
 
+cubes [3;4;5]
 
 //
 
@@ -53,13 +55,17 @@ let cubes = List.map (fun n -> n * n * n)
 
 let timespi = (*) 3 
 
+timespi 4
+
 //
 
 //- Sequence Expressions
 
-seq { for i in 1..5 -> (i, i*i) }
-[ for i in 1..5 -> i * i ]
-[| for i in 1..5 -> i * i |]
+let ienumerable = seq { for i in 1..5 -> (i, i*i) }
+
+let list = [ for i in 1..5 -> i * i ]
+
+let array = [| for i in 1..5 -> i * i |]
 
 //
 
@@ -71,24 +77,77 @@ List.map (fun x -> x * x) [1..10]
 
 //- Tail Recursion
 
-let rec fact n = if n = 1 then 1 else n* (fact n-1)  
+open System.Numerics
 
 let rec fact n = 
-    let rec aux i acc = if i = 0 then acc
-                          else aux i-1 i*acc
-    aux n 1
+    if n = BigInteger.Zero then BigInteger.One 
+    else n * (fact n-BigInteger.One)
+
+fact (new BigInteger 10000)
+
+let rec factTail n = 
+    let rec aux i acc = 
+        if i = BigInteger.Zero then acc
+        else aux (i-BigInteger.One) (i*acc)
+    aux n BigInteger.One
+
+factTail (new BigInteger 10000)
+
+//
+
+//- Continuation passing style
+
+type Tree =
+    | Node of string * Tree * Tree
+    | Tip of string
+
+let rec naiveSize tree =
+    match tree with
+    | Tip _ -> 1
+    | Node(_, left, right) -> 
+        naiveSize left + naiveSize right
+
+let rec sizeCont tree continuation =
+    match tree with 
+    | Tip _ -> continuation 1
+    | Node (_, left, right) ->
+        sizeCont left (fun leftSize -> 
+            sizeCont right (fun rightSize -> 
+                continuation (leftSize + rightSize)))
+
+let size tree = sizeCont tree (fun x -> x)
+
+//
+
+//- Memoization
+
+let rec fibNaive n = 
+    if n <= 2 then 1 
+    else fibNaive(n-1) + fibNaive(n-2)
+
+fibNaive 43
+
+let fibFast =
+    let cache = new System.Collections.Generic.Dictionary<int,int>()
+    let rec fibCached n = 
+        if cache.ContainsKey(n) then cache.[n]
+        else if n <= 2 then 1
+        else let result = fibCached(n-1) + fibCached(n-2)
+             cache.Add(n,result)
+             result
+    fun n -> fibCached n
+
+fibFast 43
+
+//
 
 //- Workflows
 
-type 'a option = 
-    | None
-    | Some of 'a
+//type 'a option = 
+//    | None
+//    | Some of 'a
 
-#light
 type Attempt<'a> = (unit -> 'a option)
-
-// ----------------------------
-// Listing 9-6.
 
 let succeed x = (fun () -> Some(x))
 let fail      = (fun () -> None)
@@ -113,6 +172,9 @@ type AttemptBuilder() =
 
     /// Used to de-sugar uses of 'let' inside computation expressions.
     member b.Let(p,rest) : Attempt<'a> = rest p
+
+    member b.ReturnFrom(p : Attempt<'a> ) = p
+
 let attempt = new AttemptBuilder()
 
 let alwaysOne = attempt { return 1 }
@@ -131,8 +193,6 @@ let sumIfBothSmall (inp1,inp2) =
                   let sum = n1 + n2
                   return sum }
 
-// ----------------------------
-
 let sumIfBothSmall1 (inp1,inp2) =
     attempt { let! n1 = failIfBig inp1
               do printfn "Hey, n1 was small!"
@@ -141,25 +201,6 @@ let sumIfBothSmall1 (inp1,inp2) =
               let sum = n1 + n2
               return sum }
 
-
-// ----------------------------
-
 runAttempt(sumIfBothSmall1 (999,999))
 
 runAttempt(sumIfBothSmall1 (999,1003))
-
-// ----------------------------
-
-let sumIfBothSmall2 (inp1,inp2) =
-    attempt { let sum = ref 0
-              let! n1 = failIfBig inp1
-              do sum := sum.Value + n1
-              let! n2 = failIfBig inp2
-              do sum := sum.Value + n2
-              return sum.Value }
-
-let printThenSeven =
-        attempt { do printf "starting..."
-                  return 3 + 4 }
-
-// -

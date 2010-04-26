@@ -92,17 +92,14 @@
 - Sequence Epressions (List Comprehensions)
 - Partial function application (currying)
 - Higher order functions (map, fold, filter)
-- Computation Expressions (Monads)
 
 # Funtional concepts
 
 - Tail Recursion
 - Continuation passing style
 - Memoization
-- Functors
-- Monoids
 
-# Monads
+# Computation Expressions (Monads)
 
 - Concept from mathematics, Category theory
 - A triple:
@@ -127,7 +124,7 @@
 
 # Monad 
 
-- Funtor: M: C -> C
+- Functor: M: C -> C
 - unit: X -> M(X)
 - join: M(M(X)) -> M(X)
 

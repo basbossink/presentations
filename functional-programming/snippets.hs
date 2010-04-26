@@ -9,6 +9,7 @@ let h a b = sqrt $ a^2 + b^2
 let square = flip (^) 2
 
 let norm = sqrt . sum . map square
+
 --\\
 
 
@@ -75,7 +76,14 @@ let fact n =
     in factaux n 1
 
 --\
+
 {-- Monads --}
+
+import qualified Data.Map as M
+
+getAddress person phoneMap carrierMap addressMap = 
+        lookup phoneMap person >>= lookup carrierMap >>= lookup addressMap
+    where lookup = flip M.lookup
 
 instance Monad Maybe where
     Just x >>= k = k x

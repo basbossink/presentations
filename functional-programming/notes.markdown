@@ -167,14 +167,26 @@ Java JSE 7 proposed syntax quite ugly
 
 ## Continuation passing style
 
+- example
+- naive is **not** tail recursive
+    + large and/or unbalanced tree's -> stackoverflow
+- continuation passing pass the function that should be invoked with answer
+- both sizeCont left (fun leftSize -> .. are tail recursive
+
+## Memoization
+- think caching in a closure
+- example
+- caching in a local function
+
 # Monads
 
 - hiding complexity 
 - think control structures
 - chaining computations
+- jukky cs example
 
 # What is it good at?
 
 ## Stateless
-- web
+- web/REST
 
