@@ -14,7 +14,8 @@ let g (a : double) (b : double) = (a*a + b*b) |> sqrt
 
 let rec fib n =
     match n with
-    | 0 | 1 -> n
+    | 0 -> n
+    | 1 -> n
     | _ -> fib (n - 1) + fib (n - 2)
 
 //
@@ -135,7 +136,7 @@ let rec fibNaive n =
 
 fibNaive 43
 
-let fibFast =
+let fibFast m =
     let cache = new System.Collections.Generic.Dictionary<int,int>()
     let rec fibCached n = 
         if cache.ContainsKey(n) then cache.[n]
@@ -143,9 +144,9 @@ let fibFast =
         else let result = fibCached(n-1) + fibCached(n-2)
              cache.Add(n,result)
              result
-    fun n -> fibCached n
+    fibCached m
 
-fibFast 43
+fibFast 42
 
 //
 
@@ -160,7 +161,9 @@ type Attempt<'a> = (unit -> 'a option)
 let succeed x = (fun () -> Some(x))
 let fail      = (fun () -> None)
 let runAttempt (a:Attempt<'a>) = a()
-let bind p rest = match runAttempt p with None -> fail | Some r -> (rest r)
+let bind p rest = match runAttempt p with 
+                    | None -> fail 
+                    | Some r -> (rest r)
 let delay f = (fun () -> runAttempt (f ()))
 
 type AttemptBuilder() =

@@ -17,9 +17,11 @@ var r = f.Compose(g)(x)
 
 #region Anonymous functions
 
-public static IEnumerable<T> Cubes(IEnumerable<T> source) > 
+public static IEnumerable<T> Cubes(
+    IEnumerable<T> source,
+    int a) > 
 {
-    return source.Select(x => x * x * x);
+    return x => a + x * x * x;
 }
 
 public static Func<int, Func<int,int> > Adder(int n) 
@@ -45,7 +47,7 @@ private IDictionary<string, string> userIdToPhoneNumber = new Dictionary<string,
 private IDictionary<string, string> phoneToCarrier = new Dictionary<string,string>();
 private IDictionary<string, string> carrierToAddress = new Dictionary<string,string>();
 
-public void GetAddress(string userId) 
+public string GetAddress(string userId) 
 {
     string adr = string.Empty;
     string phone = null;
@@ -62,6 +64,7 @@ public void GetAddress(string userId)
 #endregion 
 
 #region In Linq >>= is SelectMany
+
 PetOwner[] petOwners = 
                     { new PetOwner { Name="Higa, Sidney", 
                           Pets = new List<string>{ "Scruffy", "Sam" } },
@@ -70,7 +73,8 @@ PetOwner[] petOwners =
                       new PetOwner { Name="Price, Vernette", 
                           Pets = new List<string>{ "Scratches", "Diesel" } } };
 
-IEnumerable<string> query1 = petOwners.SelectMany(petOwner => petOwner.Pets);
+IEnumerable<string> query1 = petOwners.SelectMany(
+    petOwner => petOwner.Pets);
 //alternative
 IEnumerable<string> query2 = from petOwner in petOwners
                              from pet in petOwner.Pets
