@@ -15,7 +15,7 @@ the GNU Free Documentation License Version 1.3.
   The resulting presentation uses [S5][S5].
   [S5][S5] is a slide show format based entirely on XHTML, CSS, and JavaScript.
 
-[S5]: (http://meyerweb.com/eric/tools/s5/)
+[S5]: http://meyerweb.com/eric/tools/s5/
 
 (c\) Bas Bossink <bas.bossink@gmail.com>
 
