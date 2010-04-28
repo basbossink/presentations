@@ -20,7 +20,7 @@
 
 ### Anecdote
 
-- Euclid greek mathematician 300 BC known for:
+- Euclid Greek mathematician 300 BC known for:
     + Elements, 13 books containing from the ground up geometry and number theory 
     + Euclidean algorithm, efficient algorithm to calculate gcd 
 
@@ -28,7 +28,7 @@
 
 ### About
 
-- Opensource GFDL
+- Open-source GFDL
 - On github 
 - Cross platform
 - Tools used:
@@ -111,14 +111,14 @@
 
 - Functional languages are mostly strongly typed
 - Two basic camps still exist
-    + no equivalent of Duck Typing, no *objects* to recieve the message
+    + no equivalent of Duck Typing, no *objects* to receive the message
 
 ### Lazy/Eager, Single/Multi-paradigm
 
 - Erlang, really functional, Armstrong says: "Concurrency Oriented"
 - Common Lisp, CLOS, Common Lisp Object System
 - F#:
-    + Funtional
+    + Functional
     + Imperative
     + Object-Oriented
     + Language-Oriented
@@ -139,7 +139,7 @@
 
 ### Type inference
 
-- Lately mostly doing Haskell, preperation a bit disappointing
+- Lately mostly doing Haskell, preparation a bit disappointing
   F# inference does not use info about signature sqrt
   Haskell does.
 - Haskell :type ghci is different from type of bound expression
@@ -178,7 +178,7 @@ Java JSE 7 proposed syntax quite ugly
 
 ### Sequence Expressions (List Comprehensions)
 
-- Think PowerShell ranges on steriods
+- Think PowerShell ranges on steroids
 - Also available in Python and Erlang
 - F# generalizes list comprehensions to Sequence Expressions with syntactic sugar for seq, list and array
 
@@ -217,7 +217,7 @@ Java JSE 7 proposed syntax quite ugly
 - hiding complexity 
 - think control structures
 - chaining computations
-- jukky cs example
+- cs example
 
 # When to use it?
 
@@ -228,6 +228,6 @@ Java JSE 7 proposed syntax quite ugly
 # When not to use it?
 
 - a lotta state
-- interoperabillity, e.g. Haskell, Erlang only interoperate with C
+- interoperability, e.g. Haskell, Erlang only interoperate with C
 - team knowledge
 

@@ -65,7 +65,7 @@
 
 # Taxonomy
 
-- Group functional languages accross several axis:
+- Group functional languages across several axis:
     + Statically typed / Dynamically typed
     + Strong typing / Weak typing
     + Lazy / Eager
@@ -119,7 +119,7 @@
 # Functor 
 
 - Transformation between categories
-- Given categorie C, D, functor F 
+- Given category C, D, functor F 
      + F : C -> D
      + f: A -> B then F(f) -> F(A) -> F(B)
 - Examples: F: **Grp** -> **Set**, forgetful functor
