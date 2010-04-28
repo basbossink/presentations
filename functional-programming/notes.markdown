@@ -14,14 +14,14 @@
 
 ### Inventory
 
-- How has used a functional language?
-- How has used a functional language after completing their education?
-- How has written a LINQ query?
+- Who has used a functional language?
+- Who has used a functional language after completing their education?
+- Who has written a LINQ query?
 
 ### Anecdote
 
 - Euclid greek mathematician 300 BC known for:
-    + Elements, 13 books containing from the ground up geometry and number theory Euclidean algorithm
+    + Elements, 13 books containing from the ground up geometry and number theory 
     + Euclidean algorithm, efficient algorithm to calculate gcd 
 
 > When Ptolemy the First asked Euclid if there was no shorter road to geometry than the Elements, he replied, "there is no royal road to geometry." 
@@ -83,6 +83,7 @@
 
 ### Timeline
 
+- Stripped down [history of programming languages][hist]
 - Lisp one of the first programming languages
     + predates C by 14 years
     + based on untyped lambda calculus
@@ -97,6 +98,8 @@
     + Haskell was designed to focus research of typed, lazy functional
       languages
 - Clojure a Lisp on the JVM and .Net
+
+[hist]: http://oreilly.com/news/languageposter_0504.html
 
 ## Taxonomy
 
@@ -132,7 +135,7 @@
     + Python
     + Ruby
     + Scala
-- F# no interpreter on the fly compilation
+- F# no interpreter but on the fly compilation
 
 ### Type inference
 
@@ -145,7 +148,7 @@
 
 - Examples
 - F# supports **Active Patterns** functions to be run as part of pattern matching
-  Makes it possible to match over arbitrary types and paremeterize pattern 
+  Makes it possible to match over arbitrary types and parameterize pattern 
   matching.
 
 ### Algabraic data types
@@ -200,7 +203,7 @@ Java JSE 7 proposed syntax quite ugly
 - example
 - naive is **not** tail recursive
     + large and/or unbalanced tree's -> stackoverflow
-- continuation passing pass the function that should be invoked with answer
+- continuation passing, pass the function that should be invoked with answer
 - both sizeCont left (fun leftSize -> .. are tail recursive
 
 ## Memoization
@@ -216,9 +219,15 @@ Java JSE 7 proposed syntax quite ugly
 - chaining computations
 - jukky cs example
 
-# What is it good at?
+# When to use it?
 
 ## Stateless
 
 - web/REST
+
+# When not to use it?
+
+- a lotta state
+- interoperabillity, e.g. Haskell, Erlang only interoperate with C
+- team knowledge
 

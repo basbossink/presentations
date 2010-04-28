@@ -19,16 +19,16 @@ rule '.png' => '.svg' do |t|
     sh "#{cov} #{t.source} #{t.name}"
 end
 
+rule '.pdf' => '.markdown' do |t|
+    sh "markdown2pdf -N -o #{t.name} #{t.source}"
+end
+
 file 'slides.html' => 'slides.markdown' do
     sh "pandoc -w s5 -s slides.markdown > slides.html"
 end
 
 file 'languages.png' => 'language-study.list' do
     sh "perl language-study.list2dot language-study.list | dot -Tpng > languages.png"
-end
-
-file 'notes.pdf' => 'notes.markdown' do
-    sh "markdown2pdf -N -o notes.pdf notes.markdown"
 end
 
 file 'slides.markdown' => [ 
@@ -38,4 +38,5 @@ file 'slides.markdown' => [
     'parabola.png', 
     'curve.png'
 ]
+
 file 'notes.markdown' => []

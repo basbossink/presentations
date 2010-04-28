@@ -43,11 +43,11 @@
 
 # Example 
 
-![](/parabola.png "A simple function")
+![](parabola.png "A simple function")
 
 # Non-example
 
-![](/curve.png "A simple curve")
+![](curve.png "A simple curve")
 
 # Definition of a Function
 
@@ -61,7 +61,7 @@
     + untyped lambda calculus
     + simply typed lambda calculus  
 
-![](/languages.png "Abbreviated genealogy of functional programming languages")
+![](languages.png "Abbreviated genealogy of functional programming languages")
 
 # Taxonomy
 
@@ -73,11 +73,11 @@
 
 # Taxonomy
 
-![](/dynamic-static-strong-weak.png "dynamic vs. static and strong vs. weak typing") 
+![](dynamic-static-strong-weak.png "dynamic vs. static and strong vs. weak typing") 
 
 # Taxonomy 
 
-![](/lazy-eager-single-multi.png "lazy vs eager evaluation and single vs multi-paradigm" )
+![](lazy-eager-single-multi.png "lazy vs eager evaluation and single vs multi-paradigm" )
 
 # Features
 
