@@ -12,10 +12,10 @@ the GNU Free Documentation License Version 1.3.
 - [perl](http://www.perl.org/)
 - [convert](http://http://www.imagemagick.org/script/index.php)
 - Any webserver of choice to host the generated html output.  
-  The resulting presentation uses [S5][S5].
-  [S5][S5] is a slide show format based entirely on XHTML, CSS, and JavaScript.
+  The resulting presentation uses [Slidy][Sl].
+  [Slidy][Sl] is a slide show format based entirely on XHTML, CSS, and JavaScript.
 
-[S5]: http://meyerweb.com/eric/tools/s5/
+[Sl] http://www.w3.org/Talks/Tools/Slidy2/Overview.html#(1)
 
 (c\) Bas Bossink <bas.bossink@gmail.com>
 
