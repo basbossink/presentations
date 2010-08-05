@@ -15,7 +15,7 @@ the GNU Free Documentation License Version 1.3.
   The resulting presentation uses [Slidy][Sl].
   [Slidy][Sl] is a slide show format based entirely on XHTML, CSS, and JavaScript.
 
-[Sl] http://www.w3.org/Talks/Tools/Slidy2/Overview.html#(1)
+[Sl]: http://www.w3.org/Talks/Tools/Slidy2/Overview.html#(1)
 
 (c\) Bas Bossink <bas.bossink@gmail.com>
 
