@@ -39,7 +39,7 @@
 - Unit test
     + [WELC][welc] : A test that runs in less than 1/10th of a second
     and is small enough to help you localize problems when it fails
-    + [XTP][xtp] : A test that verifies tho behavior of some small
+    + [XTP][xtp] : A test that verifies the behavior of some small
     part of the overall system.
     + [wikipedia][wput] : In computer programming, unit testing is a
     method by which individual units of source code are tested to
@@ -70,10 +70,15 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
 
 Table: Test Double Types
 
-
 # Good unit tests
 - Run fast
 - Help localize problems
+- Help improve quality
+- Help understand SUT
+- Reduce (and not introduce) risk
+- Are easy to run
+- Are easy to write and maintain
+- Require minimal maintenance
 
 # Good tests are A TRIP
 - Automatic
@@ -81,6 +86,18 @@ Table: Test Double Types
 - Repeatable
 - Independent
 - Professional
+
+# Good Economics
+![](Economics-Good.gif "Good testing economics")
+
+# Bad Economics
+![](Economics-Bad.gif "Bad testing economics")
+
+# Test code quality
+- DRY
+- DRY
+- DRY
+- DRY : don't repeat yourself
 
 # Good tests are Fast
 - 6000 classes => 6000 test fixtures
@@ -95,7 +112,7 @@ Table: Test Double Types
 - It starts other threads
 - It calls Thread.Sleep(...)
 
-# Right BICEP
+# What to test: Right BICEP
 - Right: Are the results right?
 - B: Are all the boundary conditions correct?
 - I: Can we check inverse relationships?
