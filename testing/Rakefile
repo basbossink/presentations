@@ -11,6 +11,10 @@ cov = if ENV.has_key? 'CONVERT' then
 
 task :default => ['slides.html']
 
+task :serve do
+    sh "python -m SimpleHTTPServer 8000"
+end
+
 rule '.png' => '.gnu' do |t|
     sh "gnuplot #{t.source}"
 end
