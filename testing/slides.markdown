@@ -1,4 +1,4 @@
-% Testing
+% Unit Testing
 % Bas Bossink
 % April 2010
 
@@ -9,7 +9,7 @@
 - Inspiration
 - Reality
 - What do we need?
-- Next action?
+- Next actions
 
 # Introduction
 - Goal
@@ -33,21 +33,68 @@
 
 # Definitions
 
-![](agile-testing-quadrants.JPG "agile testing quadrants")
+![](./agile-testing-quadrants.JPG "agile testing quadrants")
 
 # Definitions
 - Unit test
     + [WELC][welc] : A test that runs in less than 1/10th of a second
-    and is small enough to help you localize problems when it fails
+    and is small enough to help you localize problems when it fails.
     + [XTP][xtp] : A test that verifies the behavior of some small
     part of the overall system.
     + [wikipedia][wput] : In computer programming, unit testing is a
     method by which individual units of source code are tested to
     determine if they are fit for use. A unit is the smallest testable
     part of an application.
+- Component Test :
+    + Component : 
+         - More granular 
+         - Self contained
+         - Clear responibillity
+         - (deployable)
 - SUT : System Under Test
 
+# Good Unit Tests
+- Run fast
+    + 6000 classes => 6000 test fixtures
+    + Avg. 3 test/fixture = 18.000 tests
+    + Acceptable runtime 2-3 min. => 0.01 s/test
+- Help localize problems
+- Help improve quality
+- Help understand SUT
+- Reduce (and not introduce) risk
+- Are easy to run
+- Are easy to write and maintain
+
+# Good Economics
+![](./Economics-Good.gif "Good testing economics")
+
+# Bad Economics
+![](./Economics-Bad.gif "Bad testing economics")
+
+# Good Unit Tests are A TRIP
+- Automatic
+- Thorough
+- Repeatable
+- Independent
+- Professional
+
+# It ain't a Unit Test when
+- It talks to a database
+- It communicates across a network
+- It touches the filesystem
+- It starts other processes
+- It starts other threads
+- It calls Thread.Sleep(...)
+
+# Test Code Quality
+- DRY
+- DRY
+- DRY
+- DRY : don't repeat yourself
+
 # Definitions
+
+# Test Doubles
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Pattern             Purpose                                      Has Behavior  Injects indirect  Handles indirect                          Values provided by           Examples                             
@@ -68,56 +115,20 @@ Fake Object         Run (unrunnable) tests (faster)              yes           n
 Temporary Test Stub Stand in for procedural code not yet written yes           no                uses them                                 none                         In-memory database emulator          
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Table: Test Double Types
-
-# Good unit tests
-- Run fast
-- Help localize problems
-- Help improve quality
-- Help understand SUT
-- Reduce (and not introduce) risk
-- Are easy to run
-- Are easy to write and maintain
-- Require minimal maintenance
-
-# Good tests are A TRIP
-- Automatic
-- Thorough
-- Repeatable
-- Independent
-- Professional
-
-# Good Economics
-![](Economics-Good.gif "Good testing economics")
-
-# Bad Economics
-![](Economics-Bad.gif "Bad testing economics")
-
-# Test code quality
-- DRY
-- DRY
-- DRY
-- DRY : don't repeat yourself
-
-# Good tests are Fast
-- 6000 classes => 6000 test fixtures
-- avg. 3 test/fixture = 18.000 tests
-- Acceptable runtime 2-3 min. => 0.01 s/test
-
-# It ain't a unit test when
-- It talks to a database
-- It communicates across a network
-- It touches the filesystem
-- It starts other processes
-- It starts other threads
-- It calls Thread.Sleep(...)
-
-# What to test: Right BICEP
-- Right: Are the results right?
-- B: Are all the boundary conditions correct?
-- I: Can we check inverse relationships?
-- C: Can we cross-check results using other means?
-- E: Can we force error conditions to happen?
-- P: Are performance characteristics within bounds?
 
 [wput]: http://en.wikipedia.org/wiki/Unit_test "Wikipedia Unit Test"
+
+# Inspiration
+- Positive filter
+- Watch flow, kadanz, 
+- Code Kata by Robert C. Martin aka Uncle Bob
+    + ruby
+    + calculate the list of primes that divide of a given number
+
+# Reality
+- Happy medium
+- Part of an interview with Billy Hollis for dotnetrocks
+
+# What do we need?
+
+# Next actions
