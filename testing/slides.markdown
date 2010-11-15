@@ -32,7 +32,7 @@
 [putj]: http://pragprog.com/titles/utj/pragmatic-unit-testing-in-java-with-junit "Pragmatic Unit Testing in Java"
 
 # Definitions
-
+<!-- http://lh3.ggpht.com/_X3kaawac_g4/S3VCgzOuyQI/AAAAAAAAAvw/aww4Ui2N7LU/agile-testing-quadrants.JPG?imgmax=800 -->
 ![](./agile-testing-quadrants.JPG "agile testing quadrants")
 
 # Definitions
@@ -66,9 +66,11 @@
 - Are easy to write and maintain
 
 # Good Economics
+<!-- http://xunitpatterns.com/Economics-Good.gif -->
 ![](./Economics-Good.gif "Good testing economics")
 
 # Bad Economics
+<!-- http://xunitpatterns.com/Economics-Bad.gif -->
 ![](./Economics-Bad.gif "Bad testing economics")
 
 # Good Unit Tests are A TRIP
@@ -124,12 +126,14 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
     + calculate the list of primes that divide of a given number
 
 # Inspiration
+<!-- http://vimeo.com/7762511 -->
 [Katacast Uncle Bob Prime Factors](./uncle_bob.html)
 
 # Reality
 - Happy medium
 - Part of an interview with Billy Hollis for dotnetrocks  
 
+<!-- excerpt from: http://www.dotnetrocks.com/default.aspx?showNum=600 -->
 [Excerpt of Billy Hollis interview](./billy_hollis.html)
 
 # What do we need?
