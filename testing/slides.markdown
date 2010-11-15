@@ -84,15 +84,13 @@
 - It touches the filesystem
 - It starts other processes
 - It starts other threads
-- It calls Thread.Sleep(...)
+- It calls <code>Thread.Sleep(...)</code>
 
 # Test Code Quality
 - DRY
 - DRY
 - DRY
 - DRY : don't repeat yourself
-
-# Definitions
 
 # Test Doubles
 
@@ -120,14 +118,19 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
 
 # Inspiration
 - Positive filter
-- Watch flow, kadanz, 
+- Watch flow, kadanz
 - Code Kata by Robert C. Martin aka Uncle Bob
     + ruby
     + calculate the list of primes that divide of a given number
 
+# Inspiration
+[Katacast Uncle Bob Prime Factors](./uncle_bob.html)
+
 # Reality
 - Happy medium
-- Part of an interview with Billy Hollis for dotnetrocks
+- Part of an interview with Billy Hollis for dotnetrocks  
+
+[Excerpt of Billy Hollis interview](./billy_hollis.html)
 
 # What do we need?
 
