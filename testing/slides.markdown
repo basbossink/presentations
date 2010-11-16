@@ -8,7 +8,7 @@
 - Definitions
 - Inspiration
 - Reality
-- What do we need?
+- Where do we want to go?
 - Next actions
 
 # Introduction
@@ -125,17 +125,14 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
     + ruby
     + calculate the list of primes that divide of a given number
 
-# Inspiration
-<!-- http://vimeo.com/7762511 -->
-[Katacast Uncle Bob Prime Factors](./uncle_bob.html)
+[Katacast Uncle Bob Prime Factors](http://vimeo.com/7762511)
 
 # Reality
 - Happy medium
 - Part of an interview with Billy Hollis for dotnetrocks  
 
-<!-- excerpt from: http://www.dotnetrocks.com/default.aspx?showNum=600 -->
-[Excerpt of Billy Hollis interview](./billy_hollis.html)
+[Excerpt of Billy Hollis interview](http://www.dotnetrocks.com/default.aspx?showNum=600)
 
-# What do we need?
+# Where do we want to go?
 
 # Next actions
