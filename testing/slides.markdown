@@ -133,17 +133,20 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
     + ruby
     + calculate the list of primes that divide of a given number
 
-[Katacast Uncle Bob Prime Factors](http://vimeo.com/7762511)
+[Katacast Uncle Bob Prime Factors][kata]
 
+[kata]: http://vimeo.com/7762511 "Prime number kata"
 [ub]: http://www.objectmentor.com/omTeam/martin_r.html "Bio for Robert C. Martin"
 
 # Reality
 - Happy medium
-- Part of an interview with [Billy Hollis][bh] for dotnetrocks  
+- Part of an interview with [Billy Hollis][bh] for [dotnetrocks][dnr]
 
-[Excerpt of Billy Hollis interview](http://www.dotnetrocks.com/default.aspx?showNum=600)
+[Excerpt of Billy Hollis interview][600]
 
+[dnr]: http://www.dotnetrocks.com/Default.aspx ".NET Rocks"
 [bh]: http://dotnetmasters.com/ "Billy Hollis"
+[600]: http://www.dotnetrocks.com/default.aspx?showNum=600 "dotnetrocks show 600"
 
 # Where do we want to go?
 
