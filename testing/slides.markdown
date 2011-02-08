@@ -1,6 +1,6 @@
 % Unit Testing
 % Bas Bossink
-% April 2010
+% November 2010
 
 # Contents
 
@@ -30,10 +30,16 @@
 [xtp]: http://xunitpatterns.com/ "xUnit Test Patterns"
 [kc]: http://www.katacasts.com/ "Kata Casts"
 [putj]: http://pragprog.com/titles/utj/pragmatic-unit-testing-in-java-with-junit "Pragmatic Unit Testing in Java"
+[exmp]: http://www.exampler.com/ "Brian Marrick"
+[agt]: http://www.amazon.com/Agile-Testing-Practical-Guide-Testers/dp/0321534468/ref=sr_1_1?ie=UTF8&qid=1297200292&sr=8-1 "Agile testing"
 
 # Definitions
-<!-- http://lh3.ggpht.com/_X3kaawac_g4/S3VCgzOuyQI/AAAAAAAAAvw/aww4Ui2N7LU/agile-testing-quadrants.JPG?imgmax=800 -->
-![](./agile-testing-quadrants.JPG "agile testing quadrants")
+![](http://lh3.ggpht.com/_X3kaawac_g4/S3VCgzOuyQI/AAAAAAAAAvw/aww4Ui2N7LU/agile-testing-quadrants.JPG?imgmax=800 "agile testing quadrants")
+
+[see][exmp]
+
+[as dicusssed in Agile Testing][agt]
+
 
 # Definitions
 - Unit test
@@ -66,12 +72,14 @@
 - Are easy to write and maintain
 
 # Good Economics
-<!-- http://xunitpatterns.com/Economics-Good.gif -->
-![](./Economics-Good.gif "Good testing economics")
+![](http://xunitpatterns.com/Economics-Good.gif "Good testing economics")
+
+[see][xtp]
 
 # Bad Economics
-<!-- http://xunitpatterns.com/Economics-Bad.gif -->
-![](./Economics-Bad.gif "Bad testing economics")
+![](http://xunitpatterns.com/Economics-Bad.gif "Bad testing economics")
+
+[see][xtp]
 
 # Good Unit Tests are A TRIP
 - Automatic
@@ -121,17 +129,21 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
 # Inspiration
 - Positive filter
 - Watch flow, kadanz
-- Code Kata by Robert C. Martin aka Uncle Bob
+- Code Kata by [Robert C. Martin][ub] aka [Uncle Bob][ub]
     + ruby
     + calculate the list of primes that divide of a given number
 
 [Katacast Uncle Bob Prime Factors](http://vimeo.com/7762511)
 
+[ub]: http://www.objectmentor.com/omTeam/martin_r.html "Bio for Robert C. Martin"
+
 # Reality
 - Happy medium
-- Part of an interview with Billy Hollis for dotnetrocks  
+- Part of an interview with [Billy Hollis][bh] for dotnetrocks  
 
 [Excerpt of Billy Hollis interview](http://www.dotnetrocks.com/default.aspx?showNum=600)
+
+[bh]: http://dotnetmasters.com/ "Billy Hollis"
 
 # Where do we want to go?
 
