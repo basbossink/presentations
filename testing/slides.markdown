@@ -36,7 +36,7 @@
 # Definitions
 ![](http://lh3.ggpht.com/_X3kaawac_g4/S3VCgzOuyQI/AAAAAAAAAvw/aww4Ui2N7LU/agile-testing-quadrants.JPG?imgmax=800 "agile testing quadrants")
 
-[see][exmp]
+[see: exampler.com][exmp]
 
 [as dicusssed in Agile Testing][agt]
 
@@ -74,12 +74,14 @@
 # Good Economics
 ![](http://xunitpatterns.com/Economics-Good.gif "Good testing economics")
 
-[see][xtp]
+[xunitpatterns.com][xtpge]
 
 # Bad Economics
 ![](http://xunitpatterns.com/Economics-Bad.gif "Bad testing economics")
 
-[see][xtp]
+[xunitpatterns.com][xtpge]
+
+[xtpge]: http://xunitpatterns.com/Goals%20of%20Test%20Automation.html#Economics of Test Automation "Good Economics of Test Automation"
 
 # Good Unit Tests are A TRIP
 - Automatic
@@ -87,6 +89,10 @@
 - Repeatable
 - Independent
 - Professional
+
+[pragmatic unit testing summary card][pragsum]
+
+[pragsum]: http://media.pragprog.com/titles/utj/StandaloneSummary.pdf "Summary Card"
 
 # It ain't a Unit Test when
 - It talks to a database
