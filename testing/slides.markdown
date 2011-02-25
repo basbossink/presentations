@@ -1,13 +1,14 @@
 % Unit Testing
 % Bas Bossink
-% November 2010
+% March 2011
 
 # Contents
 
 - Introduction
-- Definitions
 - Inspiration
 - Reality
+- Definitions
+- Guidelines
 - Where do we want to go?
 - Next actions
 
@@ -32,6 +33,28 @@
 [putj]: http://pragprog.com/titles/utj/pragmatic-unit-testing-in-java-with-junit "Pragmatic Unit Testing in Java"
 [exmp]: http://www.exampler.com/ "Brian Marrick"
 [agt]: http://www.amazon.com/Agile-Testing-Practical-Guide-Testers/dp/0321534468/ref=sr_1_1?ie=UTF8&qid=1297200292&sr=8-1 "Agile testing"
+
+# Inspiration
+- Positive filter
+- Watch flow, kadanz
+- Code Kata by [Robert C. Martin][ub] aka [Uncle Bob][ub]
+    + ruby
+    + calculate the list of primes that divide of a given number
+
+[Katacast Uncle Bob Prime Factors][kata]
+
+[kata]: http://vimeo.com/7762511 "Prime number kata"
+[ub]: http://www.objectmentor.com/omTeam/martin_r.html "Bio for Robert C. Martin"
+
+# Reality
+- Happy medium
+- Part of an interview with [Billy Hollis][bh] for [dotnetrocks][dnr]
+
+[Excerpt of Billy Hollis interview][600]
+
+[dnr]: http://www.dotnetrocks.com/Default.aspx ".NET Rocks"
+[bh]: http://dotnetmasters.com/ "Billy Hollis"
+[600]: http://www.dotnetrocks.com/default.aspx?showNum=600 "dotnetrocks show 600"
 
 # Definitions
 ![](http://lh3.ggpht.com/_X3kaawac_g4/S3VCgzOuyQI/AAAAAAAAAvw/aww4Ui2N7LU/agile-testing-quadrants.JPG?imgmax=800 "agile testing quadrants")
@@ -131,28 +154,6 @@ Temporary Test Stub Stand in for procedural code not yet written yes           n
 
 
 [wput]: http://en.wikipedia.org/wiki/Unit_test "Wikipedia Unit Test"
-
-# Inspiration
-- Positive filter
-- Watch flow, kadanz
-- Code Kata by [Robert C. Martin][ub] aka [Uncle Bob][ub]
-    + ruby
-    + calculate the list of primes that divide of a given number
-
-[Katacast Uncle Bob Prime Factors][kata]
-
-[kata]: http://vimeo.com/7762511 "Prime number kata"
-[ub]: http://www.objectmentor.com/omTeam/martin_r.html "Bio for Robert C. Martin"
-
-# Reality
-- Happy medium
-- Part of an interview with [Billy Hollis][bh] for [dotnetrocks][dnr]
-
-[Excerpt of Billy Hollis interview][600]
-
-[dnr]: http://www.dotnetrocks.com/Default.aspx ".NET Rocks"
-[bh]: http://dotnetmasters.com/ "Billy Hollis"
-[600]: http://www.dotnetrocks.com/default.aspx?showNum=600 "dotnetrocks show 600"
 
 # Where do we want to go?
 
