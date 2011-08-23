@@ -30,7 +30,7 @@ Time   VS        Framework   C#
 2009  2008 SP1    3.5 SP1    3.0 
 2010      2010        4.0    4.0 
 
-# C# Features
+# C# Features (3.0)
 - Implicitly Typed Local Variables and Arrays
 - Auto-Implemented Properties
 - Object Initializers
@@ -39,6 +39,8 @@ Time   VS        Framework   C#
 - Anonymous Types
 - Lambda Expressions
 - Query Keywords (LINQ)
+
+# C# Features (4.0)
 - Partial Method Definitions
 - Dynamic
 - Named and optional arguments
@@ -55,7 +57,7 @@ Dictionary<string,Func<string,double>> fred =
     new Dictionary<string, Func<string,double>>();
 ~~~    
 
-$\Downarrow$
+$\downarrow$
 
 ~~~ { .Cs }    
 var fred = new Dictionary<string, Func<string,double>>();
@@ -64,7 +66,7 @@ var fred = new Dictionary<string, Func<string,double>>();
 # Auto-Implemented Properties
 - compiler generates property backing member
 
-~~~ { .Cs }
+~~~ { .Cs .numberLines}
 public class Flinstone { 
     private string m_Name;
     public string Name {
@@ -74,9 +76,9 @@ public class Flinstone {
 }
 ~~~
 
-$\Downarrow$
+$\downarrow$
 
-~~~ { .Cs }
+~~~ { .Cs .numberLines}
 public class Flinstone {
     public string Name { get; set; }
 }
@@ -97,6 +99,7 @@ var fred = new List<int>() { 37, 42, 53 };
 - Add methods to existing types
 - No modification of original types
 - No deriving
+- Used extensively to provide LINQ 'helper' methods on `IEnumerable<T>`
 
 ~~~ { .Cs }
 public static string YabaDabaDo(this Flinstone fred) {
@@ -110,23 +113,23 @@ var noise = fred.YabaDabaDo();
 - Main usage LINQ
 - Types without a name
 
-~~~ { .Cs}
+~~~ { .Cs }
 var fred = new { Name = "Fred", Friend="Barney" };
 ~~~
 
-# Lambda Expressions
+# $\lambda$ Expressions
 - shorter notation for anonymous methods
 
-~~~ { .Cs }
+~~~ { .Cs .numberLines }
 var flinstones = bedrockCitizins.Find(
     delegate(string c) { 
         return c.Lastname.Equals("Flinstone"); 
     });
 ~~~
 
-$\Downarrow$ 
+$\downarrow$ 
 
-~~~ { .Cs }
+~~~ { .Cs .numberLines }
 var flinstones = bedrockCitizins.Find(
     c => c.Lastname.Equals("Flinstone"));
 ~~~
@@ -140,7 +143,7 @@ var flinstones = bedrockCitizins.Find(
 - Set of extension methods in `System.Linq`
 - 'Deferred' execution via `Expression`'s
 
-~~~ { .Cs }
+~~~ { .Cs .numberLines }
 var flinstones = from citizen in bedrockCitizens
                  where citizen.Name.Equals("Flinestone")
                  select citizen.Name;
@@ -157,6 +160,19 @@ var flinstones = from citizen in bedrockCitizens
 <tr><td>- <code>orderby</code></td><td>- <code>in</code></td></tr>
 <tr><td>- <code>join</code></td><td>- <code>by</code></td></tr>
 </table>
+
+
+# LINQ, $\lambda$ Expressions, Homoiconicity
+- Homoiconic :
+    + home = same
+    + iconic = appearance
+- LISP
+- code is data, data is code
+
+~~~ { .Cs }
+Func<int, int> twiceD = x => x * 2; 
+Expression<Func<int, int>> twiceE = x => x * 2;
+~~~
 
 # Partial Method Definitions
 
@@ -176,12 +192,86 @@ partial void onNameChanged()
 - For interacting with dynamically typed languages (Iron-, -Python,
   -Ruby)
 - `dynamic` almost everywhere you would use a type name
+- Compile time errors $\rightarrow$ runtime errors
   
 # Named and optional arguments
+- For COM interop
+- For Microsoft Office Automation API
+- Use name iso position to identify parameter
+- Can be used for: 
+    + methods
+    + indexers
+    + constructors
+    + delegates
+
+# Named arguments
+- Declaration does not need to change
+
+~~~ { .Cs }
+bool IsPythagoreanTriple(int opposite, int adjacent, int hypotenuse) {
+    ...
+}  
+...
+var fred = IsPythagoreanTripele(hypotenuse: 5, adjacent: 4, opposite: 3);
+~~~
+
+# Optional arguments
+- Have a default value in definition
+- Come after all required parameters
+
+~~~ { .Cs .numberLines}
+bool IsFlinstone(string firstName, string lastName = "Flinstone") {
+    ...
+}
+if(IsFlinstone("Fred")) {
+...
+}
+if(IsFlinstone("Barney", "Rubble"))
+...
+}
+~~~
 
 # Covariance
+- Safe
+- Implicit
+- arrays, delegates, generics
+- Preserves assignment compatibility
+- `out` keyword for generic parameters
+
+~~~ { .Cs .numberLines }
+public interface IEnumerator<out T> : IDisposable, IEnumerator {
+    T Current { get; }
+    bool MoveNext();
+    void Reset();
+}
+~~~
+
+- Example
+
+~~~ { .Cs .numberLines }
+IEnumerable<String> strings = new List<String>();
+IEnumerable<Object> objects = strings;
+~~~
 
 # Contravariance
+- Safe
+- Implicit
+- arrays, delegates, generics
+- `in` keyword for generic parameters
+
+~~~ { .Cs .numberLines }
+public interface IComparer<in T> {
+    int Compare(T x, T y);
+}
+~~~
+
+- Example
+
+~~~ { .Cs .numberLines }
+void PutOutside(object o) { .... }
+Action<object> action = PutOutside;
+Action<Flinstone> dinoAction = action;
+~~~
 
 # .NET Framework
 - `HashSet<T>`
@@ -190,15 +280,23 @@ partial void onNameChanged()
 - `Tuple<...>`
 - `ReaderWriterLockSlim`
 - BigInteger and Complex Numbers
+- File System Enumeration Improvements
 - Pipes
 - Garbage Collection improvements
+- Memory-Mapped Files
 - ThreadPool Performance Enhancements
 - Code Contracts
-- Dynamic Language Runtime
-- File System Enumeration Improvements
-- Memory-Mapped Files
-- Managed Extensibility Framework
-- Task Parallel Library
+
+# .NET Framework 
+- Dynamic Language Runtime (DLR)
+- Managed Extensibility Framework (MEF)
+- Task Parallel Library (TPL)
+- Windows Presentation Foundation (WPF)
+- Windows Communication Foundation (WCF)
+- Windows Workflow Foundation (WF)
+
+
+# Managed Extensibility Framework 
 
 F\#
 ===
