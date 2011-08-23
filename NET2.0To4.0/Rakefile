@@ -28,7 +28,7 @@ rule '.pdf' => '.markdown' do |t|
 end
 
 file 'slides.html' => 'slides.markdown' do
-    sh "pandoc -w slidy --offline -s slides.markdown > slides.html"
+    sh "pandoc -w slidy --offline --standalone slides.markdown > slides.html"
 end
 
 file 'slides.markdown' => []
