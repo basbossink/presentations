@@ -22,35 +22,35 @@
 [gh]: http://github.com/basbossink/presentations "Presentations on github"
 
 # Time table
-Time   VS        Framework   C# 
------ --------- ----------- -----
-2005      2005        2.0    2.0 
-2006      2005        3.0    2.0 
-2008      2008        3.5    3.0 
+Time   VS        Framework   C#   Theme
+----- --------- ----------- ----- -----
+2005      2005        2.0    2.0  Generics
+2006      2005        3.0    2.0  WPF, WCF, WF
+2008      2008        3.5    3.0  LINQ
 2009  2008 SP1    3.5 SP1    3.0 
-2010      2010        4.0    4.0 
+2010      2010        4.0    4.0  Dynamic
 
 # C# Features (3.0)
 - Implicitly Typed Local Variables and Arrays
 - Auto-Implemented Properties
-- Object Initializers
 - Collection Initializers
+- Object Initializers
 - Extension Methods
 - Anonymous Types
-- Lambda Expressions
+- $\lambda$ Expressions
 - Query Keywords (LINQ)
 
 # C# Features (4.0)
 - Partial Method Definitions
-- Dynamic
+- Dynamic keyword
 - Named and optional arguments
 - Covariance
 - Contravariance
 
 # Implicitly Typed Local Variables
 - `var` $\neq$ `object`
-- compiler infers correct type
-- still strongly typed 
+- Compiler infers correct type
+- Still strongly typed 
 
 ~~~ { .Cs }
 Dictionary<string,Func<string,double>> fred = 
@@ -64,9 +64,9 @@ var fred = new Dictionary<string, Func<string,double>>();
 ~~~
 
 # Auto-Implemented Properties
-- compiler generates property backing member
+- Compiler generates property backing member
 
-~~~ { .Cs .numberLines}
+~~~ { .Cs .numberLines }
 public class Flinstone { 
     private string m_Name;
     public string Name {
@@ -78,21 +78,22 @@ public class Flinstone {
 
 $\downarrow$
 
-~~~ { .Cs .numberLines}
+~~~ { .Cs .numberLines }
 public class Flinstone {
     public string Name { get; set; }
 }
 ~~~
 
-# Object Initializers
-~~~ { .Cs }
-var fred = new Flinstone { Name = "Fred" };
-~~~
-
 # Collection Initializers
+- Natural extension of array initializer syntax
 
 ~~~ { .Cs }
 var fred = new List<int>() { 37, 42, 53 };
+~~~
+
+# Object Initializers
+~~~ { .Cs }
+var fred = new Flinstone { Name = "Fred" };
 ~~~
 
 # Extension methods 
@@ -139,8 +140,8 @@ var flinstones = bedrockCitizins.Find(
 - Embedded SQL-like language
 - LINQ to `{`objects, xml, SQL, ... `}`
 - Provider model via `IQueryable<T>`
-- mostly 'lazy'
-- Set of extension methods in `System.Linq`
+- Mostly 'lazy'
+- Set of extension methods on `IEnumerable<T>` in `System.Linq`
 - 'Deferred' execution via `Expression`'s
 
 ~~~ { .Cs .numberLines }
@@ -161,13 +162,12 @@ var flinstones = from citizen in bedrockCitizens
 <tr><td>- <code>join</code></td><td>- <code>by</code></td></tr>
 </table>
 
-
 # LINQ, $\lambda$ Expressions, Homoiconicity
 - Homoiconic :
-    + home = same
+    + homo = same
     + iconic = appearance
 - LISP
-- code is data, data is code
+- Code is data, data is code
 
 ~~~ { .Cs }
 Func<int, int> twiceD = x => x * 2; 
@@ -208,11 +208,11 @@ partial void onNameChanged()
 - Declaration does not need to change
 
 ~~~ { .Cs }
-bool IsPythagoreanTriple(int opposite, int adjacent, int hypotenuse) {
+bool IsFlinstone(string firstName, string lastName) {
     ...
 }  
 ...
-var fred = IsPythagoreanTripele(hypotenuse: 5, adjacent: 4, opposite: 3);
+var fred = IsFlinstone(lastName: "Rubble", firstName: "Barney");
 ~~~
 
 # Optional arguments
@@ -232,6 +232,7 @@ if(IsFlinstone("Barney", "Rubble"))
 ~~~
 
 # Covariance
+- Convert narrow to wider 
 - Safe
 - Implicit
 - arrays, delegates, generics
@@ -254,6 +255,7 @@ IEnumerable<Object> objects = strings;
 ~~~
 
 # Contravariance
+- Convert from wide to narrow
 - Safe
 - Implicit
 - arrays, delegates, generics
@@ -282,12 +284,12 @@ Action<Flinstone> dinoAction = action;
 - BigInteger and Complex Numbers
 - File System Enumeration Improvements
 - Pipes
-- Garbage Collection improvements
 - Memory-Mapped Files
-- ThreadPool Performance Enhancements
 - Code Contracts
 
 # .NET Framework 
+- ThreadPool Performance Enhancements
+- Garbage Collection improvements
 - Dynamic Language Runtime (DLR)
 - Managed Extensibility Framework (MEF)
 - Task Parallel Library (TPL)
