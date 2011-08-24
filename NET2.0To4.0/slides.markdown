@@ -28,7 +28,7 @@ Time   VS        Framework   C#   Theme
 2006      2005        3.0    2.0  WPF, WCF, WF
 2008      2008        3.5    3.0  LINQ
 2009  2008 SP1    3.5 SP1    3.0 
-2010      2010        4.0    4.0  Dynamic
+2010      2010        4.0    4.0  Dynamic, Parallel
 
 # C# Features (3.0)
 - Implicitly Typed Local Variables and Arrays
@@ -138,17 +138,22 @@ var flinstones = bedrockCitizins.Find(
 # Query keywords (LINQ)
 - Language INtegrated Query
 - Embedded SQL-like language
-- LINQ to `{`objects, xml, SQL, ... `}`
-- Provider model via `IQueryable<T>`
+- LINQ to `{`objects, xml, ... `}`
 - Mostly 'lazy'
 - Set of extension methods on `IEnumerable<T>` in `System.Linq`
-- 'Deferred' execution via `Expression`'s
 
-~~~ { .Cs .numberLines }
-var flinstones = from citizen in bedrockCitizens
-                 where citizen.Name.Equals("Flinestone")
-                 select citizen.Name;
-~~~
+# LINQ
+- Extensible: 
+    + `IQueryable<T>` 
+    + Implementing query operators
+- Examples:
+    + LINQ To WMI
+    + LINQ To MSI
+    + LINQ To Excel
+    + LINQ To Sharepoint
+    + LINQ To Active Directory
+    + LINQ To Simpsons
+
 
 # Query keywords (LINQ)
 
@@ -162,7 +167,22 @@ var flinstones = from citizen in bedrockCitizens
 <tr><td>- <code>join</code></td><td>- <code>by</code></td></tr>
 </table>
 
+# LINQ examples
+
+~~~ { .Cs .numberLines }
+var flinstones = from citizen in bedrockCitizens
+                 where citizen.Name.Equals("Flinestone")
+                 select citizen.Name;
+
+var pythagoreanTriples = from a in Enumerable.Range(1, 25)
+                         from b in Enumerable.Range(a, 25 - a)
+                         from c in Enumerable.Range(b, 25 - b)
+                         where a * a + b * b == c * c
+                         select Tuple.Create(a, b, c);
+~~~
+
 # LINQ, $\lambda$ Expressions, Homoiconicity
+- 'Deferred' execution via `Expression`'s
 - Homoiconic :
     + homo = same
     + iconic = appearance
@@ -291,14 +311,31 @@ Action<Flinstone> dinoAction = action;
 - ThreadPool Performance Enhancements
 - Garbage Collection improvements
 - Dynamic Language Runtime (DLR)
-- Managed Extensibility Framework (MEF)
 - Task Parallel Library (TPL)
+- Managed Extensibility Framework (MEF)
 - Windows Presentation Foundation (WPF)
 - Windows Communication Foundation (WCF)
 - Windows Workflow Foundation (WF)
 
+# Task Parallel Library
+- `System.Threading.Tasks` namespace
+- "Friends don't let friends create threads"
+- Parallel LINQ
 
-# Managed Extensibility Framework 
+~~~ { .Cs }
+Parallel.ForEach(sourceCollection, item => Process(item));
+
+Task<string> reportData2 = Task.Factory.StartNew(() => GetFileData())
+                                       .ContinueWith((x) => Analyze(x.Result))
+                                       .ContinueWith((y) => Summarize(y.Result));
+~~~
 
 F\#
 ===
+- Multiparadigm
+- Functional by default
+- Statically typed
+- Eager by default
+- Syntax OCAML
+- Type inference
+
