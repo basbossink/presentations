@@ -140,7 +140,7 @@ var flinstones = bedrockCitizins.Find(
 - Embedded SQL-like language
 - LINQ to `{`objects, xml, ... `}`
 - Mostly 'lazy'
-- Set of extension methods on `IEnumerable<T>` in `System.Linq`
+- Extension methods on `IEnumerable<T>`,`IQuereable<T>` in `System.Linq`
 
 # LINQ
 - Extensible: 
@@ -213,7 +213,21 @@ partial void onNameChanged()
   -Ruby)
 - `dynamic` almost everywhere you would use a type name
 - Compile time errors $\rightarrow$ runtime errors
+- Opens opportunities like `method_missing` meta-programming
+
+# Dynamic Example
   
+~~~ { .Cs .numberLines } 
+// Before the introduction of dynamic.
+((Excel.Range)excelApp.Cells[1, 1]).Value2 = "Name";
+Excel.Range range2008 = (Excel.Range)excelApp.Cells[1, 1];
+
+
+// With dynamic 
+excelApp.Cells[1, 1].Value = "Name";
+Excel.Range range2010 = excelApp.Cells[1, 1];
+~~~
+ 
 # Named and optional arguments
 - For COM interop
 - For Microsoft Office Automation API
@@ -228,11 +242,15 @@ partial void onNameChanged()
 - Declaration does not need to change
 
 ~~~ { .Cs }
-bool IsFlinstone(string firstName, string lastName) {
+bool IsFlinstone(
+    string firstName, 
+    string lastName) {
     ...
 }  
 ...
-var fred = IsFlinstone(lastName: "Rubble", firstName: "Barney");
+var fred = IsFlinstone(
+    lastName: "Rubble", 
+    firstName: "Barney");
 ~~~
 
 # Optional arguments
@@ -240,13 +258,15 @@ var fred = IsFlinstone(lastName: "Rubble", firstName: "Barney");
 - Come after all required parameters
 
 ~~~ { .Cs .numberLines}
-bool IsFlinstone(string firstName, string lastName = "Flinstone") {
+bool IsFlinstone(
+    string firstName, 
+    string lastName = "Flinstone") {
     ...
 }
 if(IsFlinstone("Fred")) {
 ...
 }
-if(IsFlinstone("Barney", "Rubble"))
+if(IsFlinstone("Barney", "Rubble")) {
 ...
 }
 ~~~
@@ -260,14 +280,16 @@ if(IsFlinstone("Barney", "Rubble"))
 - `out` keyword for generic parameters
 
 ~~~ { .Cs .numberLines }
-public interface IEnumerator<out T> : IDisposable, IEnumerator {
-    T Current { get; }
-    bool MoveNext();
-    void Reset();
+public interface IEnumerator<out T> : 
+    IDisposable, 
+    IEnumerator {
+        T Current { get; }
+        bool MoveNext();
+        void Reset();
 }
 ~~~
 
-- Example
+# Covariance Example
 
 ~~~ { .Cs .numberLines }
 IEnumerable<String> strings = new List<String>();
@@ -287,7 +309,7 @@ public interface IComparer<in T> {
 }
 ~~~
 
-- Example
+# Contravariance Example
 
 ~~~ { .Cs .numberLines }
 void PutOutside(object o) { .... }
@@ -301,15 +323,18 @@ Action<Flinstone> dinoAction = action;
 - `Action<...>` delegate declarations
 - `Tuple<...>`
 - `ReaderWriterLockSlim`
-- BigInteger and Complex Numbers
+- `BigInteger`
+- `Complex`
+
+# .NET Framework
 - File System Enumeration Improvements
 - Pipes
 - Memory-Mapped Files
 - Code Contracts
-
-# .NET Framework 
 - ThreadPool Performance Enhancements
 - Garbage Collection improvements
+
+# .NET Framework 
 - Dynamic Language Runtime (DLR)
 - Task Parallel Library (TPL)
 - Managed Extensibility Framework (MEF)
@@ -323,11 +348,21 @@ Action<Flinstone> dinoAction = action;
 - Parallel LINQ
 
 ~~~ { .Cs }
-Parallel.ForEach(sourceCollection, item => Process(item));
+Parallel.ForEach(sourceCollection, 
+    item => Process(item));
 
-Task<string> reportData2 = Task.Factory.StartNew(() => GetFileData())
-                                       .ContinueWith((x) => Analyze(x.Result))
-                                       .ContinueWith((y) => Summarize(y.Result));
+Task<string> reportData2 = 
+    Task.Factory.StartNew(() => GetFileData())
+        .ContinueWith((x) => Analyze(x.Result))
+        .ContinueWith((y) => Summarize(y.Result));
+
+var pythagoreanTriples = 
+    from a in Enumerable.Range(1, 25).AsParallel()
+    from b in Enumerable.Range(a, 25 - a)
+    from c in Enumerable.Range(b, 25 - b)
+    where a * a + b * b == c * c
+    select Tuple.Create(a, b, c);
+
 ~~~
 
 F\#
@@ -338,4 +373,29 @@ F\#
 - Eager by default
 - Syntax OCAML
 - Type inference
+
+# F# Features
+- Discriminated unions
+- Active Patterns
+- Currying
+- Higher order functions
+- Sequence expressions
+- Asynchronous workflows
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
