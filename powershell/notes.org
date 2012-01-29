@@ -1,0 +1,26 @@
+#+TITLE:     Notes for PowerShell demo/presentation at ASML
+#+AUTHOR:    Bas Bossink
+#+EMAIL:     bas.bossink@gmail.com
+#+LANGUAGE:  nl
+#+OPTIONS:   H:6 num:t toc:nil \n:nil @:t ::t |:t ^:t -:nil f:t *:t <:nil
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:nil pri:nil tags:nil
+#+OPTIONS:   timestamp:t creator:t
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+* Huldiging Bas
+  Voordat ik begin met mijn praatje over PowerShell wil ik 
+  eerst iemand bedanken zonder wie ik hier nu niet zou staan. Dat is iemand 
+  die ik denk allemaal heel dankbaar zijn. Deze gewaardeerde vriend heeft als 
+  een soort kruising tussen een pitbull en de Dalai Lama, niet een maar ik 
+  denk wel een dozijn paarse krokodillen geslacht met een rust en flair waar 
+  ik bijzonder veel respect voor heb. Ik neem aan dat iedereen inmiddels weet 
+  over wie ik het heb mag ik een oorverdovend applaus voor onze Z-400 koning 
+  Bas Prins. Kom erbij Bas, Zo'n uh, goeie hebben wij nog niet gehad. Zo'n uh, 
+  goeie hebben wij nog niet gehad. Ik heb lang nagedacht over wat ik je als 
+  cadeautje zou kunnen geven om je te bedanken voor je epische daden, maar ik 
+  kon niets bedenken wat recht zou doen aan je geleverde prestatie. Een paarse 
+  'Crocodile Dundee hoed', een standbeeld, het leek me allemaal niet voldoende 
+  om onze dankbaarheid tot uitdrukking te brengen. Daarom vrees ik dat je het 
+  moet doen met onze eeuwige dankbaarheid en deze fles die je kunt nuttigen op 
+  een geschikt moment. Nogmaals Bas namens ons allen, dank je wel voor je 
+  doorzettingsvermogen, vasthoudendheid en onvermoeibaarheid. Mag ik 3 
+  hoeraatjes voor Bas Prins mensen.

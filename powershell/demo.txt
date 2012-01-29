@@ -1,0 +1,4 @@
+help
+man
+help help
+help about*
