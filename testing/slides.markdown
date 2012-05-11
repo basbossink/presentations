@@ -1,6 +1,8 @@
 % Unit Testing
 % Bas Bossink
 % November 2010
+% Copyright 2012 Bas Bossink <bas.bossink@gmail.com>.
+% See the file LICENSE for copying conditions.
 
 # Contents
 

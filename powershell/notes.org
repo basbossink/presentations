@@ -6,10 +6,12 @@
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:nil pri:nil tags:nil
 #+OPTIONS:   timestamp:t creator:t
 #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+# Copyright 2012 Bas Bossink <bas.bossink@gmail.com>.
+# See the file LICENSE for copying conditions.
 * Huldiging Bas
   Voordat ik begin met mijn praatje over PowerShell wil ik 
   eerst iemand bedanken zonder wie ik hier nu niet zou staan. Dat is iemand 
-  die ik denk allemaal heel dankbaar zijn. Deze gewaardeerde vriend heeft als 
+  die we denk ik allemaal heel dankbaar zijn. Deze gewaardeerde vriend heeft als 
   een soort kruising tussen een pitbull en de Dalai Lama, niet een maar ik 
   denk wel een dozijn paarse krokodillen geslacht met een rust en flair waar 
   ik bijzonder veel respect voor heb. Ik neem aan dat iedereen inmiddels weet 
@@ -24,3 +26,22 @@
   een geschikt moment. Nogmaals Bas namens ons allen, dank je wel voor je 
   doorzettingsvermogen, vasthoudendheid en onvermoeibaarheid. Mag ik 3 
   hoeraatjes voor Bas Prins mensen.
+* Demo
+** Introductie
+
+*** Doel
+    - introductie
+    - wegwijzen om te beginnen met het gebruiken van PowerShell
+    - enthousiasmeren
+
+*** Peilen
+**** Wie heeft er wel eens gehoord van PowerShell?
+**** Wie heeft er wel eens PowerShell gebruikt?
+**** Wie heeft er wel eens een PowerShell script geschreven?
+**** Wie heeft er wel eens een dos commando uitgevoerd?
+**** Wie heeft er wel eens een bash commando uitegvoerd?
+Jullie zullen je als een vis in het water voelen als ik jullie de basis 
+van Windows PowerShell zal demonstreren.
+** Help
+
+*** Wat is het eerste wat je typed in een onbekende shell?

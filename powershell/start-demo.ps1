@@ -1,4 +1,9 @@
-
+<#
+Copyright unknown. See
+- http://blogs.msdn.com/b/powershell/archive/2007/03/06/improved-start-demo-script.aspx
+- http://blogs.msdn.com/b/powershell/archive/2007/03/03/start-demo-help-doing-demos-using-powershell.aspx
+for details.
+#>
 function Start-Demo
 {
   param($file=".\demo.txt", [int]$command=0)

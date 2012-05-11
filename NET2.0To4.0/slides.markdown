@@ -1,6 +1,8 @@
 % .NET 2.0 -> 4.0 What's new
 % Bas Bossink
 % August 2011
+% Copyright 2012 Bas Bossink <bas.bossink@gmail.com>.
+% See the file LICENSE for copying conditions.
 
 # Contents
 
