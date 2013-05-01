@@ -10,22 +10,28 @@
     %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
   %body{ :class => 'impress-not-supported'}
     %div{ :id => 'impress'}
-      %div{ :class => 'step slide title', :data => { :x => -1000, :y => -1500 }}
+      %div{ :class => 'step slide title', :data => { :x => -1000, :y => -1500, :scale => 5 }}
         %h1 Behavior Driven Development
         %h2 SpecFlow
         %h2 Bas Bossink <bas.bossink@gmail.com>
-      %div{ :class => 'step slide', :data => { :x => 0, :y => -1000 }}
+      %div{ :class => 'step slide', :data => { :x => -500, :y => -1000, :scale => 1 }}
         %h1 Agenda
         %ol
           %li What is BDD?
           %li Evolution of BDD
           %li Tools
           %li SpecFlow
-      %div{ :class => 'step slide', :data => { :x => 1000, :y => -500 }}
-        %h1 What is BDD
+      %div{ :class => 'step slide', :data => { :x => 0, :y => -500, :scale => 1 }}
+        %h1 What is BDD?
         %ul
           %li TDD different vocabulary
           %li influences: domain-driven design, object-oriented analysis
+          %li ubiquitous language
+          %li specification by example
+      %div{ :class => 'step slide', :data => { :x => 500, :y => 0, :scale => 1 }}
+        %h1 Evolution of BDD
+        %ol
+          %li Dan North 
     %script{ :src => 'js/impress.js' }
     %script
       impress().init()
