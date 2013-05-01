@@ -1,0 +1,14 @@
+#+TITLE: Software Designer
+#+AUTHOR: Bas Bossink <bas.bossink@gmail.com>
+** Wie heeft thuis een computer?
+** Wat doe je zoal op de computer?
+** Wat gebruik je daarvoor?
+** Wat is software?
+** Noem apparaten in dit lokaal waar software in zit?
+** Waaruit bestaat software?
+** Hoe word software gemaakt?
+** Hoe ziet de dag van een software ontwikkelaar eruit?
+** Hoe word je software designer?
+** Wat moet je kunnen?
+** Beroemde programmeurs:
+[[http://blog.sherweb.com/the-men-behind-the-code-creators-of-famous-programming-languages/][men behind famous programming languages]] 
