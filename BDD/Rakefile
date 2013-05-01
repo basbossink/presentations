@@ -1,0 +1,22 @@
+require 'rake/clean'
+require 'rexml/document'
+
+HAML = FileList.new('*.haml')
+HTML = HAML.ext('html')
+SCSS = FileList.new('*.scss')
+CSS = SCSS.ext('css')
+LAYOUT = HTML + CSS
+
+CLEAN.include(LAYOUT)
+
+rule '.html' => ['.haml'] do |t|
+    sh %{ haml -E utf-8 #{t.source} #{t.name} }
+end
+
+rule '.css' => ['.scss'] do |t|
+    sh %{ sass -t compressed #{t.source} #{t.name} }
+end
+
+desc 'Generate html and css from sources'
+task :default => LAYOUT do
+end

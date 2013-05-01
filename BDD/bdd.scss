@@ -1,0 +1,28 @@
+@mixin gradient($direction, $start-color, $end-color) {
+    background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
+    background-image: -moz-linear-gradient($direction, $start-color, $end-color);
+    background-image: -ms-linear-gradient($direction, $start-color, $end-color);
+    background-image: -o-linear-gradient($direction, $start-color, $end-color);
+    background-image: -linear-gradient($direction, $start-color, $end-color);
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+body { 
+    @include gradient(top left, silver, white); 
+    font-family: 'DejaVu Sans', sans-serif;
+}
+.step {
+    width: 800px;
+    height: 600px;
+    padding: 40px 60px;
+    font-size: 32px;
+    opacity: 0.3;
+}
+.step.active {
+    opacity: 1;
+}
+.slide {
+    @include gradient(top left, white, silver); 
+}
