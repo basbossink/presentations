@@ -1,3 +1,4 @@
+require 'webrick'
 require 'rake/clean'
 require 'rexml/document'
 
@@ -19,4 +20,11 @@ end
 
 desc 'Generate html and css from sources'
 task :default => LAYOUT do
+end
+
+desc 'Start a webserver to serve this presentation'
+task :serve => :default do
+    server = WEBrick::HTTPServer.new :Port => 4000, :DocumentRoot => __dir__
+    trap 'INT' do server.shutdown end
+    server.start
 end
