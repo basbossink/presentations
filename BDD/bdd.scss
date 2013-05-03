@@ -5,9 +5,40 @@
     background-image: -o-linear-gradient($direction, $start-color, $end-color);
     background-image: -linear-gradient($direction, $start-color, $end-color);
 }
-$primary: LightSlateGray;
-$secondary: OldLace;
-$ternary: Teal;
+$primary: #002b36;
+$secondary: #073642;
+$ternary: #839496;
+html {
+    background-color: $primary;
+    color: $ternary;
+    margin: 0;
+}
+code {
+    background-color: $secondary;
+    padding: 2px;
+}
+a {
+    color: #b58900;
+}
+a:visited {
+    color: #dc322f;
+}
+a:hover {
+    color: #cb4b16;
+}
+h1 {
+    color: #d33682;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #859900;
+}
+li {
+    color: #268bd2;
+}
 body { 
     @include gradient(top left, $primary, $secondary); 
     font-family: 'DejaVu Sans', sans-serif;
@@ -32,5 +63,5 @@ code {
     opacity: 1;
 }
 .slide {
-    @include gradient(bottom, $primary, $ternary); 
+    @include gradient(bottom, $secondary, $primary); 
 }
