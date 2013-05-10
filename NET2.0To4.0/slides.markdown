@@ -1,9 +1,6 @@
 % .NET 2.0 -> 4.0 What's new
 % Bas Bossink
 % August 2011
-% Copyright 2012 Bas Bossink <bas.bossink@gmail.com>.
-% See the file LICENSE for copying conditions.
-
 # Contents
 
 - Introduction
@@ -68,7 +65,7 @@ var fred = new Dictionary<string, Func<string,double>>();
 # Auto-Implemented Properties
 - Compiler generates property backing member
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 public class Flinstone { 
     private string m_Name;
     public string Name {
@@ -80,7 +77,7 @@ public class Flinstone {
 
 $\downarrow$
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 public class Flinstone {
     public string Name { get; set; }
 }
@@ -123,7 +120,7 @@ var fred = new { Name = "Fred", Friend="Barney" };
 # $\lambda$ Expressions
 - shorter notation for anonymous methods
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 var flinstones = bedrockCitizins.Find(
     delegate(string c) { 
         return c.Lastname.Equals("Flinstone"); 
@@ -132,7 +129,7 @@ var flinstones = bedrockCitizins.Find(
 
 $\downarrow$ 
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 var flinstones = bedrockCitizins.Find(
     c => c.Lastname.Equals("Flinstone"));
 ~~~
@@ -171,7 +168,7 @@ var flinstones = bedrockCitizins.Find(
 
 # LINQ examples
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 var flinstones = from citizen in bedrockCitizens
                  where citizen.Name.Equals("Flinestone")
                  select citizen.Name;
@@ -219,7 +216,7 @@ partial void onNameChanged()
 
 # Dynamic Example
   
-~~~ { .Cs .numberLines } 
+~~~ { .Cs } 
 // Before the introduction of dynamic.
 ((Excel.Range)excelApp.Cells[1, 1]).Value2 = "Name";
 Excel.Range range2008 = (Excel.Range)excelApp.Cells[1, 1];
@@ -259,7 +256,7 @@ var fred = IsFlinstone(
 - Have a default value in definition
 - Come after all required parameters
 
-~~~ { .Cs .numberLines}
+~~~ { .Cs }
 bool IsFlinstone(
     string firstName, 
     string lastName = "Flinstone") {
@@ -281,7 +278,7 @@ if(IsFlinstone("Barney", "Rubble")) {
 - Preserves assignment compatibility
 - `out` keyword for generic parameters
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 public interface IEnumerator<out T> : 
     IDisposable, 
     IEnumerator {
@@ -293,7 +290,7 @@ public interface IEnumerator<out T> :
 
 # Covariance Example
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 IEnumerable<String> strings = new List<String>();
 IEnumerable<Object> objects = strings;
 ~~~
@@ -305,7 +302,7 @@ IEnumerable<Object> objects = strings;
 - arrays, delegates, generics
 - `in` keyword for generic parameters
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 public interface IComparer<in T> {
     int Compare(T x, T y);
 }
@@ -313,7 +310,7 @@ public interface IComparer<in T> {
 
 # Contravariance Example
 
-~~~ { .Cs .numberLines }
+~~~ { .Cs }
 void PutOutside(object o) { .... }
 Action<object> action = PutOutside;
 Action<Flinstone> dinoAction = action;
@@ -384,20 +381,7 @@ F\#
 - Sequence expressions
 - Asynchronous workflows
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
+% Copyright 2012 Bas Bossink <bas.bossink@gmail.com>.
+% See the file LICENSE for copying conditions.
+-->

@@ -27,8 +27,8 @@ rule '.pdf' => '.markdown' do |t|
     sh "markdown2pdf -N -o #{t.name} #{t.source}"
 end
 
-file 'slides.html' => 'slides.markdown' do
-    sh "pandoc -w slidy --offline --standalone slides.markdown > slides.html"
+file 'slides.html' => ['slides.markdown', 'Rakefile'] do
+    sh "pandoc -w Slidy --self-contained --standalone slides.markdown > slides.html"
 end
 
 file 'slides.markdown' => []
