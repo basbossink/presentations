@@ -1,0 +1,67 @@
+@mixin gradient($direction, $start-color, $end-color) {
+    background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
+    background-image: -moz-linear-gradient($direction, $start-color, $end-color);
+    background-image: -ms-linear-gradient($direction, $start-color, $end-color);
+    background-image: -o-linear-gradient($direction, $start-color, $end-color);
+    background-image: -linear-gradient($direction, $start-color, $end-color);
+}
+$primary: #002b36;
+$secondary: #073642;
+$ternary: #839496;
+html {
+    background-color: $primary;
+    color: $ternary;
+    margin: 0;
+}
+code {
+    background-color: $secondary;
+    padding: 2px;
+}
+a {
+    color: #b58900;
+}
+a:visited {
+    color: #dc322f;
+}
+a:hover {
+    color: #cb4b16;
+}
+h1 {
+    color: #d33682;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #859900;
+}
+li {
+    color: #268bd2;
+}
+body { 
+    @include gradient(top left, $primary, $secondary); 
+    font-family: 'DejaVu Sans', sans-serif;
+}
+img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+code {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 50%;
+}
+.step {
+    width: 800px;
+    height: 600px;
+    padding: 40px 60px;
+    font-size: 32px;
+    opacity: 0.3;
+}
+.step.active {
+    opacity: 1;
+}
+.slide {
+    @include gradient(bottom, $secondary, $primary); 
+}

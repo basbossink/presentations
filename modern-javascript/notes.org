@@ -1,0 +1,22 @@
+* Modern Javascript
+** History
+*** 1995 
+**** hacked in one week
+**** 'easy' 
+**** must look like java
+** ECMAScript 5
+*** use strict
+*** properties, getter/setter
+**** get othu() {}
+     set othu(ontu) {}
+** Resources
+*** [[http://channel9.msdn.com/Events/Build/2012/3-014][Luke Hoban, Modern 
+Javascript talk build 2012 ]] 
+*** [[http://www.youtube.com/watch?v=hQVTIJBZook][Douglas Crockford, Javascript the Good 
+    Parts, Google Talk]] 
+*** [[http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742?tag=thelinactsho-20][Javascript 
+    the Good Parts, Douglas Crockford]]
+
+*** [[http://ejohn.org/blog/the-world-of-ecmascript/][The world of ECMAScript, 
+    John Resig]]
+*** 
