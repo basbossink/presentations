@@ -5,24 +5,66 @@
     %meta{ :name => 'viewport', :content => 'width=1024' }
     %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
     %meta{ :name => 'author', :content => 'Bas Bossink' }
-    %title Behavior Driven Development | SpecFlow | by Bas Bossink
-    %link{ :rel => 'stylesheet', :href => 'bdd.css' }
+    %title Modern Javascript | by Bas Bossink
+    %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
+    %link{ :rel => 'stylesheet', :href => 'styles/shCore.css', :type => 'text/css' }
+    %link{ :rel => 'stylesheet', :href => 'styles/shThemeDefault.css', :type => 'text/css' }
     %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
-  %body{ :class => 'impress-not-supported'}
+    %script{ :type =>'text/javascript', :src => 'js/shCore.js' }
+    %script{ :type =>'text/javascript', :src => 'js/shBrushJScript.js' }
+    %script{ :type =>'text/javascript', :src => '//www.google.com/jsapi' }
+    :javascript
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Browser', 'version 5'],
+          ['Chrome 1.0.154.59', 1753],
+          ['Chrome 2.0172.33', 3238],
+          ['Chrome 3.0.182', 3080],
+          ['Chrome 4.0.223', 4036],
+          ['Chrome 5.0.375.126', 4920],
+          ['Chrome 6.0.453.1', 5512],
+          ['Chrome 7.0.517.44', 6081],
+          ['Chrome 8.0.552.237', 6292],
+          ['Chrome 9.0.597.107', 5959],
+          ['Chrome 10.0.648.151', 9236],
+          ['Chrome 11.0.696.77', 8075],
+          ['Chrome 12.0.742.112', 5643],
+          ['Chrome 13.0.782.99', 5794],
+          ['Chrome 14.0.835.202', 8184],
+          ['Chrome 15.0.874.121', 9222],
+          ['Chrome 16.0.912.77', 9079],
+          ['Chrome 17.0.963.83', 10049],
+          ['Chrome 18.01025.168', 10073],
+          ['Chrome 19.0.1084.56', 11595],
+          ['Chrome 20.0.1132.57', 12125],
+          ['Chrome 21.0.1189.89', 11480],
+          ['Firefox 15.0.1', 4976],
+          ['Opera 12.02', 3667]
+        ]);
+
+        var options = {
+          title: 'V8 Benchmark Suite (longer is better)'
+        };
+
+        var chart = new google.visualization.BarChart(document.getElementById('v8_benchmarks'));
+        chart.draw(data, options);
+      }
+    %body{ :class => 'impress-not-supported'}
     %div{ :id => 'impress'}
-      %div{ :class => 'step slide title', :data => { :x => -1000, :y => -1500, :scale => 7 }}
-        %h1 Behavior Driven Development
-        %h2 SpecFlow
+      %div{ :class => 'step slide title', :data => { :x => -1500, :y => -1500, :scale => 7 }}
+        %h1 Modern Javascript
         %h2 Bas Bossink <bas.bossink@gmail.com>
-      %div{ :class => 'step slide', :data => { :x => -500, :y => -1000, :scale => 1 }}
+      %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
         %h1 Agenda
         %ul
           %li About
-          %li What is BDD?
-          %li Scenario's
-          %li Specification's
-          %li SpecFlow
-      %div{ :class => 'step slide', :data => { :x => 0, :y => -1000, :z => -2000, 'rotate-x' => 10, 'rotate-y' => -30, :scale => 1}}
+          %li Why javascript
+          %li History
+          %li Modern javascript
+          %li The Good Parts
+      %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1}}
         %h1 About
         %ul 
           %li 
@@ -33,25 +75,81 @@
           %li 
             %a{ :href => 'https://github.com/basbossink/presentations' } source
           %li 
-            %a{ :href => 'http://basbossink.github.io/presentations/BDD/bdd.html'} view
-      %div{ :class => 'step slide', :data => { :x => 0, :y => -500, :scale => 1 }}
-        %h1 What is BDD?
+            %a{ :href => 'http://basbossink.github.io/presentations/modern-javascript/modern-javascript.html'} view
+      %div{ :class => 'step slide', :data => { :x => 2750, :y => 2750, :z => -5000, :scale => 5 }}
+        %h1 Why javascript
+      %div{ :class => 'step slide', :data => { :x => 750, :y => 750, :scale => 1 }}
+        %h1 Popularity
+        %iframe{ :src => 'http://langpop.corger.nl/', :width => 700, :height => 500 }
+        %span{ :class => 'small center'} 
+          courtesy of 
+          %a{ :src => 'http://langpop.corger.nl/' }
+            http://langpop.corger.nl/
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
+        %h1 Ubiquitous
         %ul
-          %li TDD different vocabulary
-          %li influences: domain-driven design, object-oriented analysis
-          %li ubiquitous language
-          %li specification by example
-      %div{ :class => 'step slide', :data => {:x => 1000, :y => 0, 'rotate' => -90, :scale => 1 }}
-        %h1 Communication
-        %img{ :src => 'http://im.rediff.com/money/2011/dec/communication.jpg', :width => 600 }
-      %div{ :class => 'step slide', :data => {:x => 2000, :y => 500, 'rotate' => -180, :scale => 1 }}
-        %h1 Communication
-        %img{ :src => 'http://stuartjallen.files.wordpress.com/2012/07/communication.png', :width => 600 }
-      %div{ :class => 'step slide', :data => {:x => 3000, :y => -500, 'rotate' => -270, :scale =>1 }}
-        %h1 Communication
-        %img{ :src => 'http://www.crnb-rcnb.ca/img/tutorial/communication.jpg', :width => 300 }
-      %div{ :class => 'step slide', :data => { :x => 3000, :y => 500, :scale => 1 }}
-        %h1 Demo Time
-    %script{ :src => 'js/impress.js' }
+          %li all internet browsers, desktop, mobile
+          %li WinRT
+          %li Windows Script Host
+          %li PDF
+          %li Node.js
+          %li Gnome 3 extensions
+          %li Qt: QML
+          %li Beagleboard, embedded programming using node.js
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, :scale => 1 }}
+        %h1 Performance
+        %div{ :id => 'v8_benchmarks' }
+      %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, :scale => 1 }}
+        %h1 Performance
+        %figure
+          %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32', :src => 'images/performance-javascript-vs-ruby-2.0.png'  }
+          %figcaption
+            %a{ :src => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32' }
+              source: Computer Language Benchmarks Game
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
+        %h1 Performance
+        %figure
+          %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32', :src => 'images/performance-javascript-vs-c.png'}
+          %figcaption
+            %a{ :src => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32' }
+              source: Computer Language Benchmarks Game
+      %div{ :class => 'step slide', :data => { :x => -4500, :y => -4500, :z => -4500, :scale => 1 }}
+        %h1 History
+        %ul
+          %li 
+            Brendan Eich, CTO Mozilla Corporation
+            %figure
+              %a{ :title =>'By AcidJazzed at en.wikipedia [see page for license], from Wikimedia Commons',
+                    :href => 'http://commons.wikimedia.org/wiki/File%3ABEich.jpg'}
+                %img{ :src => 'images/brendan-eich.jpg', :alt => 'Brendan Eich', :width => 256 }
+              %figcaption
+                %a{ :src => 'http://en.wikipedia.org/wiki/File:BEich.jpg'}
+                  source: By AcidJazzed at en.wikipedia, from Wikimedia Commons 
+          %li 1995: Livescript Netscape Navigator
+          %li name change to javascript
+          %li 
+            %q make it look like java
+      %div{ :class => 'step slide', :data => { :x => -4000, :y => -4000, :z => -4000, :scale => 1 }}
+        %h1 ECMAScript
+        %figure
+          %img{ :src => 'images/ecmascript-history.png', :alt => 'courtesy of Luke Hoban', :width => 700 }
+          %figcaption
+            %a{ :src => 'http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fsessions%2fbuild%2f2012%2f3-014.pptx'}
+              source: Modern Javascript, Luke Hoban
+      %div{ :class => 'step slide', :data => { :x => -3500, :y => -3500, :z => -3500, :scale => 1 }}
+        %h1 New features since 1999
+        %ul
+          %li 
+            strict mode
+            %code
+              %pre{ :class => 'brush: js' }
+                = preserve do
+                  :escaped
+                    (function() {
+                      'use strict';
+                      ...
+                    }());
+    %script{ :type => 'text/javascript', :src => 'js/impress.js' }
     %script
-      impress().init()
+      impress().init();
+      SyntaxHighlighter.all();

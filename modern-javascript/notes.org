@@ -1,10 +1,37 @@
 * Modern Javascript
+** Why javascript
+** Popularity
+*** several measuring methods
+    javascript top 5-10
+** abundance
+*** all browsers, desktop, mobile
+*** winrt
+*** gnome 3 extensions
+*** Qt: QML
+*** Node.js
+*** PDF
+*** Beagleboard, embedded programming using node.js
+*** Windows Script Host
+** speed
+*** 
+    [[http://benchmarksgame.alioth.debian.org/u32/which-programs-are-fastest.php][programming 
+    languages shoutout]] Javascript fastest scripting language
+**** 2-16 times slower than C
+**** 1/6 - 7 times slower than Java
+**** 1/18 - 5 times slower than C# on Mono
+**** 1/55 - 2 times slower than Ruby 2.0
+** language of the web
+** size
+“Gmail is comprised of 443,000 lines of JavaScript, 978,000 lines 
+ if comments are included.”
+    — Google, 2010
 ** History
 *** 1995 
 **** hacked in one week
 **** 'easy' 
 **** must look like java
-** ECMAScript 5
+**** Brendan Eich, CTO Mozilla Corporation
+** ECMAScript 5.1 june 2011
 *** use strict
 *** properties, getter/setter
 **** get othu() {}
