@@ -83,7 +83,7 @@
         %iframe{ :src => 'http://langpop.corger.nl/', :width => 700, :height => 500 }
         %span{ :class => 'small center'} 
           courtesy of 
-          %a{ :src => 'http://langpop.corger.nl/' }
+          %a{ :href => 'http://langpop.corger.nl/' }
             http://langpop.corger.nl/
       %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
         %h1 Ubiquitous
@@ -104,14 +104,14 @@
         %figure
           %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32', :src => 'images/performance-javascript-vs-ruby-2.0.png'  }
           %figcaption
-            %a{ :src => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32' }
+            %a{ :href => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32' }
               source: Computer Language Benchmarks Game
       %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
         %h1 Performance
         %figure
           %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32', :src => 'images/performance-javascript-vs-c.png'}
           %figcaption
-            %a{ :src => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32' }
+            %a{ :href => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32' }
               source: Computer Language Benchmarks Game
       %div{ :class => 'step slide', :data => { :x => -4500, :y => -4500, :z => -4500, :scale => 1 }}
         %h1 History
@@ -123,32 +123,76 @@
                     :href => 'http://commons.wikimedia.org/wiki/File%3ABEich.jpg'}
                 %img{ :src => 'images/brendan-eich.jpg', :alt => 'Brendan Eich', :width => 256 }
               %figcaption
-                %a{ :src => 'http://en.wikipedia.org/wiki/File:BEich.jpg'}
+                %a{ :href => 'http://en.wikipedia.org/wiki/File:BEich.jpg'}
                   source: By AcidJazzed at en.wikipedia, from Wikimedia Commons 
           %li 1995: Livescript Netscape Navigator
           %li name change to javascript
           %li 
             %q make it look like java
-      %div{ :class => 'step slide', :data => { :x => -4000, :y => -4000, :z => -4000, :scale => 1 }}
+      %div{ :class => 'step slide', :data => { :x => -3200, :y => -3200, :z => -4000, :scale => 1 }}
+        %h1 History
+        %ul
+          %li 
+            Main influences:
+            %ul 
+              %li 
+                Scheme
+                %ul
+                  %li minimalist LISP
+                  %li functional
+                  %li dynamically typed
+              %li 
+                Self
+                %ul
+                  %li Object-Oriented
+                  %li Prototypes
+                  %li dialect of Smalltalk
+      %div{ :class => 'step slide', :data => { :x => -2700, :y => -2700, :z => -3500, :scale => 1 }}
         %h1 ECMAScript
         %figure
           %img{ :src => 'images/ecmascript-history.png', :alt => 'courtesy of Luke Hoban', :width => 700 }
           %figcaption
-            %a{ :src => 'http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fsessions%2fbuild%2f2012%2f3-014.pptx'}
+            %a{ :href => 'http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fsessions%2fbuild%2f2012%2f3-014.pptx'}
               source: Modern Javascript, Luke Hoban
-      %div{ :class => 'step slide', :data => { :x => -3500, :y => -3500, :z => -3500, :scale => 1 }}
-        %h1 New features since 1999
-        %ul
-          %li 
-            strict mode
-            %code
-              %pre{ :class => 'brush: js' }
-                = preserve do
-                  :escaped
-                    (function() {
-                      'use strict';
-                      ...
-                    }());
+      %div{ :class => 'step slide', :data => { :x => -2000, :y => -2000, :z => -3000, :scale => 1 }}
+        %h1 New features ECMAScript 5
+        %h2 Strict mode
+        %code
+          %pre{ :class => 'brush: js' }
+            = preserve do
+              :escaped
+                (function() {
+                  'use strict';
+                  ...
+                }());
+        %ul 
+          %li It catches some common coding bloopers, throwing exceptions.
+          %li It prevents, or throws errors, when relatively “unsafe” actions are taken (such as gaining access to the global object).
+          %li It disables features that are confusing or poorly thought out.
+        %span{ :class => 'small'} 
+          source: John Resig, 
+          %a{ :href => 'http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/'}
+            ECMAScript 5 Strict Mode, JSON, and More
+      %div{ :class => 'step slide', :data => { :x => -1300, :y => -1300, :z => -2500, :scale => 1 }}
+        %h1 New features ECMAScript 5
+        %h2 Properties
+        %code
+          %pre{ :class => 'brush: js'}
+            = preserve do
+              :escaped
+                var fred = {};
+                Object.defineProperty(
+                    fred,
+                    "name", {
+                        get: function() {
+                          console.log("Retrieving name: " + name);
+                          return name;
+                        },
+                        set: function(value) {
+                          console.log("Setting name to: " + value);
+                          name = value;
+                        }
+                    });
     %script{ :type => 'text/javascript', :src => 'js/impress.js' }
     %script
       impress().init();
