@@ -28,7 +28,8 @@ $green:     #859900;
 }
 .light { @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03)}
 html, .dark  { @include rebase($base03,$base02,$base01,$base00,$base0,$base1,$base2,$base3)}
-html * {
+html {
+    @include rebase($base3,$base2,$base1,$base0,$base00,$base01,$base02,$base03);
     color-profile: sRGB;
     rendering-intent: auto;
 }
@@ -46,7 +47,7 @@ img {
 }
 code {
     font-family: 'DejaVu Sans Mono', monospace;
-    font-size: 50%;
+    font-size: 70%;
 }
 .step {
     width: 800px;
@@ -70,5 +71,36 @@ figcaption {
     font-size: 25%;
 }
 .small {
-    font-size: 35%
+    font-size: 35%;
+}
+.large {
+    font-size: 125%;
+}
+@mixin transform-style($value) {
+    -webkit-transform-style: $value; 
+    -moz-transform-style:    $value;
+    -ms-transform-style:     $value;
+    -o-transform-style:      $value;
+    transform-style:         $value;
+}
+@mixin transform($value) {
+    -webkit-transform:  $value;
+    -moz-transform:     $value;
+    -ms-transform:      $value;
+    -o-transform:       $value;
+     transform:         $value;
+}
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition:    $value;
+    -ms-transition:     $value;
+    -o-transition:      $value;
+    transition:         $value;
+}
+#question {
+    @include transform-style(preserve-3d);
+    display: inline-block;
+    @include transform(rotateZ(180deg));
+    @include transform(rotateY(180deg));
+    @include transition(3.0s);
 }
