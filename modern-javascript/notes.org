@@ -1,8 +1,20 @@
 * Modern Javascript
+** Agenda
+** Disclaimer
+*** Geen JavaScript guru
+*** voelde dat tijdens de vorige presentatie, JavaScript niet populair was
+**** Verdedegen van JavaScripts eer
+**** Wie heeft er wel eens geprogrammeerd in JavaScript?
+**** Hoeveel van dat programmeren was kopiëren?
+**** Wie heeft er wel eens een JavaScript boek gelezen en/of cursus gevolgd?
+** About
 ** Why javascript
 ** Popularity
 *** several measuring methods
     javascript top 5-10
+*** grootste aantal regels gewijzigd op Github
+*** een van de populairste tags op stackoverflow
+** language of the web
 ** abundance
 *** all browsers, desktop, mobile
 *** winrt
@@ -10,17 +22,19 @@
 *** Qt: QML
 *** Node.js
 *** PDF
-*** Beagleboard, embedded programming using node.js
+*** Beagleboard & Arduino, embedded programming using node.js
 *** Windows Script Host
+** Dynamic & functional
+a more readable closure
 ** speed
-*** 
-    [[http://benchmarksgame.alioth.debian.org/u32/which-programs-are-fastest.php][programming 
+*** Performance increase V8 12X
+*** Performance increase IE ~100X
+*** [[http://benchmarksgame.alioth.debian.org/u32/which-programs-are-fastest.php][programming 
     languages shoutout]] Javascript fastest scripting language
+**** 1/55 - 2 times slower than Ruby 2.0
 **** 2-16 times slower than C
 **** 1/6 - 7 times slower than Java
 **** 1/18 - 5 times slower than C# on Mono
-**** 1/55 - 2 times slower than Ruby 2.0
-** language of the web
 ** size
 “Gmail is comprised of 443,000 lines of JavaScript, 978,000 lines 
  if comments are included.”
@@ -31,11 +45,71 @@
 **** 'easy' 
 **** must look like java
 **** Brendan Eich, CTO Mozilla Corporation
-** ECMAScript 5.1 june 2011
-*** use strict
-*** properties, getter/setter
-**** get othu() {}
-     set othu(ontu) {}
+*** Scheme
+*** Self 
+** ECMAScript
+- vroeg gestandardiseerd
+- stabiel tussen 1999 en 2009
+*** ECMAScript 5.1 june 2011
+** use strict
+** properties, getter/setter
+** JSON object
+- json serialization en deserialization
+
+** Object
+*** Object.create
+- manier om objecten te maken waarbij prototype kan worden meegegeven
+- handig voor het vermijden van new operator
+*** Object.seal
+Object.seal(O) returns O after setting the internal Configurable flag
+to false for each property of O and the internal Extensible property
+of O to false.
+
+*** Object.freeze
+Object.freeze(O) returns O similar to seal except the internal
+Writable flag is also set to false.
+*** Object.keys
+- geeft een array met de namen van de properties terug,
+zonder de prototype keten te bekijken
+** Function Bind
+- kent this pointer toe
+** Array
+- every => All in C#
+- some => Any in C#
+- forEach => List.ForEach in C#
+- map => Select in C#
+- filter => Where in C#
+- reduce => Aggregate in C#
+- reduceRight => Reverse . Select in C#
+** JavaScript The Good Parts
+** Object literals
+** Functions
+- functies zijn waardes, toewijzen, doorgeven, retourneren
+- vararg mbv arguments array
+- JavaScript heeft geen block scope maar funtion scope
+** Closure
+- waarden kunnen worden 'gevangen' door functies te gebruiken
+- vooral nodig om vervuiling van de globale namespace te voorkomen
+** Inheritance
+- Object erven van elkaar zonder tussenkomst van een klasse
+- JavaScript heeft ondanks prototypes een new operator
+- advies gebruik Object.create om duidelijk te laten zien welk object
+  het prototype van een object is
+** Prototypal inheritance
+** Arrays
+** Awful Parts
+- linking via global namespace => werkt gebruik van globale
+  variabelen in de hand
+- semicolon insertion: als een regel niet geparst kan worden voeg een
+  ; toe en probeer opnieuw
+- falsy waardes
+- te veel
+** Bad Parts
+- ==
+- with 
+- eval
+- new
+- void
 ** Resources
 *** [[http://channel9.msdn.com/Events/Build/2012/3-014][Luke Hoban, Modern 
 Javascript talk build 2012 ]] 
