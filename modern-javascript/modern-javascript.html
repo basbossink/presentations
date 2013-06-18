@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=1024' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='Bas Bossink' name='author'>
+    <title>Modern Javascript | by Bas Bossink</title>
+    <link href='styles/default.css' rel='stylesheet' type='text/css'>
+    <link href='styles/shCore.css' rel='stylesheet' type='text/css'>
+    <link href='styles/shThemeDefault.css' rel='stylesheet' type='text/css'>
+    <link href='apple-touch-icon.png' rel='apple-touch-icon'>
+    <script src='js/shCore.js' type='text/javascript'></script>
+    <script src='js/shBrushJScript.js' type='text/javascript'></script>
+    <script src='//www.google.com/jsapi' type='text/javascript'></script>
+    <script>
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Browser', 'version 5'],
+          ['Chrome 1.0.154.59', 1753],
+          ['Chrome 2.0172.33', 3238],
+          ['Chrome 3.0.182', 3080],
+          ['Chrome 4.0.223', 4036],
+          ['Chrome 5.0.375.126', 4920],
+          ['Chrome 6.0.453.1', 5512],
+          ['Chrome 7.0.517.44', 6081],
+          ['Chrome 8.0.552.237', 6292],
+          ['Chrome 9.0.597.107', 5959],
+          ['Chrome 10.0.648.151', 9236],
+          ['Chrome 11.0.696.77', 8075],
+          ['Chrome 12.0.742.112', 5643],
+          ['Chrome 13.0.782.99', 5794],
+          ['Chrome 14.0.835.202', 8184],
+          ['Chrome 15.0.874.121', 9222],
+          ['Chrome 16.0.912.77', 9079],
+          ['Chrome 17.0.963.83', 10049],
+          ['Chrome 18.01025.168', 10073],
+          ['Chrome 19.0.1084.56', 11595],
+          ['Chrome 20.0.1132.57', 12125],
+          ['Chrome 21.0.1189.89', 11480],
+          ['Firefox 15.0.1', 4976],
+          ['Opera 12.02', 3667]
+        ]);
+      
+        var options = {
+          title: 'V8 Benchmark Suite (longer is better)'
+        };
+      
+        var chart = new google.visualization.BarChart(document.getElementById('v8_benchmarks'));
+        chart.draw(data, options);
+      }
+    </script>
+    <body class='impress-not-supported'></body>
+    <div id='impress'>
+      <div class='step slide title' data-scale='7' data-x='-1500' data-y='-1500'>
+        <h1>Modern Javascript</h1>
+        <h2>Bas Bossink <bas.bossink@gmail.com></h2>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-750' data-y='-750'>
+        <h1>Agenda</h1>
+        <ul>
+          <li>Disclaimer</li>
+          <li>About</li>
+          <li>Why javascript</li>
+          <li>History</li>
+          <li>Modern javascript</li>
+          <li>The Good Parts</li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-x='90' data-scale='1' data-x='-750' data-y='-750'>
+        <h1>Disclaimer</h1>
+        <ul>
+          <li>Not a JavaScript guru</li>
+          <li>Needed after last presentation</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='0' data-y='0'>
+        <h1>About</h1>
+        <ul>
+          <li>
+            <a href='https://github.com/bartaz/impress.js/'>impress.js</a>
+          </li>
+          <li>
+            <a href='http://creativecommons.org/licenses/by/3.0/nl/' rel='licensce'>
+              Creative Commons Attribution 3.0 Netherlands License
+            </a>
+          </li>
+          <li>
+            <a href='https://github.com/basbossink/presentations/modern-javascript'>source</a>
+          </li>
+          <li>
+            <a href='http://basbossink.github.io/presentations/modern-javascript/modern-javascript.html'>view</a>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-x='700' data-y='700'>
+        <h1>Why javascript</h1>
+        <ul>
+          <li>Popularity</li>
+          <li>The language of the web</li>
+          <li>It's everywhere</li>
+          <li>Dynamic &amp; functional</li>
+          <li>Fast scripting language</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='1400' data-y='1400'>
+        <h1>Popularity</h1>
+        <iframe height='500' src='http://langpop.corger.nl/' width='700'></iframe>
+        <span class='small center'>
+          courtesy of
+          <a href='http://langpop.corger.nl/'>
+            http://langpop.corger.nl/
+          </a>
+        </span>
+      </div>
+      <div class='step slide' data-scale='1' data-x='2250' data-y='2250'>
+        <h1>Ubiquitous</h1>
+        <ul>
+          <li>all internet browsers, desktop, mobile</li>
+          <li>WinRT</li>
+          <li>Windows Script Host</li>
+          <li>PDF</li>
+          <li>Node.js</li>
+          <li>Gnome 3 extensions</li>
+          <li>Qt: QML</li>
+          <li>Beagleboard &amp; Arduino, embedded programming using node.js</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3000' data-y='3000'>
+        <h1>Performance</h1>
+        <div id='v8_benchmarks'></div>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3750' data-y='3750'>
+        <h1>Performance</h1>
+        <figure>
+          <img alt='http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&amp;lang=v8&amp;lang2=yarv&amp;data=u32' src='images/performance-javascript-vs-ruby-2.0.png'>
+          <figcaption>
+            <a href='http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&amp;lang=v8&amp;lang2=yarv&amp;data=u32'>
+              source: Computer Language Benchmarks Game
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+      <div class='step slide' data-scale='1' data-x='4500' data-y='4500'>
+        <h1>Performance</h1>
+        <figure>
+          <img alt='http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&amp;lang=v8&amp;lang2=gcc&amp;data=u32' src='images/performance-javascript-vs-c.png'>
+          <figcaption>
+            <a href='http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&amp;lang=v8&amp;lang2=gcc&amp;data=u32'>
+              source: Computer Language Benchmarks Game
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+      <div class='step slide' data-scale='1' data-x='5200' data-y='3500' data-z='-4500'>
+        <h1>History</h1>
+        <ul>
+          <li>
+            Brendan Eich, CTO Mozilla Corporation
+            <figure>
+              <a href='http://commons.wikimedia.org/wiki/File%3ABEich.jpg' title='By AcidJazzed at en.wikipedia [see page for license], from Wikimedia Commons'>
+                <img alt='Brendan Eich' src='images/brendan-eich.jpg' width='156'>
+              </a>
+              <figcaption>
+                <a href='http://en.wikipedia.org/wiki/File:BEich.jpg'>
+                  source: By AcidJazzed at en.wikipedia, from Wikimedia Commons
+                </a>
+              </figcaption>
+            </figure>
+          </li>
+          <li>1995: Livescript Netscape Navigator</li>
+          <li>name change to javascript</li>
+          <li>
+            <q>make it look like java</q>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='5900' data-y='2700' data-z='-4000'>
+        <h1>History</h1>
+        <ul>
+          <li>
+            Main influences:
+            <ul>
+              <li>
+                Scheme
+                <ul>
+                  <li>minimalist LISP</li>
+                  <li>functional</li>
+                  <li>dynamically typed</li>
+                </ul>
+              </li>
+              <li>
+                Self
+                <ul>
+                  <li>Object-Oriented</li>
+                  <li>Prototypes</li>
+                  <li>dialect of Smalltalk</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='6600' data-y='2000' data-z='-3500'>
+        <h1>ECMAScript</h1>
+        <figure>
+          <img alt='courtesy of Luke Hoban' src='images/ecmascript-history.png' width='700'>
+          <figcaption>
+            <a href='http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fsessions%2fbuild%2f2012%2f3-014.pptx'>
+              source: Modern Javascript, Luke Hoban
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+      <div class='step slide' data-scale='1' data-x='7300' data-y='1300' data-z='-3000'>
+        <h3>New in ECMAScript 5: Strict mode</h3>
+        <code><pre class='brush: js'>(function() {&#x000A;  'use strict';&#x000A;  ...&#x000A;}());</pre></code>
+        <ul>
+          <li>Catches some common coding bloopers, throwing exceptions</li>
+          <li>Prevents, or throws errors, when relatively “unsafe” actions are taken</li>
+          <li>Disables features that are confusing or poorly thought out.</li>
+        </ul>
+        <span class='small'>
+          source: John Resig,
+          <a href='http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/'>
+            ECMAScript 5 Strict Mode, JSON, and More
+          </a>
+        </span>
+      </div>
+      <div class='step slide' data-scale='1' data-x='8000' data-y='600' data-z='-2500'>
+        <h3>New in ECMAScript 5: Properties</h3>
+        <code><pre class='brush: js'>var fred = {};&#x000A;Object.defineProperty(fred, &quot;name&quot;, {&#x000A;        get: function() {&#x000A;          console.log(&quot;Retrieving name: &quot; + name);&#x000A;          return name;&#x000A;        },&#x000A;        set: function(value) {&#x000A;          console.log(&quot;Setting name to: &quot; + value);&#x000A;          name = value;&#x000A;        }&#x000A;    });</pre></code>
+      </div>
+      <div class='step slide' data-scale='1' data-x='8700' data-y='-100' data-z='-2000'>
+        <h1>New in ECMAScript 5: JSON object</h1>
+        <ul>
+          <li>JSON.parse</li>
+          <li>JSON.stringify</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='9400' data-y='-800' data-z='-1500'>
+        <h1>New in ECMAScript 5: Object</h1>
+        <ul>
+          <li>Object.create</li>
+          <li>Object.seal</li>
+          <li>Object.freeze</li>
+          <li>Object.keys</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='10100' data-y='-1600' data-z='-1000'>
+        <h1>New in ECMAScript 5: Function bind</h1>
+        <code><pre class='brush: js'>var Button = function(content) { this.content = content; };&#x000A;Button.prototype.click = function() { &#x000A;  console.log(this.content + ' clicked'); &#x000A;}&#x000A;var fred = new Button('OK');&#x000A;var boundClick = fred.click.bind(fred);&#x000A;boundClick();</pre></code>
+      </div>
+      <div class='step slide' data-scale='1' data-x='10800' data-y='-2300' data-z='-500'>
+        <h1>New in ECMAScript 5: Array</h1>
+        <ul>
+          <li>every, some</li>
+          <li>forEach</li>
+          <li>map</li>
+          <li>filter</li>
+          <li>reduce</li>
+          <li>reduceRight</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-4200' data-y='-4200'>
+        <h1>JavaScript: The Good Parts</h1>
+        <ul>
+          <li>
+            Douglas Crockford
+            <ul>
+              <li>JavaScript architect at Yahoo!</li>
+              <li>creator of JSON</li>
+              <li>in ECMAScript committee</li>
+            </ul>
+          </li>
+          <li>
+            <a href='http://shop.oreilly.com/product/9780596517748.do'>
+              JavaScript: The Good Parts
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-4900' data-y='-4900'>
+        <h1>Object literals</h1>
+        <code><pre class='brush: js'>var fred = {&#x000A;  firstName: &quot;Fred&quot;,&#x000A;  lastName: &quot;Flinstone&quot;,&#x000A;  hometown: &quot;Bedrock&quot;,&#x000A;  wife: {&#x000A;    firstName: &quot;Wilma&quot;,&#x000A;    lastName: &quot;Flinstone&quot;&#x000A;  }&#x000A;};</pre></code>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-5600' data-y='-5600'>
+        <h1>Functions</h1>
+        <ul>
+          <li>Functions are objects</li>
+          <li>
+            <code>arguments</code>
+            array
+          </li>
+          <li>
+            Function scope
+            <span class='large'>
+              NOT
+            </span>
+            block scope
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-6300' data-y='-6300'>
+        <h1>Closure</h1>
+        <code><pre class='brush: js'>var myObject = (function () {&#x000A;  var value = 0;&#x000A;&#x000A;  return {&#x000A;    increment: function (inc) {&#x000A;        value += typeof inc === 'number' ? inc : 1;&#x000A;    },&#x000A;    getValue: function (  ) {&#x000A;        return value;&#x000A;    }&#x000A;  };&#x000A;}());</pre></code>
+        <span class='small center'>
+          source: JavaScript: The Good Parts, Douglas Crockford
+        </span>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-7000' data-y='-7000'>
+        <h1>Inheritance</h1>
+        <ul>
+          <li>Prototypal</li>
+          <li>
+            Obscured by use of
+            <code>new</code>
+            operator
+          </li>
+          <li>
+            prefer
+            <code>Object.create</code>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-7700' data-y='-7700'>
+        <h1>Prototypal Inheritance</h1>
+        <code><pre class='brush: js'>var fred = {&#x000A;  name : 'Fred Flinstone',&#x000A;  saying : 'Yabadabadoo!',&#x000A;  says : function() { return this.saying || ''; }&#x000A;};&#x000A;var barney = Object.create(fred);&#x000A;barney.name = 'Barney Rubble';&#x000A;barney.saying = 'Hi Fred';</pre></code>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-8400' data-y='-8400'>
+        <h1>Arrays</h1>
+        <ul>
+          <li>Arrays are objects</li>
+          <li>Array literals</li>
+          <li>Different types</li>
+          <li>
+            Use
+            <code>for</code>
+            iso
+            <code>for in</code>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-9100' data-y='-9100'>
+        <h1>Awful Parts</h1>
+        <ul>
+          <li>Global variables</li>
+          <li>
+            Semicolon Insertion
+            <code><pre class='brush: js'>return&#x000A;{&#x000A;  status: true&#x000A;};</pre></code>
+            ↓
+            <code><pre class='brush: js'>return;&#x000A;{&#x000A;  status: true&#x000A;};</pre></code>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-9800' data-y='-9800'>
+        <h1>Awful Parts</h1>
+        <h3>Falsy values:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <code>0</code>
+              </td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td>
+                <code>NaN</code>
+              </td>
+              <td>Number</td>
+            </tr>
+            <tr>
+              <td>
+                <code>''</code>
+              </td>
+              <td>String</td>
+            </tr>
+            <tr>
+              <td>
+                <code>false</code>
+              </td>
+              <td>Boolean</td>
+            </tr>
+            <tr>
+              <td>
+                <code>null</code>
+              </td>
+              <td>Object</td>
+            </tr>
+            <tr>
+              <td>
+                <code>undefined</code>
+              </td>
+              <td>Undefined</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-10500' data-y='-10500'>
+        <h1>Bad Parts</h1>
+        <ul>
+          <li>
+            <code>==</code>
+            <code><pre class='brush: js'>'' == '0'          // false&#x000A;0 == ''            // true&#x000A;0 == '0'           // true&#x000A;&#x000A;false == 'false'   // false&#x000A;false == '0'       // true&#x000A;&#x000A;false == undefined // false&#x000A;false == null      // false&#x000A;null == undefined  // true&#x000A;&#x000A;' \t\r\n ' == 0    // true</pre></code>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-11200' data-y='-11200'>
+        <h1>Bad Parts</h1>
+        <ul>
+          <li>with</li>
+          <li>eval</li>
+          <li>new</li>
+          <li>void</li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-x='-135' data-rotate-y='135' data-rotate-z='135' data-scale='1' data-x='-11900' data-y='-11900'>
+        <h1>Questions?</h1>
+      </div>
+    </div>
+    <script src='js/impress.js' type='text/javascript'></script>
+    <script>
+      impress().init();
+      SyntaxHighlighter.all();
+    </script>
+  </head>
+</html>

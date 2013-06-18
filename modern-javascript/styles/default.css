@@ -1,0 +1,103 @@
+.light {
+  background-color: #fdf6e3;
+  color: #657b83; }
+  .light * {
+    color: #657b83; }
+  .light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+    color: #586e75;
+    border-color: #657b83; }
+  .light a, .light a:active, .light a:visited {
+    color: #586e75; }
+
+html, .dark {
+  background-color: #002b36;
+  color: #839496; }
+  html *, .dark * {
+    color: #839496; }
+  html h1, html h2, html h3, html h4, html h5, html h6, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #93a1a1;
+    border-color: #839496; }
+  html a, html a:active, html a:visited, .dark a, .dark a:active, .dark a:visited {
+    color: #93a1a1; }
+
+html {
+  background-color: #fdf6e3;
+  color: #657b83;
+  color-profile: sRGB;
+  rendering-intent: auto; }
+  html * {
+    color: #657b83; }
+  html h1, html h2, html h3, html h4, html h5, html h6 {
+    color: #586e75;
+    border-color: #657b83; }
+  html a, html a:active, html a:visited {
+    color: #586e75; }
+
+body {
+  font-family: 'DejaVu Sans', sans-serif; }
+
+img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center; }
+
+code {
+  font-family: 'DejaVu Sans Mono', monospace;
+  font-size: 70%; }
+
+.step {
+  width: 800px;
+  height: 600px;
+  padding: 40px 60px;
+  font-size: 32px;
+  opacity: 0.3; }
+
+.step.active {
+  opacity: 1; }
+
+#v8_benchmarks {
+  width: 700px;
+  height: 500px; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center; }
+
+figcaption {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  font-size: 25%; }
+
+.small {
+  font-size: 35%; }
+
+.large {
+  font-size: 125%; }
+
+#question {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  display: inline-block;
+  -webkit-transform: rotateZ(180deg);
+  -moz-transform: rotateZ(180deg);
+  -ms-transform: rotateZ(180deg);
+  -o-transform: rotateZ(180deg);
+  transform: rotateZ(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s; }
