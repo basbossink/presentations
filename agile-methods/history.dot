@@ -38,6 +38,7 @@ digraph history {
     scrumban[label="Scrum-ban"];
     TPS -> Lean -> leansd -> kanban;
     TPS -> leansd;
+    TPS -> kanban;
     adapt -> leansd;
     scrum -> kanban;
     adapt -> fdd;

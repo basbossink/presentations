@@ -1,6 +1,9 @@
 % Agile Methods
 % Bas Bossink
 % January 2014
+# Agile Methods
+## An overview
+
 # Contents
 
 - Introduction
