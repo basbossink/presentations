@@ -1,0 +1,33 @@
+require 'rake/clean'
+
+CLEAN.include(FileList['*.html','*.pdf','*.png'])
+
+# Windows has a name clash with builtin dos convert command
+cov = if ENV.has_key? 'CONVERT' then 
+          "\"#{ENV['CONVERT']}\"" 
+      else 
+          "convert" 
+      end
+
+task :default => ['slides.html']
+
+task :serve do
+    sh "python -m SimpleHTTPServer 4000"
+end
+
+rule '.png' => '.gnu' do |t|
+    sh "gnuplot #{t.source}"
+end
+
+rule '.png' => '.svg' do |t|
+    sh "#{cov} #{t.source} #{t.name}"
+end
+
+rule '.pdf' => '.markdown' do |t|
+    sh "markdown2pdf -N -o #{t.name} #{t.source}"
+end
+
+rule '.html' => ['.markdown', 'Rakefile'] do |t|
+    sh "pandoc -w Slidy --self-contained --standalone #{t.source} > #{t.name}"
+end
+

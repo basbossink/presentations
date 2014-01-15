@@ -1,0 +1,53 @@
+digraph history {
+    /* rankdir=LR; */
+    ranksep=.75;
+    {
+        node[shape=plaintext, fontsize=16];
+        1948 -> 1957 -> 1958 -> 1970 -> 1974 -> 1988 -> 1990 -> 1994 -> 1995 -> 
+        1996 -> 1997 -> 2001 -> 2003 -> 2004 -> 2005
+    }
+    node [shape=none];
+    { rank = same; 1948; TPS; }
+    { rank = same; 1957; Inc;}
+    { rank = same; 1970; evo; }
+    { rank = same; 1974; adapt; }
+    { rank = same; 1990; Lean; } 
+    { rank = same; 1994; rup; dsdm; }
+    { rank = same; 1995; scrum; }
+    { rank = same; 1996; xp; }
+    { rank = same; 1997; fdd; }
+    { rank = same; 2001; am; }
+    { rank = same; 2003; leansd; }   
+    { rank = same; 2004; kanban; cc; }
+    { rank = same; 2005; comp; }
+    TPS[label="Toyota Production System"];
+    Lean[label="Lean Manufacturing"];
+    Inc[label="Incremental software development"];
+    adapt[label="Adaptive Software development"];
+    evo[label="Evolutionary Project Management"];
+    comp[label="Competitive Engineering"];
+    rup[label="Rational Unified Process"];
+    scrum[label="Scrum"];
+    cc[label="Crystal Clear"];
+    xp[label="Extreme Programming"];
+    fdd[label="Feature Driven Development"];
+    dsdm[label="Dynamic Systems Development Method"];
+    am[label="Agile Manifesto"];
+    kanban[label="Kanban"];
+    leansd[label="Lean Software Development"];
+    scrumban[label="Scrum-ban"];
+    TPS -> Lean -> leansd -> kanban;
+    TPS -> leansd;
+    adapt -> leansd;
+    scrum -> kanban;
+    adapt -> fdd;
+    scrum -> am;
+    dsdm -> am;
+    xp -> am;
+    cc -> am;
+    adapt -> am;
+    fdd -> am;
+    scrum -> scrumban;
+    kanban -> scrumban;
+    evo -> comp;
+}
