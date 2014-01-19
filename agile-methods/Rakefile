@@ -1,37 +1,31 @@
+require 'webrick'
 require 'rake/clean'
+require 'rexml/document'
 
-CLEAN.include(FileList['*.html','*.pdf','*.png'])
+HAML = FileList.new('*.haml')
+HTML = HAML.ext('html')
+SCSS = FileList.new('*.scss')
+CSS = SCSS.ext('css')
+LAYOUT = HTML + CSS
 
-# Windows has a name clash with builtin dos convert command
-cov = if ENV.has_key? 'CONVERT' then 
-          "\"#{ENV['CONVERT']}\"" 
-      else 
-          "convert" 
-      end
+CLEAN.include(LAYOUT)
 
-task :default => ['slides.html']
-
-task :serve do
-    sh "python -m SimpleHTTPServer 4000"
+rule '.html' => ['.haml'] do |t|
+    sh %{ haml -E utf-8 #{t.source} #{t.name} }
 end
 
-rule '.dot' => 'svg' do |t|
-    sh "dot -Tsvg -o#{t.name} #{t.source}"
+rule '.css' => ['.scss'] do |t|
+    sh %{ sass -t compressed #{t.source} #{t.name} }
 end
 
-rule '.png' => '.gnu' do |t|
-    sh "gnuplot #{t.source}"
+desc 'Generate html and css from sources'
+task :default => LAYOUT do
 end
 
-rule '.png' => '.svg' do |t|
-    sh "#{cov} #{t.source} #{t.name}"
-end
-
-rule '.pdf' => '.markdown' do |t|
-    sh "markdown2pdf -N -o #{t.name} #{t.source}"
-end
-
-rule '.html' => ['slides.markdown', 'Rakefile', 'history.svg'] do |t|
-    sh "pandoc -w Slidy --self-contained --standalone #{t.source} > #{t.name}"
+desc 'Start a webserver to serve this presentation'
+task :serve => :default do
+    server = WEBrick::HTTPServer.new :Port => 4000, :DocumentRoot => __dir__
+    trap 'INT' do server.shutdown end
+    server.start
 end
 
