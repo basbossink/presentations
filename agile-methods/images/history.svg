@@ -219,12 +219,8 @@
 <path fill="none" stroke="black" d="M147.125,-719.826C149.103,-688.081 153,-618.07 153,-559 153,-559 153,-559 153,-377 153,-323.699 156.173,-261.489 158.246,-226.523"/>
 <polygon fill="black" stroke="black" points="161.762,-226.368 158.875,-216.174 154.775,-225.944 161.762,-226.368"/>
 </g>
-<!-- rup -->
-<g id="node29" class="node"><title>rup</title>
-<text text-anchor="middle" x="1129" y="-644.3" font-family="Times New Roman,serif" font-size="14.00">Rational Unified Process</text>
-</g>
 <!-- dsdm -->
-<g id="node30" class="node"><title>dsdm</title>
+<g id="node29" class="node"><title>dsdm</title>
 <text text-anchor="middle" x="775" y="-644.3" font-family="Times New Roman,serif" font-size="14.00">Dynamic Systems Development Method</text>
 </g>
 <!-- dsdm&#45;&gt;am -->
@@ -233,7 +229,7 @@
 <polygon fill="black" stroke="black" points="640.188,-313.981 633.114,-306.094 633.726,-316.671 640.188,-313.981"/>
 </g>
 <!-- scrum -->
-<g id="node32" class="node"><title>scrum</title>
+<g id="node31" class="node"><title>scrum</title>
 <text text-anchor="middle" x="390" y="-554.3" font-family="Times New Roman,serif" font-size="14.00">Scrum</text>
 </g>
 <!-- scrum&#45;&gt;am -->
@@ -254,6 +250,10 @@
 <g id="edge57" class="edge"><title>scrum&#45;&gt;scrumban</title>
 <path fill="none" stroke="black" d="M390,-539.817C390,-508.058 390,-438.024 390,-379 390,-379 390,-379 390,-197 390,-140.887 363.99,-79.3602 347.11,-45.3388"/>
 <polygon fill="black" stroke="black" points="350.065,-43.4269 342.412,-36.0995 343.825,-46.5997 350.065,-43.4269"/>
+</g>
+<!-- rup -->
+<g id="node33" class="node"><title>rup</title>
+<text text-anchor="middle" x="1129" y="-464.3" font-family="Times New Roman,serif" font-size="14.00">Rational Unified Process</text>
 </g>
 <!-- xp -->
 <g id="node34" class="node"><title>xp</title>

@@ -1,0 +1,534 @@
+#+TITLE:     Agile Methods
+#+AUTHOR:    Bas Bossink
+#+EMAIL:     bas.bossink@gmail.com
+#+DATE:      2013-06-18 Tue
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: toc:nil
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Agile Methods
+** Agenda
+*** Introductie
+**** Ontkenning
+**** Over
+**** Waarom deze presentatie
+**** Doelen
+*** Wat is agile?
+*** Geschiedenis van agile
+*** Extreme Programming
+*** Scrum
+*** Lean
+*** Kanban
+*** Slot
+** Introductie
+- interactief
+- luchtig
+- levendig
+*** Disclaimer
+- ik ben geen Agile expert
+- ik vind het leuk zelf van alles te leren door er over te presenteren
+*** Over
+*** favicon
+[[http://commons.wikimedia.org/wiki/File%3ACrystal_Clear_app_quick_restart.png][restart pagina link]] [[http://upload.wikimedia.org/wikipedia/commons/7/7b/Crystal_Clear_app_quick_restart.png][file url]] attribution: By Everaldo
+Coelho and YellowIcon [<a
+href="http://www.gnu.org/licenses/lgpl.html">LGPL</a>], <a
+href="http://commons.wikimedia.org/wiki/File%3ACrystal_Clear_app_quick_restart.png">via
+Wikimedia Commons</a>
+**** Waarom deze presentatie
+**** Doel van deze presentatie
+*** impress.js
+- gemaakt mbv impress.js en andere vrije software
+- impress.js is een javascript library die divs in html veranderd
+  naar slides
+*** Creative Commons Attribution 3.0 License
+*** op github te vinden
+**** code
+**** gehost via github pages
+*** Waarom deze presentatie
+**** The Clean Coder
+- Een zeer interessant boek wat ik iedereen kan aan raden
+- Uncle Bob is van mening dat iedere professionele software
+  ontwikkelaar iets zou moeten weten over agile methodes
+**** Lean Software Development
+- Mary & Tom Poppendiek
+- Zeer interessant boek geeft achtergrond en manier van denken weer
+  die passen binnen agile, legt link tussen lean manufacturing en
+  agile software ontwikkeling
+*** Doel van deze presentatie
+- Een overzicht geven van agile en een aantal specifieke agile methodes
+- Agile methodes lijken op elkaar
+
+*** Inventarisatie
+**** Vraag
+- Wie werkt er op een project waarvan word gezegd dat er een agile methode wordt gebruikt?
+- Wie van jullie is het daarmee eens?
+- Welke methode wordt er gebruikt in het project?
+** Wat is Agile?
+*** Vraag
+- Wie kan mij zeggen wat Agile betekent?
+[[http://www.wildcatsmagazine.nl/][site luipaard]] 
+*** Definities
+- agile: marked by ready ability to move with quick easy grace (Merriam-Webster) 
+- agile: behendig (google translate)
+- wendbaar -> agile (google translate)
+- behendig: bedreven, bekwaam, bijdehand, handig, vaardig, vlug
+- Agile software development is a group of software development
+  methods based on iterative and incremental development, where
+  requirements and solutions evolve through collaboration between
+  self-organizing, cross-functional teams. (Wikipedia: Agile software development)
+
+*** Wat is het doel van Agile?
+- klant tevredenheid
+- succes voor de klant
+- meer opbrengsten
+- software maken die beter aansluit bij de wensen van de klant
+*** agile manifesto: 
+In February 2001, 17 software developers (see below) met at the
+Snowbird, Utah resort, to discuss lightweight development methods.
+They published the Manifesto for Agile Software Development[1] to
+define the approach now known as agile software development. Some of
+the manifesto's authors formed the Agile Alliance, a non-profit
+organization that promotes software development according to the
+manifesto's values and principles. The well-known background picture
+of the Agile Manifesto website was taken by Ward Cunningham, who
+wanted to capture the moment during the weekend meeting at
+Snowbird.[6]
+**** Auteurs
+***** Kent Beck
+- Grootvader van Extreme programming en TDD
+- mede auteur van JUnit
+- Auteur van aantal boeken over XP, TDD, JUnit
+- big Smalltalk user
+***** James Grenning
+- XP user, trainer
+- uitvinder planning poker
+- auteur: Test-Driven Development of Embedded C
+***** Robert C. Martin
+- Uncle Bob
+- software craftsmanship
+- internationale consultant sinds 1990
+- auteur van aantal boeken over OO,Agile,UML, Clean Code
+- oprichter Object Mentor
+***** Mike Beedle
+- een van de eerste Scrum gebruikers
+- Scrum trainer, consultant
+- auteur: Enterprise Scrum: Agile Management of the 21st century
+***** Jim Highsmith
+James A. (Jim) Highsmith III (born 1945) is an American software
+engineer and author of books in the field of software development
+methodology. He is the creator of Adaptive Software Development,
+described in his 1999 book "Adaptive Software Development", and winner
+of the 2000 Jolt Award, and the Stevens Award in 2005.
+
+***** Steve Mellor
+Stephen J. Mellor (born 1952) is a British computer scientist,
+developer of the Shlaer-Mellor method and Executable UML, and
+signatory to the Agile Manifesto.
+
+***** Arie van Bennekom 
+DSDM
+***** Andrew Hunt 
+Andy Hunt (sometimes credited as Andrew Hunt) is a writer of books on
+software development. Hunt co-authored The Pragmatic Programmer, six
+other books and many articles, and was one of the 17 original authors
+of the Agile Manifesto and founders of the Agile Alliance. He and
+partner Dave Thomas founded the Pragmatic Bookshelf series of books
+for software developers.
+***** Ken Schwaber
+Ken Schwaber (born 1945) is a software developer, product manager and
+industry consultant. Ken worked with Jeff Sutherland to formulate the
+initial versions of the Scrum development process and to present Scrum
+as a formal process at OOPSLA'95.[1]
+***** Alistair Cockburn 
+Alistair Cockburn /ˈælɨstər ˈkoʊbərn/ is one of the initiators of the
+agile movement in software development, helping write the Manifesto
+for Agile Software Development in 2001, the agile PM Declaration of
+Interdependence in 2005, and co-founding the International Consortium
+for Agile in 2009 (with Ahmed Sidky and Ash Rofail). He is a principal
+expositor of the use case for documenting business processes and
+behavioral requirements for software, and inventor of the Cockburn
+Scale for categorizing software projects.
+***** Ron Jeffries
+Ron Jeffries (born 1939) is one of the 3 founders of the Extreme
+Programming (XP) software development methodology circa 1996, along
+with Kent Beck and Ward Cunningham. He was from 1996, an XP coach on
+the Chrysler Comprehensive Compensation System project, which was
+where XP was invented.
+***** Jeff Sutherland
+Dr. Jeff Sutherland is one of the inventors of the Scrum software
+development process. Together with Ken Schwaber, he created Scrum as a
+formal process at OOPSLA'95. Jeff helped to write the Agile Manifesto
+in 2001. He is the writer of The Scrum Guide.
+***** Ward Cunningham
+Howard G. "Ward" Cunningham (born May 26, 1949) is an American
+computer programmer who developed the first wiki. A pioneer in both
+design patterns and Extreme Programming, he started programming the
+software WikiWikiWeb in 1994 and installed it on the website of his
+software consultancy, Cunningham & Cunningham (commonly known by its
+domain name, c2.com), on March 25, 1995, as an add-on to the Portland
+Pattern Repository.
+***** Jon Kern
+Jon Kern is a developer, software architect, and team leader/coach
+that keeps the people and the business in sharp focus. Aerospace
+engineer-turned software expert, co-author of Agile Manifesto for
+Software Development and Java Design.
+***** Dave Thomas
+Dave Thomas is a computer programmer and author/editor. He has written
+about Ruby. Together with Andy Hunt, he co-authored The Pragmatic
+Programmer and runs The Pragmatic Bookshelf publishing company.
+***** Martin Fowler
+Martin Fowler (born 1963) is a British software engineer, author and
+international speaker on software development, specializing in
+object-oriented analysis and design, UML, patterns, and agile software
+development methodologies, including extreme programming.
+***** Brian Marick
+Brian Marick, a graduate of the University of Illinois, was a software
+testing specialist in the 1990s, an Agile software development
+specialist in the 2000s, and concentrates on programming in Ruby and
+Clojure in the 2010s. Marick is an author of the Agile Manifesto that
+launched the Agile software development movement, an early proponent
+of the Context-Driven school of testing, and author of three books.
+
+**** Manifesto
+   Individuals and interactions over processes and tools
+   Working software over comprehensive documentation
+   Customer collaboration over contract negotiation
+   Responding to change over following a plan
+   
+   That is, while there is value in the items on the right, we value
+   the items on the left more.
+**** Principles
+Our highest priority is to satisfy the customer
+through early and continuous delivery
+of valuable software.
+
+Welcome changing requirements, even late in 
+development. Agile processes harness change for 
+the customer's competitive advantage.
+
+Deliver working software frequently, from a 
+couple of weeks to a couple of months, with a 
+preference to the shorter timescale.
+
+Business people and developers must work 
+together daily throughout the project.
+
+Build projects around motivated individuals. 
+Give them the environment and support they need, 
+and trust them to get the job done.
+
+The most efficient and effective method of 
+conveying information to and within a development 
+team is face-to-face conversation.
+
+Working software is the primary measure of progress.
+
+Agile processes promote sustainable development. 
+The sponsors, developers, and users should be able 
+to maintain a constant pace indefinitely.
+
+Continuous attention to technical excellence 
+and good design enhances agility.
+
+Simplicity--the art of maximizing the amount 
+of work not done--is essential.
+
+The best architectures, requirements, and designs 
+emerge from self-organizing teams.
+
+At regular intervals, the team reflects on how 
+to become more effective, then tunes and adjusts 
+its behavior accordingly.
+*** declaration of interdependence
+   een soortgelijk initiatief door succesvolle agile project leiders:
+Declaration of Interdependence 
+
+Agile and adaptive approaches for linking people, projects and value
+We are a community of project leaders that are highly successful at
+delivering results. To achieve these results:
+
+We increase return on investment by making continuous flow of value
+our focus.
+
+We deliver reliable results by engaging customers in frequent
+interactions and shared ownership.
+
+We expect uncertainty and manage for it through iterations,
+anticipation, and adaptation.
+
+We unleash creativity and innovation by recognizing that individuals
+are the ultimate source of value, and creating an environment where
+they can make a difference.
+
+We boost performance through group accountability for results and
+shared responsibility for team effectiveness.
+
+We improve effectiveness and reliability through situationally
+specific strategies, processes and practices.
+** History
+*** 1948 - 1975 Toyata Production System 
+The main objectives of the TPS are to design out overburden (muri)
+and inconsistency (mura), and to eliminate waste (muda).
+*** 1957: Iterative development
+Incremental software development methods have been traced back to
+1957.[2] In 1974, a paper by E. A. Edmonds introduced an adaptive
+software development process.
+*** 1970: Evo
+In the early 1970s, Tom Gilb started publishing the concepts of
+Evolutionary Project Management (EVO), which has evolved into
+Competitive Engineering.
+- Scales and meters
+
+*** 1974: Adaptive Software Development
+Adaptive Software Development (ASD) is a software development process
+that grew out of rapid application development work by Jim Highsmith
+and Sam Bayer. It embodies the principle that continuous adaptation of
+the process to the work at hand is the normal state of affairs.
+
+Adaptive Software Development replaces the traditional waterfall cycle
+with a repeating series of speculate, collaborate, and learn cycles.
+This dynamic cycle provides for continuous learning and adaptation to
+the emergent state of the project. The characteristics of an ASD life
+cycle are that it is mission focused, feature based, iterative,
+timeboxed, risk driven, and change tolerant.
+
+**** Highsmith 
+Mede auteur Decleration of interdependence en agile manifesto
+*** 1990: Lean Manufacturing
+Lean manufacturing, lean enterprise, or lean production, often simply,
+"lean", is a production practice that considers the expenditure of
+resources for any goal other than the creation of value for the end
+customer to be wasteful, and thus a target for elimination. Working
+from the perspective of the customer who consumes a product or
+service, "value" is defined as any action or process that a customer
+would be willing to pay for. Essentially, lean is centered on
+preserving value with less work. Lean manufacturing is a management
+philosophy derived mostly from the Toyota Production System (TPS)
+(hence the term Toyotism is also prevalent) and identified as "lean"
+only in the 1990s.[1][2] TPS is renowned for its focus on reduction of
+the original Toyota seven wastes to improve overall customer value,
+but there are varying perspectives on how this is best achieved. The
+steady growth of Toyota, from a small company to the world's largest
+automaker,[3] has focused attention on how it has achieved this
+success.
+
+*** 1994: Dynamic Systems Development Method
+Dynamic systems development method (DSDM) is an agile project delivery
+framework, primarily used as a software development method. First
+released in 1994, DSDM originally sought to provide some discipline to
+the rapid application development (RAD) method. In 2007 DSDM became a
+generic approach to project management and solution delivery. DSDM is
+an iterative and incremental approach that embraces principles of
+Agile development, including continuous user/customer involvement.
+
+DSDM fixes cost, quality and time at the outset and uses the MoSCoW
+prioritisation of scope into musts, shoulds, coulds and won't haves to
+adjust the project deliverable to meet the stated time constraint.
+
+*** 1995: Scrum
+Scrum is an iterative and incremental Agile software development
+framework for managing software projects and product or application
+development. Its focus is on "a flexible, holistic product development
+strategy where a development team works as a unit to reach a common
+goal" as opposed to a "traditional, sequential approach". Scrum
+enables the creation of self-organizing teams by encouraging
+co-location of all team members, and verbal communication among all
+team members and disciplines in the project.
+*** 1996: Extreme Programming
+- komt zometeen nog uitgebreid aan de orde
+*** 1996: Rational Unified process
+The Rational Unified Process (RUP) is an iterative software
+development process framework created by the Rational Software
+Corporation, a division of IBM since 2003.[1] RUP is not a single
+concrete prescriptive process, but rather an adaptable process
+framework, intended to be tailored by the development organizations
+and software project teams that will select the elements of the
+process that are appropriate for their needs. RUP is a specific
+implementation of the Unified Process. Combining the experience base
+of companies led to the articulation of six best practices for modern
+software engineering:
+- Develop iteratively, with risk as the primary iteration driver[2]
+- Manage requirements 
+- Employ a component-based architecture 
+- Model software visually 
+- Continuously verify quality
+- Control changes
+*** 1997: Feature Driven Development
+Feature-driven development (FDD) is an iterative and incremental
+software development process. It is one of a number of Agile methods
+for developing software and forms part of the Agile Alliance. FDD
+blends a number of industry-recognized best practices into a cohesive
+whole. These practices are all driven from a client-valued
+functionality (feature) perspective. Its main purpose is to deliver
+tangible, working software repeatedly in a timely manner.
+*** 2001: Agile Manifesto
+al uitgebreid aan bod geweest
+*** 2003: Lean Software Development
+komt nog aanbod
+*** 2004: Kanban
+komt nog aanbod
+*** 2004: Crystal
+Frequent Delivery
+Reflective Improvement
+Osmotic Communication
+Personal Safety
+Focus
+Easy Access to Expert Users
+A Technical Environment with Automated Tests, Configuration Management, and Frequent Integration
+- datum van ontstaan kon ik niet terug vinden
+- 2004 is de datum waarop het eerste boek over Crystal door Allistar
+  Cockburn verscheen
+*** 2005: Scrum-ban
+- zoals de naam doet vermoeden een samensmelting van Scrum en Kanban
+*** 2005: Competitive Engineering
+- weederom Tom Gilb, of liever de Gilb family
+** Extreme Programming
+[[http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/][parachutisten]]
+*** Crank all the knobs to 10
+[[http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm][Mixer alles op tien]]
+**** Vraag
+Iemand enig idee wat de link van deze foto tot Extreme Programming is?
+
+The first time I was asked to lead a team, I asked them to do a little
+bit of the things I thought were sensible, like testing and reviews.
+The second time there was a lot more on the line. I thought, "Damn the
+torpedoes, at least this will make a good article," [and] asked the
+team to crank up all the knobs to 10 on the things I thought were
+essential and leave out everything else.
+*** Values
+- Simplicity
+- Communication
+- Feedback
+- Respect
+- Courage
+*** Rules
+**** Planning
+- User stories
+- Release planning
+- small releases
+- iterations
+- iteration planning
+**** Managing
+- open work space
+- sustainable pace
+- stand up meeting
+- measure project velocity
+- move people around
+- retrospectives
+**** Design
+- simplicity
+- metaphor
+- CRC cards (Class, Responsibilities, Collaboration)
+- spike solutions
+- yagni (You Ain't Gonna Need It)
+- Refactor mercilessly
+**** Coding
+- customer always available
+- coding standard
+- Test Driven Development
+- pair programming
+- Continuous Integration
+- collective code ownership
+**** Test
+- all code has unit tests
+- the bar green before release
+- bug found -> add test to reproduce
+- automated acceptance tests
+** Scrum
+The authors described a new approach to commercial product development
+that would increase speed and flexibility, based on case studies from
+manufacturing firms in the automotive, photocopier and printer
+industries.[3] They called this the holistic or rugby approach, as the
+whole process is performed by one cross-functional team across
+multiple overlapping phases, where the team "tries to go the distance
+as a unit, passing the ball back and forth".[3]
+*** Roles
+**** Product owner
+The Product Owner represents the stakeholders and is the voice of the
+customer. He is accountable for ensuring that the team delivers value
+to the business. The Product Owner writes (or has the team write)
+customer-centric items (typically user stories), ranks and prioritizes
+them, and adds them to the product backlog. Scrum teams should have
+one Product Owner, and while they may also be a member of the
+development team, this role should not be combined with that of the
+Scrum Master. In an enterprise environment, though, the Product Owner
+is often combined with the role of Project Manager as they have the
+best visibility regarding the scope of work (products).
+**** Scrum master
+Scrum is facilitated by a Scrum Master, who is accountable for
+removing impediments to the ability of the team to deliver the product
+goals and deliverables. The Scrum Master is not a traditional team
+lead or project manager, but acts as a buffer between the team and any
+distracting influences. The Scrum Master ensures that the Scrum
+process is used as intended. The Scrum Master is the enforcer of the
+rules of Scrum, often chairs key meetings, and challenges the team to
+improve. The role has also been referred to as a servant-leader to
+reinforce these dual perspectives.
+**** Development team
+The Development Team is responsible for delivering potentially
+shippable increments (PSIs) of product at the end of each Sprint (the
+Sprint Goal). A Team is made up of 3–9 individuals with
+cross-functional skills who do the actual work (analyse, design,
+develop, test, technical communication, document, etc.). The
+Development Team in Scrum is self-organizing, even though there may be
+some level of interface with project management offices (PMOs).
+*** Process
+- Sprints; timebox
+- sprint planning
+- sprint retrospective
+- definition of done Scrum emphasizes working product at the end of
+  the Sprint that is really "done"; in the case of software, this
+  means a system that is integrated, fully tested, end-user
+  documented, and potentially shippable.[10]
+- daily standup
+  - come prepared
+  - starts on time
+  - same spot
+  - timeboxed 15 min
+  - all are welcome
+  - the 3 questions:
+    - What have you done since yesterday?
+    - What are you planning to do today?
+    - Any impediments/stumbling blocks?
+** Lean
+[[http://upload.wikimedia.org/wikipedia/en/5/5e/The_8_Wastes_-_DOWNTIME.jpg][8 wastes]]
+
+** kanban
+[[http://www.fightersgeneration.com/characters4/whip-k3.jpg][Whip]]
+[[http://www.justdesktopwallpapers.com/desktop_wallpaper/1109/1024x768/jennifer_ellison_whip.html][Whip hot chick]]
+Kanban (かんばん(看板)?) (literally signboard or billboard)
+*** Four principles
+- Start with what you do now
+- Agree to pursue incremental, evolutionary change
+- Respect the current process, roles, responsibilities & titles
+- Leadership at all levels
+*** Six core practices
+- Visualise
+- Limit WIP (work-in-progress)
+- Manage flow
+- Make policies explicit
+- Implement feedback loops
+- Improve collaboratively, evolve experimentally (using models and the
+  scientific method)
+
+** Slot
+*** Wat hebben we zojuist geleerd
+**** Doel van agile
+- aansluiten bij de wens van de klant
+- efficient werken/wegnemen van verspilling
+- de mens staat centraal
+**** Belangrijke ingredienten
+- doorlopend verbeteren/ continuous improvement
+- reflectie/meten
+- persoonlijke directe communicatie
+
+*** Vraag
+- Hoe Agile is je huidige project, wat zou beter Kennan?

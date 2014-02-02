@@ -12,9 +12,9 @@ digraph history {
     { rank = same; 1970; evo; }
     { rank = same; 1974; adapt; }
     { rank = same; 1990; Lean; } 
-    { rank = same; 1994; rup; dsdm; }
+    { rank = same; 1994; dsdm; }
     { rank = same; 1995; scrum; }
-    { rank = same; 1996; xp; }
+    { rank = same; 1996; rup; xp; }
     { rank = same; 1997; fdd; }
     { rank = same; 2001; am; }
     { rank = same; 2003; leansd; }   

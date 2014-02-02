@@ -59,23 +59,24 @@ code {
 .step.active {
     opacity: 1;
 }
-#v8_benchmarks {
-    width: 700px;
-    height: 500px;
-}
 .center {
     @include center();
 }
-figcaption {
+cite, figcaption {
     @include center();
     font-size: 25%;
 }
 .small {
     font-size: 35%;
 }
+.largerbold {
+    font-weight: bold;
+    font-size: 125%;
+}
 .large {
     font-size: 125%;
 }
+
 @mixin transform-style($value) {
     -webkit-transform-style: $value; 
     -moz-transform-style:    $value;
@@ -97,10 +98,29 @@ figcaption {
     -o-transition:      $value;
     transition:         $value;
 }
+@keyframes rotate {
+  from { 
+    transform: rotateY(0deg) rotateZ(0deg); 
+  }
+  to { 
+    transform: rotateY(360deg) rotateZ(360deg); 
+  }
+}
+@-webkit-keyframes rotate {
+  from { 
+    -webkit-transform: rotateY(0deg) rotateZ(0deg); 
+  }
+  to { 
+    -webkit-transform: rotateY(360deg) rotateZ(360deg); 
+  }
+}
 #question {
+    padding: 0px;
+    margin-top: -50px;
+    @include center();
     @include transform-style(preserve-3d);
-    display: inline-block;
-    @include transform(rotateZ(180deg));
-    @include transform(rotateY(180deg));
-    @include transition(3.0s);
+    color: $blue;
+    font-size: 2000%;
+    animation:rotate 5s infinite;
+    -webkit-animation:rotate 5s infinite;
 }

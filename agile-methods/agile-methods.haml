@@ -5,15 +5,17 @@
     %meta{ :name => 'viewport', :content => 'width=1024' }
     %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
     %meta{ :name => 'author', :content => 'Bas Bossink' }
-    %title Modern Javascript | by Bas Bossink
+    %title Agile Methods | by Bas Bossink
     %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
-    %link{ :rel => 'stylesheet', :href => 'styles/shCore.css', :type => 'text/css' }
-    %link{ :rel => 'stylesheet', :href => 'styles/shThemeDefault.css', :type => 'text/css' }
     %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
-    %script{ :type =>'text/javascript', :src => 'js/shCore.js' }
-    %script{ :type =>'text/javascript', :src => 'js/shBrushJScript.js' }
-    %script{ :type =>'text/javascript', :src => '//www.google.com/jsapi' }
 
+    /
+      favicon.ico: http://commons.wikimedia.org/wiki/File:Crystal_Clear_app_quick_restart.png
+      download it at: http://upload.wikimedia.org/wikipedia/commons/7/7b/Crystal_Clear_app_quick_restart.png
+      attribution: By Everaldo Coelho and YellowIcon 
+      <a href="http://www.gnu.org/licenses/lgpl.html">LGPL</a>, 
+      <a href="http://commons.wikimedia.org/wiki/File%3ACrystal_Clear_app_quick_restart.png">
+      via Wikimedia Commons</a>
     %body{ :class => 'impress-not-supported'}
     %div{ :id => 'impress'}
       %div{ :class => 'step slide title', :data => { :x => -1500, :y => -1500, :scale => 7 }}
@@ -22,16 +24,23 @@
       %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
         %h1 Agenda
         %ul
-          %li Disclaimer
-          %li About
+          %li 
+            Introduction
+            %ul  
+              %li Disclaimer
+              %li About
+              %li Why this presentation?
+              %li Goals
+          %li What is agile?
           %li History
           %li Extreme Programming
-          %li The Good Parts
+          %li Scrum
+          %li Lean
+          %li Kanban
       %div{ :class => 'step slide', :data => { :x => -750, :y => -750, 'rotate-x' => 90, :scale => 1}}
         %h1 Disclaimer
         %ul
-          %li Not a JavaScript guru
-          %li Needed after last presentation
+          %li Not a quality/agile methods expert
       %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1}}
         %h1 About
         %ul 
@@ -41,350 +50,399 @@
             %a{ :rel => 'licensce', :href => 'http://creativecommons.org/licenses/by/3.0/nl/' } 
               Creative Commons Attribution 3.0 Netherlands License
           %li 
-            %a{ :href => 'https://github.com/basbossink/presentations/modern-javascript' } source
+            %a{ :href => 'https://github.com/basbossink/presentations/agile-methods' } source
           %li 
-            %a{ :href => 'http://basbossink.github.io/presentations/modern-javascript/modern-javascript.html'} view
-      %div{ :class => 'step slide', :data => { :x => 700, :y => 700 }}
-        %h1 Why javascript
-        %ul 
-          %li Popularity
-          %li The language of the web
-          %li It's everywhere
-          %li Dynamic &amp; functional
-          %li Fast scripting language
+            %a{ :href => 'http://basbossink.github.io/presentations/agile-methods/agile-methods.html'} view
+      %div{ :class => 'step slide', :data => { :x => 700, :y => 700 } }
+        %h1 Why this presentation
+        %li 
+          %a{ :href => 'http://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/ref=sr_1_1?s=books&ie=UTF8&qid=1390502774&sr=1-1&keywords=the+clean+coder' }
+            The Clean Coder
+        %li 
+          %a{ :href => 'http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_1?s=books&ie=UTF8&qid=1390502864&sr=1-1&keywords=lean+software+development' }
+            Lean Software Development: An Agile Toolkit
+        %li
+          %a{ :href => 'http://strengths.gallup.com/110440/About-StrengthsFinder-20.aspx' }
+            StrengthsFinder 2.0
       %div{ :class => 'step slide', :data => { :x => 1400, :y => 1400, :scale => 1 }}
-        %h1 Popularity
-        %iframe{ :src => 'http://langpop.corger.nl/', :width => 700, :height => 500 }
-        %span{ :class => 'small center'} 
-          courtesy of 
-          %a{ :href => 'http://langpop.corger.nl/' }
-            http://langpop.corger.nl/
+        %h1 Goals
+        %ul
+          %li Overview of Agile
+          %li Understanding Agile values
+          %li Help add more value quicker at customer
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, 'rotate-y' => 90, :scale => 1 }}
+        %h1 Inventory
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, 'rotate-x' => -90, :scale => 1 }}
+        %h1 What is agile?
       %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
-        %h1 Ubiquitous
-        %ul
-          %li all internet browsers, desktop, mobile
-          %li WinRT
-          %li Windows Script Host
-          %li PDF
-          %li Node.js
-          %li Gnome 3 extensions
-          %li Qt: QML
-          %li Beagleboard &amp; Arduino, embedded programming using node.js
+        %h1 What is agile?
+        %figure
+          %a{ :href => 'http://www.wildcatsmagazine.nl/' }
+            %img{ :src => 'images/luipaard.jpg', :height => 400 }
+        %figcaption
+          %a{ :href => 'http://www.wildcatsmagazine.nl/' }
+            Wild Cats Magazine
       %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, :scale => 1 }}
-        %h1 Performance
-        %div{ :id => 'v8_benchmarks' }
+        %h1 What is agile?
+        %ul
+          %li marked by ready ability to move with quick easy grace (Merriam-Webster) 
+          %li behendig (google translate)
+          %li bedreven, bekwaam, bijdehand, handig, vaardig, vlug
+          %li wendbaar -> agile (google translate)
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is agile?
+        %blockquote
+          %dl
+            %dt
+              Agile software development
+            %dd
+              a group of software development
+              methods based on iterative and incremental development, where
+              requirements and solutions evolve through collaboration between
+              self-organizing, cross-functional teams.
+          %footer
+            %cite 
+              %a{ :href => 'http://en.wikipedia.org/wiki/Agile_software_development' }
+                Wikipedia: Agile Software Development
+      %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, 'rotate-y' => 90, :scale => 1 }}
+        %h1 Why Agile?
       %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, :scale => 1 }}
-        %h1 Performance
-        %figure
-          %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32', :src => 'images/performance-javascript-vs-ruby-2.0.png'  }
-          %figcaption
-            %a{ :href => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=yarv&data=u32' }
-              source: Computer Language Benchmarks Game
+        %h1 
+          %a{ :href => 'http://www.agilemanifesto.org/' }
+            Agile Manifesto
+        %blockquote
+          %p
+            %span{ :class => 'largerbold' }
+              Individuals and interactions 
+            %br
+            over processes and tools
+            %br
+            %span{ :class => 'largerbold' }
+              Working software 
+            %br
+            over comprehensive documentation
+            %br
+            %span{ :class => 'largerbold' }
+              Customer collaboration 
+            %br
+            over contract negotiation
+            %br
+            %span{ :class => 'largerbold' }
+              Responding to change 
+            %br
+            over following a plan
+          %footer
+            %cite 
+              Source: 
+              %a{ :href => 'http://www.agilemanifesto.org/' }
+                http://www.agilemanifesto.org/
       %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
-        %h1 Performance
-        %figure
-          %img{ :alt => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32', :src => 'images/performance-javascript-vs-c.png'}
-          %figcaption
-            %a{ :href => 'http://benchmarksgame.alioth.debian.org/u32/benchmark.php?test=all&lang=v8&lang2=gcc&data=u32' }
-              source: Computer Language Benchmarks Game
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Declaration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              increase return on investment
+            %br
+            by making continuous flow of value our focus.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 5200, :y => 3500, :z => -4500, :scale => 1 }}
-        %h1 History
-        %ul
-          %li 
-            Brendan Eich, CTO Mozilla Corporation
-            %figure
-              %a{ :title =>'By AcidJazzed at en.wikipedia [see page for license], from Wikimedia Commons',
-                    :href => 'http://commons.wikimedia.org/wiki/File%3ABEich.jpg'}
-                %img{ :src => 'images/brendan-eich.jpg', :alt => 'Brendan Eich', :width => 156 }
-              %figcaption
-                %a{ :href => 'http://en.wikipedia.org/wiki/File:BEich.jpg'}
-                  source: By AcidJazzed at en.wikipedia, from Wikimedia Commons 
-          %li 1995: Livescript Netscape Navigator
-          %li name change to javascript
-          %li 
-            %q make it look like java
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Decleration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              deliver reliable results
+            %br
+            by engaging customers in frequent interactions and shared ownership.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 5900, :y => 2700, :z => -4000, :scale => 1 }}
-        %h1 History
-        %ul
-          %li 
-            Main influences:
-            %ul 
-              %li 
-                Scheme
-                %ul
-                  %li minimalist LISP
-                  %li functional
-                  %li dynamically typed
-              %li 
-                Self
-                %ul
-                  %li Object-Oriented
-                  %li Prototypes
-                  %li dialect of Smalltalk
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Decleration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              expect uncertainty
+            %br
+            and manage for it through iterations, anticipation, and adaptation.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 6600, :y => 2000, :z => -3500, :scale => 1 }}
-        %h1 ECMAScript
-        %figure
-          %img{ :src => 'images/ecmascript-history.png', :alt => 'courtesy of Luke Hoban', :width => 700 }
-          %figcaption
-            %a{ :href => 'http://view.officeapps.live.com/op/view.aspx?src=http%3a%2f%2fvideo.ch9.ms%2fsessions%2fbuild%2f2012%2f3-014.pptx'}
-              source: Modern Javascript, Luke Hoban
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Decleration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              unleash creativity and innovation
+            %br
+            by recognizing that individuals are the ultimate source of value, 
+            and creating an environment where they can make a difference.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 7300, :y => 1300, :z => -3000, :scale => 1 }}
-        %h3 New in ECMAScript 5: Strict mode
-        %code
-          %pre{ :class => 'brush: js' }
-            = preserve do
-              :escaped
-                (function() {
-                  'use strict';
-                  ...
-                }());
-        %ul 
-          %li Catches some common coding bloopers, throwing exceptions
-          %li Prevents, or throws errors, when relatively “unsafe” actions are taken
-          %li Disables features that are confusing or poorly thought out.
-        %span{ :class => 'small'} 
-          source: John Resig, 
-          %a{ :href => 'http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/'}
-            ECMAScript 5 Strict Mode, JSON, and More
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Decleration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              boost performance
+            %br
+            through group accountability for results and shared responsibility 
+            for team effectiveness.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 8000, :y => 600, :z => -2500, :scale => 1 }}
-        %h3 New in ECMAScript 5: Properties
-        %code
-          %pre{ :class => 'brush: js'}
-            = preserve do
-              :escaped
-                var fred = {};
-                Object.defineProperty(fred, "name", {
-                        get: function() {
-                          console.log("Retrieving name: " + name);
-                          return name;
-                        },
-                        set: function(value) {
-                          console.log("Setting name to: " + value);
-                          name = value;
-                        }
-                    });
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+          Decleration of interdependence
+        %blockquote
+          %p
+            We 
+            %span{ :class => 'largerbold' }
+              improve effectiveness and reliability
+            %br
+            through situationally specific strategies, processes and practices.
+          %footer
+            %cite 
+              Source:
+              %a{ :href => 'http://pmdoi.org/' }
+                http://pmdoi.org/
       %div{ :class => 'step slide', :data => { :x => 8700, :y => -100, :z => -2000, :scale => 1 }}
-        %h1 New in ECMAScript 5: JSON object
-        %ul 
-          %li JSON.parse
-          %li JSON.stringify
+        %h1 History
+        %figure
+          %a{ :href => 'images/history.svg', :target => '_blank' } 
+            %img{ :src => 'images/history.svg',  :height => '300' }
+        %figcaption 
+          A small overview of the history of a few agile methods 
       %div{ :class => 'step slide', :data => { :x => 9400, :y => -800, :z => -1500, :scale => 1 }}
-        %h1 New in ECMAScript 5: Object 
-        %ul 
-          %li Object.create
-          %li Object.seal
-          %li Object.freeze
-          %li Object.keys
+        %h1 Extreme Programming
+        %figure
+          %a{ :href => 'http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/' }
+            %img{ :src => 'images/superb-extreme-sport-wallpaper.jpg', :height => '300' }
+        %figcaption
+          %a{ :href => 'http://www.iwallscreen.com/' }
+            See http://www.iwallscreen.com/ for more wallpapers
       %div{ :class => 'step slide', :data => { :x => 10100, :y => -1600, :z => -1000, :scale => 1 }}
-        %h1 New in ECMAScript 5: Function bind
-        %code
-          %pre{ :class => 'brush: js'}
-            = preserve do
-              :escaped
-                var Button = function(content) { this.content = content; };
-                Button.prototype.click = function() { 
-                  console.log(this.content + ' clicked'); 
-                }
-                var fred = new Button('OK');
-                var boundClick = fred.click.bind(fred);
-                boundClick();
+        %h1 Extreme Programming
+        %figure
+          %a{ :href => 'http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm' }
+            %img{ :src => 'images/MixerAllOnTen.jpg', :height => '300' }
+        %figcaption
+          %a{ :href => 'http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm' }
+            See http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm for more audio gear
       %div{ :class => 'step slide', :data => { :x => 10800, :y => -2300, :z => -500, :scale => 1 }}
-        %h1 New in ECMAScript 5: Array
-        %ul 
-          %li every, some
-          %li forEach
-          %li map
-          %li filter
-          %li reduce
-          %li reduceRight
+        %h1 Extreme Programming
+        %h2 Values
+        %ul
+          %li Simplicity
+          %li Communication
+          %li Feedback
+          %li Respect
+          %li Courage
       %div{ :class => 'step slide', :data => { :x => -4200, :y => -4200, :scale => 1 }}
-        %h1 JavaScript: The Good Parts
-        %ul 
-          %li 
-            Douglas Crockford
-            %ul 
-              %li JavaScript architect at Yahoo!
-              %li creator of JSON
-              %li in ECMAScript committee
-          %li 
-            %a{ :href => 'http://shop.oreilly.com/product/9780596517748.do'  }
-              JavaScript: The Good Parts
+        %h1 Extreme Programming
+        %figure
+          %a{ :href => 'http://xprogramming.com/images/circles.jpg'}
+            %img{ :src => 'images/circles.jpg', :height => 300 }
+        %figcaption
+          Source: 
+          %a{ :href => 'http://xprogramming.com' }
+            http://xprogramming.com
       %div{ :class => 'step slide', :data => { :x => -4900, :y => -4900, :scale => 1 }}
-        %h1 Object literals
-        %code
-          %pre{ :class => 'brush: js'}
-            = preserve do
-              :escaped
-                var fred = {
-                  firstName: "Fred",
-                  lastName: "Flinstone",
-                  hometown: "Bedrock",
-                  wife: {
-                    firstName: "Wilma",
-                    lastName: "Flinstone"
-                  }
-                };
+        %h1 Scrum
+        %figure
+          %a{ :href => 'http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG' }
+            %img{ :src => 'images/ST_vs_Gloucester_-_Match_-_23.JPG', :height => 300 }
+        %figcaption
+          Source:
+          %a{ :href => 'http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG' }
+            http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG
+          &copy; 
+          %a{ :href => 'http://commons.wikimedia.org/wiki/User:PierreSelim' } 
+            Pierre Selim
       %div{ :class => 'step slide', :data => { :x => -5600, :y => -5600, :scale => 1 }}
-        %h1 Functions
+        %h1 Scrum
         %ul 
-          %li Functions are objects
-          %li 
-            %code
-              arguments 
-            array
-          %li 
-            Function scope 
-            %span{ :class => 'large'}
-              NOT
-            block scope
+          %li developped in nineties
+          %li Ken Schwaber, Jeff Sutherland
+          %li a project management framework
+          %li explicitely defined roles
+          %li certifications
       %div{ :class => 'step slide', :data => { :x => -6300, :y => -6300, :scale => 1 }}
-        %h1 Closure 
-        %code
-          %pre{ :class => 'brush: js'}
-            = preserve do
-              :escaped
-                var myObject = (function () {
-                  var value = 0;
-
-                  return {
-                    increment: function (inc) {
-                        value += typeof inc === 'number' ? inc : 1;
-                    },
-                    getValue: function (  ) {
-                        return value;
-                    }
-                  };
-                }());
-        %span{ :class => 'small center'} 
-          source: JavaScript: The Good Parts, Douglas Crockford
+        %h1 Scrum
+        %h2 Roles
+        %ul 
+          %li Product owner
+          %li Scrum master
+          %li Development team
       %div{ :class => 'step slide', :data => { :x => -7000, :y => -7000, :scale => 1 }}
-        %h1 Inheritance
-        %ul 
-          %li Prototypal
-          %li 
-            Obscured by use of 
-            %code
-              new
-            operator
-          %li 
-            prefer
-            %code 
-              Object.create
+        %h1 Scrum
+        %figure
+          %a{ :href => 'http://commons.wikimedia.org/wiki/File:Scrum_process.svg'}
+            %img{ :src => 'images/Scrum_process.svg', :height => 300 }
+        %figcaption
+          Source:
+          %a{ :href => 'http://commons.wikimedia.org/wiki/File:Scrum_process.svg'}
+            http://commons.wikimedia.org/wiki/File:Scrum_process.svg
+          &copy; Lakeworks
       %div{ :class => 'step slide', :data => { :x => -7700, :y => -7700, :scale => 1 }}
-        %h1 Prototypal Inheritance
-        %code
-          %pre{ :class => 'brush: js'}
-            = preserve do
-              :escaped
-                var fred = {
-                  name : 'Fred Flinstone',
-                  saying : 'Yabadabadoo!',
-                  says : function() { return this.saying || ''; }
-                };
-                var barney = Object.create(fred);
-                barney.name = 'Barney Rubble';
-                barney.saying = 'Hi Fred';
+        %h1 Scrum
+        %figure
+          %a{ :href => 'http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg'}
+            %img{ :src => 'images/Scrum_task_board.jpg', :height => 300 }
+        %figcaption
+          Source:
+          %a{ :href => 'http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg'}
+            http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg
+          &copy; 
+          %a{ :href => 'http://www.flickr.com/people/plutor/'}
+            Logan Ingalls
       %div{ :class => 'step slide', :data => { :x => -8400, :y => -8400, :scale => 1 }}
-        %h1 Arrays
-        %ul 
-          %li Arrays are objects
-          %li Array literals
-          %li Different types
-          %li 
-            Use 
-            %code 
-              for 
-            iso 
-            %code 
-              for in
+        %h1 Lean Software Development
+        %figure
+          %a{ :href => 'http://1.bp.blogspot.com/-jHzgyyblZic/UZ26-dpddgI/AAAAAAAAAc4/pBb3I4N2Suw/s1600/strong.jpg'}
+            %img{ :src => 'images/strong.jpg' }
+        %figcaption
+          Source:
+          %a{ :href => 'http://cszto.blogspot.nl/2013/05/strong-is-new-skinny-enough-is-enough.html'}
+            http://cszto.blogspot.nl/2013/05/strong-is-new-skinny-enough-is-enough.html
       %div{ :class => 'step slide', :data => { :x => -9100, :y => -9100, :scale => 1 }}
-        %h1 Awful Parts
-        %ul 
-          %li Global variables
-          %li 
-            Semicolon Insertion
-            %code
-              %pre{ :class => 'brush: js'}
-                = preserve do
-                  :escaped
-                    return
-                    {
-                      status: true
-                    };
-            ↓
-            %code
-              %pre{ :class => 'brush: js'}
-                = preserve do
-                  :escaped
-                    return;
-                    {
-                      status: true
-                    };
+        %h1 Lean Software Development
+        %blockquote
+          %dl
+            %dt
+              Lean
+            %dd
+              \: not having much fat on the body : physically thin, strong, and healthy
+            %dd
+              \: containing little or no fat
+            %dd 
+              \: not having or producing much money, food, etc.
+          %cite
+            Source:
+            %a{ :href => 'http://www.merriam-webster.com/dictionary/lean'}
+              http://www.merriam-webster.com/dictionary/lean
       %div{ :class => 'step slide', :data => { :x => -9800, :y => -9800, :scale => 1 }}
-        %h1 Awful Parts
-        %h3 Falsy values:
-        %table
-          %thead
-            %tr 
-              %th Value
-              %th Type
-          %tbody
-            %tr
-              %td 
-                %code 0
-              %td Number
-            %tr 
-              %td 
-                %code NaN
-              %td Number
-            %tr
-              %td 
-                %code ''
-              %td String
-            %tr 
-              %td
-                %code false
-              %td Boolean
-            %tr
-              %td 
-                %code null
-              %td Object
-            %tr
-              %td
-                %code
-                  undefined
-              %td Undefined
-      %div{ :class => 'step slide', :data => { :x => -10500, :y => -10500, :scale => 1 }}
-        %h1 Bad Parts
+        %h1 Lean Software Development
         %ul
           %li 
-            %code ==
-            %code
-              %pre{ :class => 'brush: js'}
-                = preserve do
-                  :escaped
-                    '' == '0'          // false
-                    0 == ''            // true
-                    0 == '0'           // true
-
-                    false == 'false'   // false
-                    false == '0'       // true
-
-                    false == undefined // false
-                    false == null      // false
-                    null == undefined  // true
-
-                    ' \t\r\n ' == 0    // true
+            %a{ :href => 'http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_1?ie=UTF8&qid=1390688274&sr=8-1&keywords=0321150783' } book
+            by Mary and Tom Poppendieck
+          %li 
+            influenced by:
+            %ul 
+              %li Toyata Production System
+              %li Lean manufacturing
+      %div{ :class => 'step slide', :data => { :x => -10500, :y => -10500, :scale => 1 }}
+        %h1 Lean Software Development
+        %h2 Seven Principles
+        %ol
+          %li Eliminate waste
+          %li Amplify learning
+          %li Decide as late as possible
+          %li Deliver as fast as possible
+          %li Empower the team
+          %li Build integrity in
+          %li See the whole
       %div{ :class => 'step slide', :data => { :x => -11200, :y => -11200, :scale => 1 }}
-        %h1 Bad Parts
+        %h1 Lean Software Development
+        %h2 Seven Practices
+        %ol
+          %li Seeing waste
+          %li Value stream mapping
+          %li Set-based development
+          %li Pull systems
+          %li Queing theory
+          %li Motivation
+          %li Measurements
+      %div{ :class => 'step slide', :data => { :x => -11900, :y => -11900, :scale => 1 }}
+        %h1 Kanban
+        %figure
+          %a{ :href => 'http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg'}
+            %img{ :src => 'images/jennifer_ellison_whip_1280x1024.jpg', :height => 400 }
+        %figcaption
+          Source:
+          %a{ :href => 'http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg'}
+            http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg
+          &copy;
+          %a{ :href => 'http://www.justdesktopwallpapers.com'}
+            http://www.justdesktopwallpapers.com
+      %div{ :class => 'step slide', :data => { :x => -12600, :y => -12600, :scale => 1 }}
+        %h1 Kanban
         %ul
-          %li with
-          %li eval
-          %li new
-          %li void
-      %div{ :class => 'step slide', :data => { :x => -11900, :y => -11900, 'rotate-z' => 135, 'rotate-y' => 135, 'rotate-x' => -135, :scale => 1 }}
-        %h1 Questions?
+          %li literally signboard or billboard
+          %li 
+            influenced by:
+            %ul 
+              %li Toyata Production System
+              %li Lean Manufacturing
+              %li Lean Software Development
+      %div{ :class => 'step slide', :data => { :x => -13300, :y => -13300, :scale => 1 }}
+        %h1 Kanban
+        %h2 Four principles
+        %ol
+          %li Start with what you do now (don't change anything)
+          %li Agree to pursue incremental, evolutionary change
+          %li Respect the current process, roles, responsibilities & titles
+          %li Leadership at all levels
+      %div{ :class => 'step slide', :data => { :x => -14000, :y => -14000, :scale => 1 }}
+        %h1 Kanban
+        %h2 Six Practices
+        %ol
+          %li Visualise
+          %li Limit WIP (work-in-progress)
+          %li Manage flow
+          %li Make policies explicit
+          %li Implement feedback loops
+          %li Improve collaboratively, evolve experimentally
+      %div{ :class => 'step slide', :data => { :x => -14700, :y => -14700, :scale => 1 }}
+        %h1 Closing
+        %ul
+          %li 
+            Goal of Agile:
+            %ul
+              %li deliver value more quickly
+              %li work efficiently (reduce waste)
+              %li people centric
+          %li
+            Ingredients:
+            %ul
+              %li Kaizen (Continuous Improvement)
+              %li Feedback, reflection
+              %li Direct face-to-face communication
+      %div{ :class => 'step slide', :data => { :x => -15400, :y => -15400, :scale => 1 }}
+        %h1 Inventory
+      %div{ :class => 'step slide', :data => { :x => -16100, :y => -16100, 'rotate-z' => 135, 'rotate-y' => 135, 'rotate-x' => -135, :scale => 1 }}
+        %span{ :class => 'center', :id => 'question'} 
+          ?
     %script{ :type => 'text/javascript', :src => 'js/impress.js' }
     %script
       impress().init();
-      SyntaxHighlighter.all();
+
