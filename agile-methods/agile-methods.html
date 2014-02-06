@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=1024' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='Bas Bossink' name='author'>
+    <title>Agile Methods | by Bas Bossink</title>
+    <link href='styles/default.css' rel='stylesheet' type='text/css'>
+    <link href='apple-touch-icon.png' rel='apple-touch-icon'>
+    <!--
+      favicon.ico: http://commons.wikimedia.org/wiki/File:Crystal_Clear_app_quick_restart.png
+      download it at: http://upload.wikimedia.org/wikipedia/commons/7/7b/Crystal_Clear_app_quick_restart.png
+      attribution: By Everaldo Coelho and YellowIcon
+      <a href="http://www.gnu.org/licenses/lgpl.html">LGPL</a>,
+      <a href="http://commons.wikimedia.org/wiki/File%3ACrystal_Clear_app_quick_restart.png">
+      via Wikimedia Commons</a>
+    -->
+    <body class='impress-not-supported'></body>
+    <div id='impress'>
+      <div class='step slide title' data-scale='7' data-x='-1500' data-y='-1500'>
+        <h1>Agile methods</h1>
+        <h2>Bas Bossink <bas.bossink@gmail.com></h2>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-750' data-y='-750'>
+        <h1>Agenda</h1>
+        <ul>
+          <li>
+            Introduction
+            <ul>
+              <li>Disclaimer</li>
+              <li>About</li>
+              <li>Why this presentation?</li>
+              <li>Goals</li>
+            </ul>
+          </li>
+          <li>What is agile?</li>
+          <li>History</li>
+          <li>Extreme Programming</li>
+          <li>Scrum</li>
+          <li>Lean</li>
+          <li>Kanban</li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-x='90' data-scale='1' data-x='-750' data-y='-750'>
+        <h1>Disclaimer</h1>
+        <ul>
+          <li>Not a quality/agile methods expert</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='0' data-y='0'>
+        <h1>About</h1>
+        <ul>
+          <li>
+            <a href='https://github.com/bartaz/impress.js/'>impress.js</a>
+          </li>
+          <li>
+            <a href='http://creativecommons.org/licenses/by/3.0/nl/' rel='licensce'>
+              Creative Commons Attribution 3.0 Netherlands License
+            </a>
+          </li>
+          <li>
+            <a href='https://github.com/basbossink/presentations/agile-methods'>source</a>
+          </li>
+          <li>
+            <a href='http://basbossink.github.io/presentations/agile-methods/agile-methods.html'>view</a>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-x='700' data-y='700'>
+        <h1>Why this presentation</h1>
+        <li>
+          <a href='http://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1390502774&amp;sr=1-1&amp;keywords=the+clean+coder'>
+            The Clean Coder
+          </a>
+        </li>
+        <li>
+          <a href='http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1390502864&amp;sr=1-1&amp;keywords=lean+software+development'>
+            Lean Software Development: An Agile Toolkit
+          </a>
+        </li>
+        <li>
+          <a href='http://strengths.gallup.com/110440/About-StrengthsFinder-20.aspx'>
+            StrengthsFinder 2.0
+          </a>
+        </li>
+      </div>
+      <div class='step slide' data-scale='1' data-x='1400' data-y='1400'>
+        <h1>Goals</h1>
+        <ul>
+          <li>Overview of Agile</li>
+          <li>Understanding Agile values</li>
+          <li>Help add more value quicker at customer</li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-y='90' data-scale='1' data-x='2250' data-y='2250'>
+        <h1>Inventory</h1>
+      </div>
+      <div class='step slide' data-rotate-x='-90' data-scale='1' data-x='2250' data-y='2250'>
+        <h1>What is agile?</h1>
+      </div>
+      <div class='step slide' data-scale='1' data-x='2250' data-y='2250'>
+        <h1>What is agile?</h1>
+        <figure>
+          <a href='http://www.wildcatsmagazine.nl/'>
+            <img height='400' src='images/luipaard.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          <a href='http://www.wildcatsmagazine.nl/'>
+            Wild Cats Magazine
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3000' data-y='3000'>
+        <h1>What is agile?</h1>
+        <ul>
+          <li>marked by ready ability to move with quick easy grace (Merriam-Webster)</li>
+          <li>behendig (google translate)</li>
+          <li>bedreven, bekwaam, bijdehand, handig, vaardig, vlug</li>
+          <li>wendbaar -> agile (google translate)</li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-x='90' data-scale='1' data-x='3000' data-y='3000'>
+        <h1>What is agile?</h1>
+        <blockquote>
+          <dl>
+            <dt>
+              Agile software development
+            </dt>
+            <dd>
+              a group of software development
+              methods based on iterative and incremental development, where
+              requirements and solutions evolve through collaboration between
+              self-organizing, cross-functional teams.
+            </dd>
+          </dl>
+          <footer>
+            <cite>
+              <a href='http://en.wikipedia.org/wiki/Agile_software_development'>
+                Wikipedia: Agile Software Development
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-rotate-y='90' data-scale='1' data-x='3750' data-y='3750'>
+        <h1>Why Agile?</h1>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3750' data-y='3750'>
+        <h1>
+          <a href='http://www.agilemanifesto.org/'>
+            Agile Manifesto
+          </a>
+        </h1>
+        <blockquote>
+          <p>
+            <span class='largerbold'>
+              Individuals and interactions
+            </span>
+            <br>
+            over processes and tools
+            <br>
+            <span class='largerbold'>
+              Working software
+            </span>
+            <br>
+            over comprehensive documentation
+            <br>
+            <span class='largerbold'>
+              Customer collaboration
+            </span>
+            <br>
+            over contract negotiation
+            <br>
+            <span class='largerbold'>
+              Responding to change
+            </span>
+            <br>
+            over following a plan
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://www.agilemanifesto.org/'>
+                http://www.agilemanifesto.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='4500' data-y='4500'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Declaration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              increase return on investment
+            </span>
+            <br>
+            by making continuous flow of value our focus.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='5200' data-y='3500' data-z='-4500'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Decleration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              deliver reliable results
+            </span>
+            <br>
+            by engaging customers in frequent interactions and shared ownership.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='5900' data-y='2700' data-z='-4000'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Decleration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              expect uncertainty
+            </span>
+            <br>
+            and manage for it through iterations, anticipation, and adaptation.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='6600' data-y='2000' data-z='-3500'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Decleration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              unleash creativity and innovation
+            </span>
+            <br>
+            by recognizing that individuals are the ultimate source of value,
+            and creating an environment where they can make a difference.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='7300' data-y='1300' data-z='-3000'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Decleration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              boost performance
+            </span>
+            <br>
+            through group accountability for results and shared responsibility
+            for team effectiveness.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='8000' data-y='600' data-z='-2500'>
+        <h1>
+          <a href='http://pmdoi.org/'></a>
+          Decleration of interdependence
+        </h1>
+        <blockquote>
+          <p>
+            We
+            <span class='largerbold'>
+              improve effectiveness and reliability
+            </span>
+            <br>
+            through situationally specific strategies, processes and practices.
+          </p>
+          <footer>
+            <cite>
+              Source:
+              <a href='http://pmdoi.org/'>
+                http://pmdoi.org/
+              </a>
+            </cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='8700' data-y='-100' data-z='-2000'>
+        <h1>History</h1>
+        <figure>
+          <a href='images/history.svg' target='_blank'>
+            <img height='300' src='images/history.svg'>
+          </a>
+        </figure>
+        <figcaption>
+          A small overview of the history of a few agile methods
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='9400' data-y='-800' data-z='-1500'>
+        <h1>Extreme Programming</h1>
+        <figure>
+          <a href='http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/'>
+            <img height='300' src='images/superb-extreme-sport-wallpaper.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          <a href='http://www.iwallscreen.com/'>
+            See http://www.iwallscreen.com/ for more wallpapers
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='10100' data-y='-1600' data-z='-1000'>
+        <h1>Extreme Programming</h1>
+        <figure>
+          <a href='http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm'>
+            <img height='300' src='images/MixerAllOnTen.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          <a href='http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm'>
+            See http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm for more audio gear
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='10800' data-y='-2300' data-z='-500'>
+        <h1>Extreme Programming</h1>
+        <h2>Values</h2>
+        <ul>
+          <li>Simplicity</li>
+          <li>Communication</li>
+          <li>Feedback</li>
+          <li>Respect</li>
+          <li>Courage</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-4200' data-y='-4200'>
+        <h1>Extreme Programming</h1>
+        <figure>
+          <a href='http://xprogramming.com/images/circles.jpg'>
+            <img height='300' src='images/circles.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://xprogramming.com'>
+            http://xprogramming.com
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-4900' data-y='-4900'>
+        <h1>Scrum</h1>
+        <figure>
+          <a href='http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG'>
+            <img height='300' src='images/ST_vs_Gloucester_-_Match_-_23.JPG'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG'>
+            http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG
+          </a>
+          &copy;
+          <a href='http://commons.wikimedia.org/wiki/User:PierreSelim'>
+            Pierre Selim
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-5600' data-y='-5600'>
+        <h1>Scrum</h1>
+        <ul>
+          <li>developped in nineties</li>
+          <li>Ken Schwaber, Jeff Sutherland</li>
+          <li>a project management framework</li>
+          <li>explicitely defined roles</li>
+          <li>certifications</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-6300' data-y='-6300'>
+        <h1>Scrum</h1>
+        <h2>Roles</h2>
+        <ul>
+          <li>Product owner</li>
+          <li>Scrum master</li>
+          <li>Development team</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-7000' data-y='-7000'>
+        <h1>Scrum</h1>
+        <figure>
+          <a href='http://commons.wikimedia.org/wiki/File:Scrum_process.svg'>
+            <img height='300' src='images/Scrum_process.svg'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://commons.wikimedia.org/wiki/File:Scrum_process.svg'>
+            http://commons.wikimedia.org/wiki/File:Scrum_process.svg
+          </a>
+          &copy; Lakeworks
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-7700' data-y='-7700'>
+        <h1>Scrum</h1>
+        <figure>
+          <a href='http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg'>
+            <img height='300' src='images/Scrum_task_board.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg'>
+            http://en.wikipedia.org/wiki/File:Scrum_task_board.jpg
+          </a>
+          &copy;
+          <a href='http://www.flickr.com/people/plutor/'>
+            Logan Ingalls
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-8400' data-y='-8400'>
+        <h1>Lean Software Development</h1>
+        <figure>
+          <a href='http://1.bp.blogspot.com/-jHzgyyblZic/UZ26-dpddgI/AAAAAAAAAc4/pBb3I4N2Suw/s1600/strong.jpg'>
+            <img src='images/strong.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://cszto.blogspot.nl/2013/05/strong-is-new-skinny-enough-is-enough.html'>
+            http://cszto.blogspot.nl/2013/05/strong-is-new-skinny-enough-is-enough.html
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-9100' data-y='-9100'>
+        <h1>Lean Software Development</h1>
+        <blockquote>
+          <dl>
+            <dt>
+              Lean
+            </dt>
+            <dd>
+              : not having much fat on the body : physically thin, strong, and healthy
+            </dd>
+            <dd>
+              : containing little or no fat
+            </dd>
+            <dd>
+              : not having or producing much money, food, etc.
+            </dd>
+          </dl>
+          <cite>
+            Source:
+            <a href='http://www.merriam-webster.com/dictionary/lean'>
+              http://www.merriam-webster.com/dictionary/lean
+            </a>
+          </cite>
+        </blockquote>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-9800' data-y='-9800'>
+        <h1>Lean Software Development</h1>
+        <ul>
+          <li>
+            <a href='http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_1?ie=UTF8&amp;qid=1390688274&amp;sr=8-1&amp;keywords=0321150783'>book</a>
+            by Mary and Tom Poppendieck
+          </li>
+          <li>
+            influenced by:
+            <ul>
+              <li>Toyata Production System</li>
+              <li>Lean manufacturing</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-10500' data-y='-10500'>
+        <h1>Lean Software Development</h1>
+        <h2>Seven Principles</h2>
+        <ol>
+          <li>Eliminate waste</li>
+          <li>Amplify learning</li>
+          <li>Decide as late as possible</li>
+          <li>Deliver as fast as possible</li>
+          <li>Empower the team</li>
+          <li>Build integrity in</li>
+          <li>See the whole</li>
+        </ol>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-11200' data-y='-11200'>
+        <h1>Lean Software Development</h1>
+        <h2>Seven Practices</h2>
+        <ol>
+          <li>Seeing waste</li>
+          <li>Value stream mapping</li>
+          <li>Set-based development</li>
+          <li>Pull systems</li>
+          <li>Queing theory</li>
+          <li>Motivation</li>
+          <li>Measurements</li>
+        </ol>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-11900' data-y='-11900'>
+        <h1>Kanban</h1>
+        <figure>
+          <a href='http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg'>
+            <img height='400' src='images/jennifer_ellison_whip_1280x1024.jpg'>
+          </a>
+        </figure>
+        <figcaption>
+          Source:
+          <a href='http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg'>
+            http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg
+          </a>
+          &copy;
+          <a href='http://www.justdesktopwallpapers.com'>
+            http://www.justdesktopwallpapers.com
+          </a>
+        </figcaption>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-12600' data-y='-12600'>
+        <h1>Kanban</h1>
+        <ul>
+          <li>literally signboard or billboard</li>
+          <li>
+            influenced by:
+            <ul>
+              <li>Toyata Production System</li>
+              <li>Lean Manufacturing</li>
+              <li>Lean Software Development</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-13300' data-y='-13300'>
+        <h1>Kanban</h1>
+        <h2>Four principles</h2>
+        <ol>
+          <li>Start with what you do now (don't change anything)</li>
+          <li>Agree to pursue incremental, evolutionary change</li>
+          <li>Respect the current process, roles, responsibilities & titles</li>
+          <li>Leadership at all levels</li>
+        </ol>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-14000' data-y='-14000'>
+        <h1>Kanban</h1>
+        <h2>Six Practices</h2>
+        <ol>
+          <li>Visualise</li>
+          <li>Limit WIP (work-in-progress)</li>
+          <li>Manage flow</li>
+          <li>Make policies explicit</li>
+          <li>Implement feedback loops</li>
+          <li>Improve collaboratively, evolve experimentally</li>
+        </ol>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-14700' data-y='-14700'>
+        <h1>Closing</h1>
+        <ul>
+          <li>
+            Goal of Agile:
+            <ul>
+              <li>deliver value more quickly</li>
+              <li>work efficiently (reduce waste)</li>
+              <li>people centric</li>
+            </ul>
+          </li>
+          <li>
+            Ingredients:
+            <ul>
+              <li>Kaizen (Continuous Improvement)</li>
+              <li>Feedback, reflection</li>
+              <li>Direct face-to-face communication</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-15400' data-y='-15400'>
+        <h1>Inventory</h1>
+      </div>
+      <div class='step slide' data-rotate-x='-135' data-rotate-y='135' data-rotate-z='135' data-scale='1' data-x='-16100' data-y='-16100'>
+        <span class='center' id='question'>
+          ?
+        </span>
+      </div>
+    </div>
+    <script src='js/impress.js' type='text/javascript'></script>
+    <script>
+      impress().init();
+    </script>
+  </head>
+</html>
