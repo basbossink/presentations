@@ -1,0 +1,144 @@
+!!! 5
+%html
+  %head
+    %meta{ 'eharset' => 'utf-8' }
+    %meta{ :name => 'viewport', :content => 'width=1024' }
+    %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
+    %meta{ :name => 'author', :content => 'Bas Bossink' }
+    %title Coding Dojo | 2014 Feb 19
+    %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
+    %body{ :class => 'impress-not-supported'}
+    %div{ :id => 'impress'}
+      %div{ :class => 'step slide title', :data => { :x => -2250, :y => -2250, :scale => 12 }}
+        %h1 Coding Dojo
+        %h2 2014 Feb 19
+      %div{ :class => 'step slide', :data => { :x => -1500, :y => -1500, :scale => 1 }}
+        %h1 Agenda
+        %ul
+          %li Introduction
+          %li Development Environment
+          %li Bas: Parisian style, Bowling Kata
+          %li Break
+          %li All: Kake style, FizzBuzz Kata 
+          %li Evaluation
+          %li Conclusion
+      %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1}}
+        %h1 Introduction
+        %ul
+          %li What is a Coding Dojo?
+          %li Test Driven Development
+      %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1}}
+        %h1 What is a Coding Dojo?
+        %ul 
+          %li Literally a place to practice the way
+          %li Good moral character
+          %li Perseverance
+          %li Respect
+          %li Practice with fierce joy
+      %div{ :class => 'step slide', :data => { :x => 700, :y => 700, :scale => 1 } }
+        %h1 Test Driven Development
+        %h2  
+          %a{ :href => 'http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd' }
+            Three laws of test driven development
+        %ul 
+          %li 
+            You are not allowed to write any production code unless it is to make a failing unit test pass.
+      %div{ :class => 'step slide', :data => { :x => 700, :y => 700, 'rotate-x' => -90, :scale => 1 } }
+        %h1 Test Driven Development
+        %h2  
+          %a{ :href => 'http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd' }
+            Three laws of test driven development
+        %ul 
+          %li
+            You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.
+      %div{ :class => 'step slide', :data => { :x => 700, :y => 700, 'rotate-y' => -90, :scale => 1 } }
+        %h1 Test Driven Development
+        %h2  
+          %a{ :href => 'http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd' }
+            Three laws of test driven development
+        %ul 
+          %li
+            You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+      %div{ :class => 'step slide', :data => { :x => 1400, :y => 1400, :scale => 1 }}
+        %h1 
+          %span{ :class => 'red' }Red
+          %span{ :class => 'green' }Green
+          %span{ :class => 'blue' }Refactor
+        %ul
+          %li 
+            %span{ :class => 'red' }Red
+            \: you're trying to get a test to pass
+          %li 
+            %span{ :class => 'green' }Green
+            \: all you're tests are passing
+          %li 
+            %span{ :class  => 'blue'}Refactor
+            \: improve the code (structure/design) without changing the behavior
+        %h2
+          %blockquote
+            "Keep the bar 
+            %span{ :class => 'green'}green
+            to keep the code clean."
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
+        %h1 Development Environment
+        %ul
+          %li 
+            %a{ :href => 'http://nodejs.org/' }
+              Node.js
+            %ul 
+              %li
+                %a{ :href => 'https://code.google.com/p/v8/' }V8
+                \: Chrome's JavaScript engine
+              %li 
+                %a{ :href => 'http://software.schmorp.de/pkg/libev.html' }libev
+                \: high-performance event loop
+              %li 
+                %a{  :href => 'http://software.schmorp.de/pkg/libeio.html' }libeio
+                \: event-based asynchronous I/O
+              %li 
+                %a{ :href => 'http://c-ares.haxx.se/' }c-ares
+                \: a C library for asynchronous DNS requests
+              %li 
+                %a{ :href => 'https://github.com/rphillips/evcom' }evcom
+                \: stream sockets for libev
+              %li 
+                %a{ :href => 'https://github.com/joyent/http-parser' }http-parser
+                \: a parser for HTTP messages written in C
+          %li
+            %a{ :href => 'http://pivotal.github.io/jasmine/', :target => '_blank' }
+              Jasmine
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, :scale => 1 }}
+        %h1 Bowling Kata
+        %ul
+          %li Score a game of bowling
+          %li Ignore illegal inputs
+          %li Strike, 10 pins single throw, ends frame, next two balls are counted as bonus
+          %li Spare, 10 pins two throws, next ball is counted as bonus
+      %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, :scale => 1 }}
+        %h1 FizzBuzz Kata
+        %ul 
+          %li
+            Write a program that prints the numbers from 1 to 100
+          %li 
+            But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz"
+          %li
+            %ul
+              %li A number is fizz if it is divisible by 3 or if it has a 3 in it.
+              %li A number is buzz if it is divisible by 5 or if it has a 5 in it.
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
+        %h1 Evaluation
+        %ul
+          %li What have you learned?
+          %li What will you start doing tomorrow?
+      %div{ :class => 'step slide', :data => { :x => 5250, :y => 5250, :scale => 1 }}
+        %h1 Conclusion
+        %ul 
+          %li Next Dojo
+          %ul 
+            %li When?
+            %li What?
+            %li Form?
+          %li Report for this Dojo on the Hightech Intranet
+    %script{ :type => 'text/javascript', :src => 'js/impress.js' }
+    %script
+      impress().init();
