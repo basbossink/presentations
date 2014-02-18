@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta eharset='utf-8'>
+    <meta content='width=1024' name='viewport'>
+    <meta content='yes' name='apple-mobile-web-app-capable'>
+    <meta content='Bas Bossink' name='author'>
+    <title>Coding Dojo | 2014 Feb 19</title>
+    <link href='styles/default.css' rel='stylesheet' type='text/css'>
+    <body class='impress-not-supported'></body>
+    <div id='impress'>
+      <div class='step slide title' data-scale='12' data-x='-2250' data-y='-2250'>
+        <h1>Coding Dojo</h1>
+        <h2>2014 Feb 19</h2>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-1500' data-y='-1500'>
+        <h1>Agenda</h1>
+        <ul>
+          <li>Introduction</li>
+          <li>Development Environment</li>
+          <li>Bas: Parisian style, Bowling Kata</li>
+          <li>Break</li>
+          <li>All: Kake style, FizzBuzz Kata</li>
+          <li>Evaluation</li>
+          <li>Conclusion</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='-750' data-y='-750'>
+        <h1>Introduction</h1>
+        <ul>
+          <li>What is a Coding Dojo?</li>
+          <li>Test Driven Development</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='0' data-y='0'>
+        <h1>What is a Coding Dojo?</h1>
+        <ul>
+          <li>Literally a place to practice the way</li>
+          <li>Good moral character</li>
+          <li>Perseverance</li>
+          <li>Respect</li>
+          <li>Practice with fierce joy</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='700' data-y='700'>
+        <h1>Test Driven Development</h1>
+        <h2>
+          <a href='http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd'>
+            Three laws of test driven development
+          </a>
+        </h2>
+        <ul>
+          <li>
+            You are not allowed to write any production code unless it is to make a failing unit test pass.
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-x='-90' data-scale='1' data-x='700' data-y='700'>
+        <h1>Test Driven Development</h1>
+        <h2>
+          <a href='http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd'>
+            Three laws of test driven development
+          </a>
+        </h2>
+        <ul>
+          <li>
+            You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-rotate-y='-90' data-scale='1' data-x='700' data-y='700'>
+        <h1>Test Driven Development</h1>
+        <h2>
+          <a href='http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd'>
+            Three laws of test driven development
+          </a>
+        </h2>
+        <ul>
+          <li>
+            You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='1400' data-y='1400'>
+        <h1>
+          <span class='red'>Red</span>
+          <span class='green'>Green</span>
+          <span class='blue'>Refactor</span>
+        </h1>
+        <ul>
+          <li>
+            <span class='red'>Red</span>
+            : you're trying to get a test to pass
+          </li>
+          <li>
+            <span class='green'>Green</span>
+            : all you're tests are passing
+          </li>
+          <li>
+            <span class='blue'>Refactor</span>
+            : improve the code (structure/design) without changing the behavior
+          </li>
+        </ul>
+        <h2>
+          <blockquote>
+            "Keep the bar
+            <span class='green'>green</span>
+            to keep the code clean."
+          </blockquote>
+        </h2>
+      </div>
+      <div class='step slide' data-scale='1' data-x='2250' data-y='2250'>
+        <h1>Development Environment</h1>
+        <ul>
+          <li>
+            <a href='http://nodejs.org/'>
+              Node.js
+            </a>
+            <ul>
+              <li>
+                <a href='https://code.google.com/p/v8/'>V8</a>
+                : Chrome's JavaScript engine
+              </li>
+              <li>
+                <a href='http://software.schmorp.de/pkg/libev.html'>libev</a>
+                : high-performance event loop
+              </li>
+              <li>
+                <a href='http://software.schmorp.de/pkg/libeio.html'>libeio</a>
+                : event-based asynchronous I/O
+              </li>
+              <li>
+                <a href='http://c-ares.haxx.se/'>c-ares</a>
+                : a C library for asynchronous DNS requests
+              </li>
+              <li>
+                <a href='https://github.com/rphillips/evcom'>evcom</a>
+                : stream sockets for libev
+              </li>
+              <li>
+                <a href='https://github.com/joyent/http-parser'>http-parser</a>
+                : a parser for HTTP messages written in C
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href='http://pivotal.github.io/jasmine/' target='_blank'>
+              Jasmine
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3000' data-y='3000'>
+        <h1>Bowling Kata</h1>
+        <ul>
+          <li>Score a game of bowling</li>
+          <li>Ignore illegal inputs</li>
+          <li>Strike, 10 pins single throw, ends frame, next two balls are counted as bonus</li>
+          <li>Spare, 10 pins two throws, next ball is counted as bonus</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='3750' data-y='3750'>
+        <h1>FizzBuzz Kata</h1>
+        <ul>
+          <li>
+            Write a program that prints the numbers from 1 to 100
+          </li>
+          <li>
+            But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz"
+          </li>
+          <li>
+            <ul>
+              <li>A number is fizz if it is divisible by 3 or if it has a 3 in it.</li>
+              <li>A number is buzz if it is divisible by 5 or if it has a 5 in it.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='4500' data-y='4500'>
+        <h1>Evaluation</h1>
+        <ul>
+          <li>What have you learned?</li>
+          <li>What will you start doing tomorrow?</li>
+        </ul>
+      </div>
+      <div class='step slide' data-scale='1' data-x='5250' data-y='5250'>
+        <h1>Conclusion</h1>
+        <ul>
+          <li>Next Dojo</li>
+          <ul>
+            <li>When?</li>
+            <li>What?</li>
+            <li>Form?</li>
+          </ul>
+          <li>Report for this Dojo on the Hightech Intranet</li>
+        </ul>
+      </div>
+    </div>
+    <script src='js/impress.js' type='text/javascript'></script>
+    <script>
+      impress().init();
+    </script>
+  </head>
+</html>
