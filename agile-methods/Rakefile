@@ -4,22 +4,23 @@ require 'rexml/document'
 
 HAML = FileList.new('*.haml')
 HTML = HAML.ext('html')
-SCSS = FileList.new('*.scss')
+SCSS = FileList.new('**/*.scss')
 CSS = SCSS.ext('css')
-DOT = FileList.new('images/*.dot')
+DOT = FileList.new('**/*.dot')
 SVG = DOT.ext('svg')
 LAYOUT = HTML + CSS + SVG
 
 CLEAN.include(LAYOUT)
 
-rule '.dot' => ['.svg'] do |t|
-    sh %{ dot -Tsvg -O #{t.source} }
+rule '.svg' => '.dot' do |t|
+    sh %{ dot -Tsvg -o #{t.name} #{t.source} }
 end
-rule '.html' => ['.haml'] do |t|
+
+rule '.html' => '.haml' do |t|
     sh %{ haml -E utf-8 #{t.source} #{t.name} }
 end
 
-rule '.css' => ['.scss'] do |t|
+rule '.css' => '.scss' do |t|
     sh %{ sass -t compressed #{t.source} #{t.name} }
 end
 

@@ -42,8 +42,6 @@ Coelho and YellowIcon [<a
 href="http://www.gnu.org/licenses/lgpl.html">LGPL</a>], <a
 href="http://commons.wikimedia.org/wiki/File%3ACrystal_Clear_app_quick_restart.png">via
 Wikimedia Commons</a>
-**** Waarom deze presentatie
-**** Doel van deze presentatie
 *** impress.js
 - gemaakt mbv impress.js en andere vrije software
 - impress.js is een javascript library die divs in html veranderd
@@ -248,35 +246,53 @@ At regular intervals, the team reflects on how
 to become more effective, then tunes and adjusts 
 its behavior accordingly.
 *** declaration of interdependence
-   een soortgelijk initiatief door succesvolle agile project leiders:
+Een soortgelijk initiatief door succesvolle agile project leiders:
 Declaration of Interdependence 
-
+o.a. David Anderson (Kanban), Alistair Cockburn (Crystal), Mike Cohn (Scrum),
+Jim Highsmith (Adaptive Software development)
 Agile and adaptive approaches for linking people, projects and value
 We are a community of project leaders that are highly successful at
 delivering results. To achieve these results:
 
-We increase return on investment by making continuous flow of value
-our focus.
+- We increase return on investment by making continuous flow of value
+  our focus.
+  - Wij verhogen rendement op investeringen door een contiue stroom van waarde 
+    onze focus te make.
 
-We deliver reliable results by engaging customers in frequent
-interactions and shared ownership.
+- We deliver reliable results by engaging customers in frequent
+  interactions and shared ownership.
+  - Wij leveren betrouwbare resultaten door klanten to boien met regelmatig 
+    interacties en gedeeld eigenaarschap.
 
-We expect uncertainty and manage for it through iterations,
-anticipation, and adaptation.
+- We expect uncertainty and manage for it through iterations,
+  anticipation, and adaptation.
+  - Wij verwachten onzekerheid en leiden dat in banen met behulp van 
+    iteraties, voorbereiding, aanpassing
 
-We unleash creativity and innovation by recognizing that individuals
-are the ultimate source of value, and creating an environment where
-they can make a difference.
+- We unleash creativity and innovation by recognizing that individuals
+  are the ultimate source of value, and creating an environment where
+  they can make a difference.
+  - Wij ontketenen creativiteit en innovatie door te erkennen dat individuen 
+    de ultime bron zijn van waarde, en creeeren een omgeving waar zij een 
+    verschil kunnen maken.
 
-We boost performance through group accountability for results and
-shared responsibility for team effectiveness.
+- We boost performance through group accountability for results and
+  shared responsibility for team effectiveness.
+  - Wij vergroten prestaties door groepsverantwoordelijkheid voor resultaten 
+    en gedeelde verantwoordelijkheid voor de effectiviteit van het team.
 
-We improve effectiveness and reliability through situationally
-specific strategies, processes and practices.
+- We improve effectiveness and reliability through situationally
+  specific strategies, processes and practices.
+  - We verbeteren effectiviteit and betrouwbaarheid door situatie specifieke 
+    strategien, processen en handelingen.
+
 ** History
 *** 1948 - 1975 Toyata Production System 
 The main objectives of the TPS are to design out overburden (muri)
 and inconsistency (mura), and to eliminate waste (muda).
+- Started when Toyota wanted to save money by mass producing cars,
+  but the Japanese market was not big enough to be able to use the 
+  traditional way of mass producing cars.
 *** 1957: Iterative development
 Incremental software development methods have been traced back to
 1957.[2] In 1974, a paper by E. A. Edmonds introduced an adaptive
@@ -285,7 +301,10 @@ software development process.
 In the early 1970s, Tom Gilb started publishing the concepts of
 Evolutionary Project Management (EVO), which has evolved into
 Competitive Engineering.
-- Scales and meters
+- Scales and meters:
+  - bv. in een project bij Assembleon was een voorbeeld:
+    - onderbuik gevoel van de teamleden
+    - de gemiddelde cycle time over een grote testset van inputs
 
 *** 1974: Adaptive Software Development
 Adaptive Software Development (ASD) is a software development process
@@ -319,6 +338,14 @@ but there are varying perspectives on how this is best achieved. The
 steady growth of Toyota, from a small company to the world's largest
 automaker,[3] has focused attention on how it has achieved this
 success.
+
+*** 1991: Rapid Application Development
+Rapid application development is a response to processes developed in the 
+1970s and 1980s, such as the Structured Systems Analysis and Design Method and 
+other Waterfall models. One of the problems with these methodologies is that 
+they were based on a traditional engineering model used to design and build 
+things like bridges and buildings. Software is an inherently different kind of 
+artifact.
 
 *** 1994: Dynamic Systems Development Method
 Dynamic systems development method (DSDM) is an agile project delivery
@@ -391,11 +418,10 @@ A Technical Environment with Automated Tests, Configuration Management, and Freq
 *** 2005: Competitive Engineering
 - weederom Tom Gilb, of liever de Gilb family
 ** Extreme Programming
-[[http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/][parachutisten]]
 *** Crank all the knobs to 10
 [[http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm][Mixer alles op tien]]
 **** Vraag
-Iemand enig idee wat de link van deze foto tot Extreme Programming is?
+Iemand enig idee welk agile process deze foto beschrijft?
 
 The first time I was asked to lead a team, I asked them to do a little
 bit of the things I thought were sensible, like testing and reviews.
@@ -403,12 +429,81 @@ The second time there was a lot more on the line. I thought, "Damn the
 torpedoes, at least this will make a good article," [and] asked the
 team to crank up all the knobs to 10 on the things I thought were
 essential and leave out everything else.
+- Na dit plaatje misschien?
+[[http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/][parachutisten]]
 *** Values
 - Simplicity
 - Communication
 - Feedback
 - Respect
 - Courage
+*** Practices
+**** Outer Circle 
+***** Whole Team
+     The entire team is responsible for the outcome, all necessary knowledge 
+     has to reside in the team.
+***** Planning Game
+     Customer explains and team estimates stories, customer prioritizes
+***** Small Releases
+     Focus on minimal set of features that adds value for the customer.
+***** Customer Tests
+     The customer creates the (automated) acceptance tests.
+**** Middle Circle
+***** Collective code ownership
+      Everybody edits all code, the team is responsible for all tasks
+***** Coding Standard
+      If everybody edits all code it is important to have a agreed upon coding 
+      standards such that everybody can read eachothers code.
+***** Sustainable Pace
+      - 40 hour week
+      - overtime is non-productive and leads to bad code
+***** Metaphor
+      It can be helpfull to have metaphor for the domain to clarify the design
+“a story that everyone - customers, programmers, and managers - can tell about 
+how the system works.”
+- Common Vision
+- Shared Vocabulary
+- Generativity
+- Architecture
+****** Examples
+1. Spreadsheet Metaphor
+2 Script Metaphor
+3 Manufacturing Metaphor (e.g. LinesStationsBinsParts or AssemblyLine)
+4 Accounting Metaphor (double-entry archive notation)
+5 Shopping Cart Metaphor (e-commerce)
+6 Auction Metaphor (e-commerce)
+7 Blackboard Metaphor (ai)
+8 Document Processor (desktop systems where the “model” gets saved as a file)
+9 Virtual Space Metaphor (eg. VR)
+10 Desktop Metaphor
+11 Tools and Materials Metaphor
+12 Buttons Everywhere Metaphor
+13 Person - what would a person employed to do this job do?
+***** Continuous Integration
+      Build and run all unit and acceptance tests after each checkin/commit.
+**** Inner Circle
+***** Test Driven Development
+1. You are not allowed to write any production code unless it is to make a 
+failing unit test pass.
+2. You are not allowed to write any more of a unit test than is sufficient to 
+fail; and compilation failures are failures.
+3. You are not allowed to write any more production code than is sufficient to 
+pass the one failing unit test.
+- Red, Green, Refactor
+***** Refactoring
+      Improve the quality of the code/design without changing the behavior of 
+      the system.
+      The only way to keep moving fast, keep agile code base is to constantly 
+      improve it's design.
+      When adding a new feature the design has to be adopted to accomodate the 
+      new feature.
+***** Simple Design
+      You Ain't Gonna Need It
+      No anticipation of future requirements
+      Do the simplelest thing to make it work
+***** Pair Programming
+      Two team members sitting behind one PC, constantly switching roles 
+      between driver and navigator.
 *** Rules
 **** Planning
 - User stories
@@ -499,6 +594,69 @@ some level of interface with project management offices (PMOs).
     - What are you planning to do today?
     - Any impediments/stumbling blocks?
 ** Lean
+*** Lean means
+- mager
+*** Origin
+- book by Mary and Tom Poppendiek
+  - Mary: 3M
+  - Tom: commercial airliner navigation devices
+- Influenced by:
+  - Toyota Production System
+  - Lean manufacturing
+  - Scrum
+  - Adaptive Software Development
+*** Seven Principles
+**** Eliminate waste
+     Waste is anything that does not add value to a product, value as 
+     percieved by the customer. Toyata production system Muda
+**** Amplify learning
+     Development is an exercise in discovery, while discovery is an exercise 
+     in reducing variation, and for this reason, a lean approach to 
+     development results in practices that are quite different than lean 
+     production practices.
+**** Decide as late as possible
+     Development practices that provide for late decision making are effective 
+     in domains that involve uncertainty, because they provide an 
+     options-based approach.
+**** Deliver as fast as possible
+     Compressing the value stream as much as possible is a fundamental lean 
+     strategy for eliminating waste. Design, implement, feedback, improve. 
+     Shorter cycles increase learning.
+**** Empower the team
+     Top-notch execution lies in getting the details right, and no one 
+     uderstands the details better tha the people who actually do the work.
+**** Build integrity in
+     Software with integrity has a coherent architecture, scores high on 
+     usability and fitness for purpose, and is maintainable, adaptable, and 
+     extensible.
+**** See the whole
+     Avoid local optimizations, optimize the whole.
+*** Seven Wastes
+**** Partially done work
+     Partially done development ties up resources in investments that have yet 
+     to yield results
+**** Extra Processes
+     Superfluous activities that do not add value for the customer and are not 
+     necessary for the team to do their work efficiently are waste.
+**** Extra Features
+     Every bit of code in the system has to be tracked, compiled, itegrated, 
+     and tested every time the code is touched and then it has to be 
+     maintained for the life of the system. Software maintenance cost 70% - >90% of 
+     the total cost. 
+     XP 2002: Standish Group 45% features never used, 19% rarely used
+**** Task Switching
+     Task switching costs time that can not be devoted to adding value to the 
+     product.
+**** Waiting
+     Delay keeps the customer from realizing value as quickly as possible. You 
+     cannot delay decisions, however, if you cannot implement rapidly once a 
+     decision is made.
+**** Motion
+     Do people have the information/people they need available? 
+     Handofs
+**** Defects
+     The amount of waste caused by a defect is the product of the defect 
+     impact and the time it goes undetected.
 [[http://upload.wikimedia.org/wikipedia/en/5/5e/The_8_Wastes_-_DOWNTIME.jpg][8 wastes]]
 
 ** kanban

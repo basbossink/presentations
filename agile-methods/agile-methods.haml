@@ -24,48 +24,15 @@
       %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
         %h1 Agenda
         %ul
-          %li 
-            Introduction
-            %ul  
-              %li Disclaimer
-              %li About
-              %li Why this presentation?
-              %li Goals
+          %li Introduction
           %li What is agile?
           %li History
           %li Extreme Programming
-          %li Scrum
-          %li Lean
           %li Kanban
-      %div{ :class => 'step slide', :data => { :x => -750, :y => -750, 'rotate-x' => 90, :scale => 1}}
-        %h1 Disclaimer
-        %ul
-          %li Not a quality/agile methods expert
-      %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1}}
-        %h1 About
-        %ul 
-          %li 
-            %a{ :href => 'https://github.com/bartaz/impress.js/' } impress.js
-          %li
-            %a{ :rel => 'licensce', :href => 'http://creativecommons.org/licenses/by/3.0/nl/' } 
-              Creative Commons Attribution 3.0 Netherlands License
-          %li 
-            %a{ :href => 'https://github.com/basbossink/presentations/agile-methods' } source
-          %li 
-            %a{ :href => 'http://basbossink.github.io/presentations/agile-methods/agile-methods.html'} view
-      %div{ :class => 'step slide', :data => { :x => 700, :y => 700 } }
-        %h1 Why this presentation
-        %li 
-          %a{ :href => 'http://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/ref=sr_1_1?s=books&ie=UTF8&qid=1390502774&sr=1-1&keywords=the+clean+coder' }
-            The Clean Coder
-        %li 
-          %a{ :href => 'http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_1?s=books&ie=UTF8&qid=1390502864&sr=1-1&keywords=lean+software+development' }
-            Lean Software Development: An Agile Toolkit
-        %li
-          %a{ :href => 'http://strengths.gallup.com/110440/About-StrengthsFinder-20.aspx' }
-            StrengthsFinder 2.0
+          %li Lean
+          %li Scrum
       %div{ :class => 'step slide', :data => { :x => 1400, :y => 1400, :scale => 1 }}
-        %h1 Goals
+        %h1 Introduction: Goals
         %ul
           %li Overview of Agile
           %li Understanding Agile values
@@ -136,10 +103,29 @@
               Source: 
               %a{ :href => 'http://www.agilemanifesto.org/' }
                 http://www.agilemanifesto.org/
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :z => 2000, 'rotate-y' => 90, :scale => 1 }}
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+            Declaration of interdependence
+        %ul 
+          %li project leaders highly successful at delivering results
+          %li team members <-> team members
+          %li teams <-> customers <-> stakeholders
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :z => 4000, 'rotate-y' => 90, :scale => 1 }}
+        %h1 
+          %a{ :href => 'http://pmdoi.org/'}
+            Declaration of interdependence
+        %figure
+          %a{ :href => 'http://alistair.cockburn.us/get/1865' }
+            %img{ :src => 'images/1865.gif', :height => '300' }
+        %figcaption
+          See 
+          %a{ :href => ' http://alistair.cockburn.us/The+declaration+of+interdependence+for+modern+management+or+DOI' }
+            http://alistair.cockburn.us/The+declaration+of+interdependence+for+modern+management+or+DOI
       %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Declaration of interdependence
+            Declaration of interdependence
         %blockquote
           %p
             We 
@@ -155,7 +141,7 @@
       %div{ :class => 'step slide', :data => { :x => 5200, :y => 3500, :z => -4500, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Decleration of interdependence
+            Declaration of interdependence
         %blockquote
           %p
             We 
@@ -171,7 +157,7 @@
       %div{ :class => 'step slide', :data => { :x => 5900, :y => 2700, :z => -4000, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Decleration of interdependence
+            Declaration of interdependence
         %blockquote
           %p
             We 
@@ -187,7 +173,7 @@
       %div{ :class => 'step slide', :data => { :x => 6600, :y => 2000, :z => -3500, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Decleration of interdependence
+          Declaration of interdependence
         %blockquote
           %p
             We 
@@ -204,7 +190,7 @@
       %div{ :class => 'step slide', :data => { :x => 7300, :y => 1300, :z => -3000, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Decleration of interdependence
+          Declaration of interdependence
         %blockquote
           %p
             We 
@@ -221,7 +207,7 @@
       %div{ :class => 'step slide', :data => { :x => 8000, :y => 600, :z => -2500, :scale => 1 }}
         %h1 
           %a{ :href => 'http://pmdoi.org/'}
-          Decleration of interdependence
+          Declaration of interdependence
         %blockquote
           %p
             We 
@@ -242,21 +228,19 @@
         %figcaption 
           A small overview of the history of a few agile methods 
       %div{ :class => 'step slide', :data => { :x => 9400, :y => -800, :z => -1500, :scale => 1 }}
-        %h1 Extreme Programming
-        %figure
-          %a{ :href => 'http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/' }
-            %img{ :src => 'images/superb-extreme-sport-wallpaper.jpg', :height => '300' }
-        %figcaption
-          %a{ :href => 'http://www.iwallscreen.com/' }
-            See http://www.iwallscreen.com/ for more wallpapers
-      %div{ :class => 'step slide', :data => { :x => 10100, :y => -1600, :z => -1000, :scale => 1 }}
-        %h1 Extreme Programming
         %figure
           %a{ :href => 'http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm' }
             %img{ :src => 'images/MixerAllOnTen.jpg', :height => '300' }
         %figcaption
           %a{ :href => 'http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm' }
             See http://www.seismicaudiospeakers.com/10-Channel-Mixer-p/backbone10.htm for more audio gear
+      %div{ :class => 'step slide', :data => { :x => 10100, :y => -1600, :z => -1000, :scale => 1 }}
+        %figure
+          %a{ :href => 'http://www.iwallscreen.com/wallpaper/1920x1200/superb-extreme-sport-wallpaper-18814.html#prettyPhoto/0/' }
+            %img{ :src => 'images/superb-extreme-sport-wallpaper.jpg', :height => '300' }
+        %figcaption
+          %a{ :href => 'http://www.iwallscreen.com/' }
+            See http://www.iwallscreen.com/ for more wallpapers
       %div{ :class => 'step slide', :data => { :x => 10800, :y => -2300, :z => -500, :scale => 1 }}
         %h1 Extreme Programming
         %h2 Values
@@ -276,7 +260,6 @@
           %a{ :href => 'http://xprogramming.com' }
             http://xprogramming.com
       %div{ :class => 'step slide', :data => { :x => -4900, :y => -4900, :scale => 1 }}
-        %h1 Scrum
         %figure
           %a{ :href => 'http://commons.wikimedia.org/wiki/File:ST_vs_Gloucester_-_Match_-_23.JPG' }
             %img{ :src => 'images/ST_vs_Gloucester_-_Match_-_23.JPG', :height => 300 }
@@ -325,7 +308,6 @@
           %a{ :href => 'http://www.flickr.com/people/plutor/'}
             Logan Ingalls
       %div{ :class => 'step slide', :data => { :x => -8400, :y => -8400, :scale => 1 }}
-        %h1 Lean Software Development
         %figure
           %a{ :href => 'http://1.bp.blogspot.com/-jHzgyyblZic/UZ26-dpddgI/AAAAAAAAAc4/pBb3I4N2Suw/s1600/strong.jpg'}
             %img{ :src => 'images/strong.jpg' }
@@ -343,8 +325,6 @@
               \: not having much fat on the body : physically thin, strong, and healthy
             %dd
               \: containing little or no fat
-            %dd 
-              \: not having or producing much money, food, etc.
           %cite
             Source:
             %a{ :href => 'http://www.merriam-webster.com/dictionary/lean'}
@@ -373,6 +353,30 @@
           %li See the whole
       %div{ :class => 'step slide', :data => { :x => -11200, :y => -11200, :scale => 1 }}
         %h1 Lean Software Development
+        %h2 Seven Wastes
+        %ol
+          %li Partially done work
+          %li Extra Processes
+          %li Extra Features
+          %li Task Switching
+          %li Waiting
+          %li Motion
+          %li Defects
+      %div{ :class => 'step slide', :data => { :x => -11200, :y => -11200, :z => 800, :'rotate-x' => 90,:scale => 1 }}
+        %h1 Lean Software Development
+        %h2 Amplify Learning
+        %ul
+          %li Learning Cycles
+          %li Feedback (Feedback Loops)
+          %li Iterations
+          %li 
+            Set-based development
+            %ul
+              %li Develop multiple options
+              %li Communicate constraints
+              %li Let the Solution Emerge
+      %div{ :class => 'step slide', :data => { :x => -11200, :y => -11200, :'rotate-x' => 90,:scale => 1 }}
+        %h1 Lean Software Development
         %h2 Seven Practices
         %ol
           %li Seeing waste
@@ -383,7 +387,6 @@
           %li Motivation
           %li Measurements
       %div{ :class => 'step slide', :data => { :x => -11900, :y => -11900, :scale => 1 }}
-        %h1 Kanban
         %figure
           %a{ :href => 'http://www.justdesktopwallpapers.com/images/celebrities/jenniferellison/jennifer_ellison_whip_1280x1024.jpg'}
             %img{ :src => 'images/jennifer_ellison_whip_1280x1024.jpg', :height => 400 }
@@ -430,10 +433,10 @@
             %ul
               %li deliver value more quickly
               %li work efficiently (reduce waste)
-              %li people centric
           %li
             Ingredients:
             %ul
+              %li People
               %li Kaizen (Continuous Improvement)
               %li Feedback, reflection
               %li Direct face-to-face communication
