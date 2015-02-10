@@ -1,0 +1,29 @@
+!!! 5
+%html
+  %head
+    %meta{ 'charset' => 'utf-8' }
+    %meta{ :name => 'viewport', :content => 'width=1024' }
+    %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
+    %meta{ :name => 'author', :content => 'Bas Bossink' }
+    %title Systemd | by Bas Bossink
+    %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
+    %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
+    %body{ :class => 'impress-not-supported'}
+    %div{ :id => 'impress'}
+      %div{ :class => 'step slide title', :data => { :x => -1500, :y => -1500, :scale => 7 }}
+        %h1 Systemd
+        %h2 Bas Bossink <bas.bossink@gmail.com>
+      %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
+        %h1 Agenda
+        %ul
+          %li Introduction
+          %li What is systemd?
+          %li History
+          %li Components of systemd
+      %div{ :class => 'step slide', :data => { :x => -16100, :y => -16100, 'rotate-z' => 135, 'rotate-y' => 135, 'rotate-x' => -135, :scale => 1 }}
+        %span{ :class => 'center', :id => 'question'} 
+          ?
+    %script{ :type => 'text/javascript', :src => 'js/impress.js' }
+    %script
+      impress().init();
+
