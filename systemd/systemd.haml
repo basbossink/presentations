@@ -17,9 +17,90 @@
         %h1 Agenda
         %ul
           %li Introduction
+          %li History of systemd
           %li What is systemd?
-          %li History
           %li Components of systemd
+      %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1 }}
+        %h1 Introduction
+        %ul
+          %li 
+            %a{ :href => 'http://creativecommons.org/licenses/by/3.0/nl/' }
+              Creative Commons Attribution 3.0 Netherlands License.
+          %li 
+            Sources available on 
+            %a{ :href => 'https://github.com/basbossink/presentations/systemd'}
+              github
+          %li
+            %a{ :href => 'http://basbossink.github.io/presentations/systemd/systemd.html'}
+              Viewable version
+          %li
+            Build using 
+            %a{ :href => 'http://bartaz.github.io/impress.js/#/bored'}
+              impress.js
+      %div{ :class => 'step slide', :data => { :x => 750, :y => 750, :scale => 1 }}
+        %h1 History
+        %ul
+          %li First commit 18 Nov 2009  
+          %li Publicly announced by Lennart Poetering 30 Apr 2010
+          %li 
+            Itch:
+            %ul
+              %li better init
+              %li better system management
+      %div{ :class => 'step slide', :data => { :x => 1500, :y => 1500, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              systemd is a suite of basic building blocks for a Linux system. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 1500, :y => 1500, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li It's not just an init system
+          %li It's an attempt to solve many 'problems'
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              It provides a system and service manager that runs as PID 1 and starts the rest of the system.
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li It's a replacement for init
+          %li It's a replacement for SysV init scripts
+          %li It not only starts processes, it manages them
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux control groups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li start all services at once (like launchd)
+          %li use kernel socket buffers to avoid waiting
+          %li use cgroups to make sure no processes get lost
+          %li either start a set of services, or don't start any of them
       %div{ :class => 'step slide', :data => { :x => -16100, :y => -16100, 'rotate-z' => 135, 'rotate-y' => 135, 'rotate-x' => -135, :scale => 1 }}
         %span{ :class => 'center', :id => 'question'} 
           ?

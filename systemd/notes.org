@@ -17,14 +17,19 @@
 * Systemd
 ** Agenda
 *** Introduction
-*** What is systemd?
 *** History
+*** What is systemd?
 *** Components of systemd
-*** Examples
 ** Introduction
 - Creative Common license
 - impress.js
 - presentation available on github
+** History
+- git log: first commit Wed Nov 18 00:42:52 2009 +0100
+- announcement blog post Lennart Poetering: 30 Apr 2010
+- Initially described as a new init system
+- inspired by launchd from Mac OS-X
+- inspired by kernel features such as cgroups
 ** What is systemd
 *** Definition from [[http://www.freedesktop.org/wiki/Software/systemd/][systemd site]]:
 systemd is a suite of basic building blocks for a Linux system. It
