@@ -19,6 +19,7 @@
 *** Introduction
 *** History
 *** What is systemd?
+*** Concepts
 *** Components of systemd
 ** Introduction
 - Creative Common license
@@ -30,7 +31,8 @@
 - Initially described as a new init system
 - inspired by launchd from Mac OS-X
 - inspired by kernel features such as cgroups
-** What is systemd
+- First distro shipping with systemd Fedora 15 2011-05-24
+** What is systemd?
 *** Definition from [[http://www.freedesktop.org/wiki/Software/systemd/][systemd site]]:
 systemd is a suite of basic building blocks for a Linux system. It
 provides a system and service manager that runs as PID 1 and starts
@@ -60,4 +62,83 @@ synchronization, log forwarding, and name resolution.
 - log forwarding
 - system configuration
 - device manager (includes udev)
-
+** Concepts
+*** Units:
+- Target
+- Service
+- Device
+- Mount
+- Automount
+- Snapshot
+- Timer
+- Swap
+- Path
+- Slice
+- Scope
+**** Show systemadm
+- systemadm is the default systemd gui
+- allows to see different units, possibly filtered by type
+** Components of systemd
+- List is not exhaustive
+*** systemctl
+- manage the system/services
+**** Run systemctl
+- systemctl list-units
+- systemctl list-units --type service
+- systemctl list-units --type timer
+- systemctl list-units --type mount
+- systemctl --failed
+- systemctl status openntpd
+- systemctl stop openntpd
+- systemctl disable openntpd
+- systemctl enable openntpd
+*** journalctl
+- show the journal/system log
+**** Run journalctl
+- journalctl
+- journalctl --reverse
+- journalctl --reverse --priority=err
+- journalctl --reverse --priority=err --output=verbose
+*** systemd-cgls
+- show the tree of cgroups
+**** Run systemd-cgls
+- systemd-cgls
+- systemd-cgls -M arch-tree
+*** systemd-cgtop
+- top command for cgroups
+**** Run systemd-cgtop
+- systemd-cgtop
+*** systemd-notify
+- send notifications to systemd
+*** systemd-analyze
+- analyze system boot-up performance
+- systemd-analyze 
+- systemd-analyze plot > boot.svg; display boot.svg
+*** loginctl
+- manage user sessions
+**** Run loginctl
+- loginctl
+- loginctl -M arch-tree
+- loginctl show-user bas
+*** systemd-nspawn
+- Spawn a namespace container for debugging, testing and building
+**** Run systemd-nspawn
+- systemd-nspawn -bD arch-tree
+- systemd-nspawn -bD arch-tree -M arch2
+*** machinectl
+- Control the systemd machine manager
+- control containers
+**** Run machinectl
+- machinectl
+- machinectl poweroff arch2
+*** hostnamectl
+- manage the hostname, also of remote systems
+**** Run hostnamectl
+- hostnamectl
+- hostnamectl -M arch-tree
+*** localectl
+- manage locale settings, keyboard settings
+*** timedatectl
+- manage date time settings, ntp settings if using systemds ntp client
+*** networkctl
+- show status of network links

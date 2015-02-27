@@ -5,13 +5,13 @@
     %meta{ :name => 'viewport', :content => 'width=1024' }
     %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
     %meta{ :name => 'author', :content => 'Bas Bossink' }
-    %title Systemd | by Bas Bossink
+    %title systemd | by Bas Bossink
     %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
     %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
     %body{ :class => 'impress-not-supported'}
     %div{ :id => 'impress'}
       %div{ :class => 'step slide title', :data => { :x => -1500, :y => -1500, :scale => 7 }}
-        %h1 Systemd
+        %h1 systemd
         %h2 Bas Bossink <bas.bossink@gmail.com>
       %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
         %h1 Agenda
@@ -19,6 +19,7 @@
           %li Introduction
           %li History of systemd
           %li What is systemd?
+          %li Units
           %li Components of systemd
       %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1 }}
         %h1 Introduction
@@ -34,9 +35,13 @@
             %a{ :href => 'http://basbossink.github.io/presentations/systemd/systemd.html'}
               Viewable version
           %li
-            Build using 
-            %a{ :href => 'http://bartaz.github.io/impress.js/#/bored'}
-              impress.js
+            Built using
+            ="&nbsp;"
+            %a{ :href => 'http://bartaz.github.io/impress.js/#/bored'}>impress.js
+            ,
+            %a{ :href => 'http://haml.info/'}Haml 
+            and 
+            %a{ :href => 'http://sass-lang.com/'}Sass 
       %div{ :class => 'step slide', :data => { :x => 750, :y => 750, :scale => 1 }}
         %h1 History
         %ul
@@ -101,6 +106,34 @@
           %li use kernel socket buffers to avoid waiting
           %li use cgroups to make sure no processes get lost
           %li either start a set of services, or don't start any of them
+      %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, :scale => 1 }}
+        %h1 Concepts: Unit
+        %blockquote
+          %dl
+            %dt unit
+            %dd
+              Units encapsulate various objects that are relevant for system boot-up and maintenance. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/software/systemd/man/systemd.html'}
+                systemd(1)
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
+        %h1 Concepts: Unit
+        %h2 Examples
+        %ul
+          %li Target (think runlevel)
+          %li Service 
+          %li Timer (think cron job)
+          %li Mount
+          %li Device (udev functionality)
+      %div{ :class => 'step slide', :data => { :x => 5250, :y => 5250, :scale => 1 }}
+        %h1 Components of systemd
+        %figure
+          %img{ :src => 'images/SystemdArchitecture.svg', :width => 800 }
+        %figcaption
+          %a{ :href => 'http://blog.lusis.org/images/posts/systemd/systemd-arch.png' }
+            based on: picture from blog dot lusis: The end of Linux
+        
       %div{ :class => 'step slide', :data => { :x => -16100, :y => -16100, 'rotate-z' => 135, 'rotate-y' => 135, 'rotate-x' => -135, :scale => 1 }}
         %span{ :class => 'center', :id => 'question'} 
           ?
