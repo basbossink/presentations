@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\mode<presentation>
+{
+  \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\title[R]{R: for your plotting and statistical needs}
+\author{Bas Bossink}
+\institute{}
+\date{2-2-2016}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+\begin{frame}
+\section{Introduction}
+\end{frame}
+\begin{frame}
+\section{History}
+\end{frame}
+\begin{frame}
+\section{Getting Data}
+\end{frame}
+\begin{frame}
+\section{Getting To Know The Data}
+\end{frame}
+\begin{frame}
+\section{Simple Plots}
+\end{frame}
+\begin{frame}
+\section{The R Language}
+\end{frame}
+\begin{frame}
+\section{The Ecosystem}
+\end{frame}
+\end{document}

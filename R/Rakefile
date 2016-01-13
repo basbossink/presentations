@@ -1,0 +1,31 @@
+require 'rake/clean'
+KNITR_FILES = FileList["*.Rnw"]
+OUTPUT_TEX  = KNITR_FILES.ext(".tex")
+OUTPUT = OUTPUT_TEX.ext(".pdf")
+CLEAN.include(FileList[
+  "*.bbl",
+  "*.nav",
+  "*.blg",
+  "*.toc",
+  "*.snm",
+  "*.aux", 
+  "*.log", 
+  "*.out", 
+  OUTPUT_TEX, 
+  "figure/**/*", 
+  "cache/**/*"])
+CLOBBER.include(OUTPUT )
+
+rule ".tex" => ".Rnw" do |t|
+  sh %[Rscript --vanilla -e "library(knitr); knit('#{t.source}');"]
+end
+
+rule ".pdf" => ".tex" do |t|
+  sh %[ lualatex #{t.source} ] 
+  sh %[ bibtex #{t.source.ext(".aux")}]
+  2.times { sh %[ lualatex #{t.source} ] }
+end
+
+file OUTPUT => OUTPUT_TEX
+desc "Create pdf"
+task :default => OUTPUT
