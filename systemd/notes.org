@@ -1,0 +1,144 @@
+#+TITLE:     Systemd
+#+AUTHOR:    Bas Bossink
+#+EMAIL:     bas.bossink@gmail.com
+#+DATE:      2015-02-10 Tue
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: toc:nil
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
+#+XSLT:
+* Systemd
+** Agenda
+*** Introduction
+*** History
+*** What is systemd?
+*** Concepts
+*** Components of systemd
+** Introduction
+- Creative Common license
+- impress.js
+- presentation available on github
+** History
+- git log: first commit Wed Nov 18 00:42:52 2009 +0100
+- announcement blog post Lennart Poetering: 30 Apr 2010
+- Initially described as a new init system
+- inspired by launchd from Mac OS-X
+- inspired by kernel features such as cgroups
+- First distro shipping with systemd Fedora 15 2011-05-24
+** What is systemd?
+*** Definition from [[http://www.freedesktop.org/wiki/Software/systemd/][systemd site]]:
+systemd is a suite of basic building blocks for a Linux system. It
+provides a system and service manager that runs as PID 1 and starts
+the rest of the system. systemd provides aggressive parallelization
+capabilities, uses socket and D-Bus activation for starting services,
+offers on-demand starting of daemons, keeps track of processes using
+Linux control groups, supports snapshotting and restoring of the
+system state, maintains mount and automount points and implements an
+elaborate transactional dependency-based service control logic.
+systemd supports SysV and LSB init scripts and works as a replacement
+for sysvinit. Other parts include a logging daemon, utilities to
+control basic system configuration like the hostname, date, locale,
+maintain a list of logged-in users and running containers and virtual
+machines, system accounts, runtime directories and settings, and
+daemons to manage simple network configuration, network time
+synchronization, log forwarding, and name resolution.
+*** Highlights
+- init system
+- services/daemon manager
+- process manager
+- mount and automount 
+- logging daemon
+- login daemon
+- network configuration
+- time configuration
+- name resolution
+- log forwarding
+- system configuration
+- device manager (includes udev)
+** Concepts
+*** Units:
+- Target
+- Service
+- Device
+- Mount
+- Automount
+- Snapshot
+- Timer
+- Swap
+- Path
+- Slice
+- Scope
+**** Show systemadm
+- systemadm is the default systemd gui
+- allows to see different units, possibly filtered by type
+** Components of systemd
+- List is not exhaustive
+*** systemctl
+- manage the system/services
+**** Run systemctl
+- systemctl list-units
+- systemctl list-units --type service
+- systemctl list-units --type timer
+- systemctl list-units --type mount
+- systemctl --failed
+- systemctl status openntpd
+- systemctl stop openntpd
+- systemctl disable openntpd
+- systemctl enable openntpd
+*** journalctl
+- show the journal/system log
+**** Run journalctl
+- journalctl
+- journalctl --reverse
+- journalctl --reverse --priority=err
+- journalctl --reverse --priority=err --output=verbose
+*** systemd-cgls
+- show the tree of cgroups
+**** Run systemd-cgls
+- systemd-cgls
+- systemd-cgls -M arch-tree
+*** systemd-cgtop
+- top command for cgroups
+**** Run systemd-cgtop
+- systemd-cgtop
+*** systemd-notify
+- send notifications to systemd
+*** systemd-analyze
+- analyze system boot-up performance
+- systemd-analyze 
+- systemd-analyze plot > boot.svg; display boot.svg
+*** loginctl
+- manage user sessions
+**** Run loginctl
+- loginctl
+- loginctl -M arch-tree
+- loginctl show-user bas
+*** systemd-nspawn
+- Spawn a namespace container for debugging, testing and building
+**** Run systemd-nspawn
+- systemd-nspawn -bD arch-tree
+- systemd-nspawn -bD arch-tree -M arch2
+*** machinectl
+- Control the systemd machine manager
+- control containers
+**** Run machinectl
+- machinectl
+- machinectl poweroff arch2
+*** hostnamectl
+- manage the hostname, also of remote systems
+**** Run hostnamectl
+- hostnamectl
+- hostnamectl -M arch-tree
+*** localectl
+- manage locale settings, keyboard settings
+*** timedatectl
+- manage date time settings, ntp settings if using systemds ntp client
+*** networkctl
+- show status of network links

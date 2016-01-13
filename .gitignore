@@ -1,4 +1,7 @@
 *.htm*
 .*.swp
 *~
+.sass-cache/
+*.css.map
+*.css
 Thumbs.db

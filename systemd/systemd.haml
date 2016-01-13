@@ -1,0 +1,145 @@
+!!! 5
+%html
+  %head
+    %meta{ 'charset' => 'utf-8' }
+    %meta{ :name => 'viewport', :content => 'width=1024' }
+    %meta{ :name => 'apple-mobile-web-app-capable', :content => 'yes' }
+    %meta{ :name => 'author', :content => 'Bas Bossink' }
+    %title systemd | by Bas Bossink
+    %link{ :rel => 'stylesheet', :href => 'styles/default.css', :type => 'text/css' }
+    %link{ :rel => 'apple-touch-icon', :href => 'apple-touch-icon.png' }
+    %body{ :class => 'impress-not-supported'}
+    %div{ :id => 'impress'}
+      %div{ :class => 'step slide title', :data => { :x => -1500, :y => -1500, :scale => 7 }}
+        %h1 systemd
+        %h2 Bas Bossink <bas.bossink@gmail.com>
+      %div{ :class => 'step slide', :data => { :x => -750, :y => -750, :scale => 1 }}
+        %h1 Agenda
+        %ul
+          %li Introduction
+          %li History of systemd
+          %li What is systemd?
+          %li Units
+          %li Components of systemd
+          %li Demo time
+      %div{ :class => 'step slide', :data => { :x => 0, :y => 0, :scale => 1 }}
+        %h1 Introduction
+        %ul
+          %li 
+            %a{ :href => 'http://creativecommons.org/licenses/by/3.0/nl/' }
+              Creative Commons Attribution 3.0 Netherlands License.
+          %li 
+            Sources available on 
+            %a{ :href => 'https://github.com/basbossink/presentations/systemd'}
+              github
+          %li
+            %a{ :href => 'http://basbossink.github.io/presentations/systemd/systemd.html'}
+              Viewable version
+          %li
+            Built using
+            ="&nbsp;"
+            %a{ :href => 'http://bartaz.github.io/impress.js/#/bored'}>impress.js
+            ,
+            %a{ :href => 'http://haml.info/'}Haml 
+            and 
+            %a{ :href => 'http://sass-lang.com/'}Sass 
+      %div{ :class => 'step slide', :data => { :x => 750, :y => 750, :scale => 1 }}
+        %h1 History
+        %ul
+          %li First commit 18 Nov 2009  
+          %li Publicly announced by Lennart Poetering 30 Apr 2010
+          %li 
+            Itch:
+            %ul
+              %li better init
+              %li better system management
+      %div{ :class => 'step slide', :data => { :x => 1500, :y => 1500, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              systemd is a suite of basic building blocks for a Linux system. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 1500, :y => 1500, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li It's not just an init system
+          %li It's an attempt to solve many 'problems'
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              It provides a system and service manager that runs as PID 1 and starts the rest of the system.
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 2250, :y => 2250, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li It's a replacement for init
+          %li It's a replacement for SysV init scripts
+          %li It not only starts processes, it manages them
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, :scale => 1 }}
+        %h1 What is systemd?
+        %blockquote
+          %dl 
+            %dt
+              systemd
+            %dd 
+              systemd provides aggressive parallelization capabilities, uses socket and D-Bus activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux control groups, supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/wiki/Software/systemd/'}
+                systemd System and Service Manager
+      %div{ :class => 'step slide', :data => { :x => 3000, :y => 3000, 'rotate-x' => 90, :scale => 1 }}
+        %h1 What is systemd?
+        %ul
+          %li start all services at once (like launchd)
+          %li use kernel socket buffers to avoid waiting
+          %li use cgroups to make sure no processes get lost
+          %li either start a set of services, or don't start any of them
+      %div{ :class => 'step slide', :data => { :x => 3750, :y => 3750, :scale => 1 }}
+        %h1 Concepts: Unit
+        %blockquote
+          %dl
+            %dt unit
+            %dd
+              Units encapsulate various objects that are relevant for system boot-up and maintenance. 
+          %footer
+            %cite
+              %a{ :href => 'http://www.freedesktop.org/software/systemd/man/systemd.html'}
+                systemd(1)
+      %div{ :class => 'step slide', :data => { :x => 4500, :y => 4500, :scale => 1 }}
+        %h1 Concepts: Unit
+        %h2 Examples
+        %ul
+          %li Target (think runlevel)
+          %li Service 
+          %li Timer (think cron job)
+          %li Mount
+          %li Device (udev functionality)
+      %div{ :class => 'step slide', :data => { :x => 5250, :y => 5250, :scale => 1 }}
+        %h1 Components of systemd
+        %figure
+          %img{ :src => 'images/SystemdArchitecture.svg', :width => 800 }
+        %figcaption
+          %a{ :href => 'http://blog.lusis.org/images/posts/systemd/systemd-arch.png' }
+            based on: picture from blog dot lusis: The end of Linux
+      %div{ :class => 'step slide', :data => { :x => 6000, :y => 6000, :scale => 1 }}
+        %h1 Demo time
+      %div{ :class => 'step slide', :data => { :x => 6750, :y => 6750, :scale => 1 }}
+        %span{ :class => 'center', :id => 'question'} 
+          ?
+    %script{ :type => 'text/javascript', :src => 'js/impress.js' }
+    %script
+      impress().init();
+
