@@ -1,4 +1,5 @@
-\documentclass{beamer}
+\documentclass[lualatex]{beamer}
+\usepackage{luatextra}
 \mode<presentation>
 {
   \usetheme{default}      % or try Darmstadt, Madrid, Warsaw, ...
@@ -7,40 +8,75 @@
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{caption}[numbered]
 } 
+\usepackage[hypcap]{caption}
 \usepackage[english]{babel}
-\usepackage[utf8x]{inputenc}
-\title[R]{R: for your plotting and statistical needs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newcommand{\thisTitle}{R: for your plotting and statistical needs}
+\hypersetup{breaklinks=true,
+            unicode=true,
+            bookmarks=true,
+            pdfpagemode=FullScreen,
+            pdfauthor={Bas Bossink},
+            pdftitle={\thisTitle},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\usepackage[T1]{fontenc}
+\title[R]{R}
+\subtitle{for your plotting and statistical needs}
 \author{Bas Bossink}
 \institute{}
 \date{2-2-2016}
 \begin{document}
-
 \begin{frame}
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
+\begin{frame}{Agenda}
   \tableofcontents
 \end{frame}
-\begin{frame}
 \section{Introduction}
+\begin{frame}{Introduction}
+  \begin{itemize}
+    \item License
+      \begin{itemize}
+        \item \href{http://creativecommons.org/licenses/by/3.0/nl/}{Creative Commons Attribution 3}
+      \end{itemize}
+    \item build using:
+      \begin{itemize}
+        \item \href{https://www.r-project.org/}{R}
+        \item \href{http://yihui.name/knitr/}{knitr}
+        \item \href{http://www.luatex.org/}{LuaLatex}
+      \end{itemize}
+  \end{itemize}
 \end{frame}
-\begin{frame}
 \section{History}
+\begin{frame}{History}
 \end{frame}
-\begin{frame}
+
 \section{Getting Data}
+\begin{frame}{Getting Data}
 \end{frame}
-\begin{frame}
+
 \section{Getting To Know The Data}
+\begin{frame}{Getting To Know The Data}
 \end{frame}
-\begin{frame}
-\section{Simple Plots}
+
+\section{Plots}
+\begin{frame}{Simple Plots}
 \end{frame}
-\begin{frame}
+
 \section{The R Language}
+\begin{frame}{The R Language}
 \end{frame}
-\begin{frame}
+
 \section{The Ecosystem}
+\begin{frame}{The Ecosystem}
 \end{frame}
+
 \end{document}

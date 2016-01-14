@@ -21,9 +21,7 @@ rule ".tex" => ".Rnw" do |t|
 end
 
 rule ".pdf" => ".tex" do |t|
-  sh %[ lualatex #{t.source} ] 
-  sh %[ bibtex #{t.source.ext(".aux")}]
-  2.times { sh %[ lualatex #{t.source} ] }
+  2.times {sh %[ lualatex #{t.source} ] }
 end
 
 file OUTPUT => OUTPUT_TEX
