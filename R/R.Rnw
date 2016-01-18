@@ -14,6 +14,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{listings}
 \newcommand{\thisTitle}{R: for your plotting and statistical needs}
 \hypersetup{breaklinks=true,
             unicode=true,
@@ -33,6 +34,11 @@
 \institute{}
 \date{2-2-2016}
 \begin{document}
+<<setup, include=FALSE>>=
+library(knitr)
+setwd("~/Dropbox/projects/presentations2/R")
+opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
+@
 \begin{frame}
   \titlepage
 \end{frame}
@@ -61,10 +67,26 @@
 
 \section{Getting Data}
 \begin{frame}{Getting Data}
+\begin{alltt}
+git clone git@github.com:torvalds/linux.git
+git checkout -b stable-v4.3.3 v4.3.3 
+cloc --csv --out=linux-4.3.3.csv
+\end{alltt}
+<<>>=
+freebsd <- read.csv("freebsd-10.2.csv")
+linux <- read.csv("linux-4.3.3.csv")
+openbsd <- read.csv("openbsd-5.8.csv")
+minix <- read.csv("minix-3.3.csv")
+@
 \end{frame}
 
 \section{Getting To Know The Data}
 \begin{frame}{Getting To Know The Data}
+<<>>=
+str(freebsd)
+summary(freebsd)
+colSums(freebsd[,3:5])
+@
 \end{frame}
 
 \section{Plots}
