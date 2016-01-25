@@ -7,7 +7,7 @@ Agenda
 ======
 ```{r, echo=FALSE}
 library(knitr)
-setwd("~/Dropbox/projects/presentations2/R")
+#setwd("~/Dropbox/projects/presentations2/R")
 opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
 ```
 - Introduction
@@ -16,18 +16,18 @@ opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size
 - Getting Data
 - Getting To Know Data
 - Plots
-- The Ecosystem
+- The R Ecosystem
 
 Introduction
 ============
 - License
   - [Creative Commons Attribution 3](http://creativecommons.org/licenses/by/3.0/nl/)
 - build using:
-  - [R][r]
-  - [RStudio][rstudio]
-  - [RMarkdown][rmd]
+  - [R](https://www.r-project.org/)
+  - [RStudio](https://www.rstudio.com/)
+  - [RMarkdown](http://rmarkdown.rstudio.com/)
 
-What is R
+What is R?
 =========
 
 > R is a free software environment for statistical computing and graphics. 
@@ -48,7 +48,7 @@ What is S?
 - S is a language that was developed by John Chambers and others at Bell
 Labs.
 - S was initiated in 1976 as an internal statistical analysis
-environment—originally implemented as Fortran libraries.
+environment, originally implemented as Fortran libraries.
 - Early versions of the language did not contain functions for statistical
 modeling.
 
@@ -144,79 +144,168 @@ Features of R (cont'd)
   (Both in the sense of beer and in the sense of speech.)
 - End of content from [Coursera: R-Programming](https://raw.githubusercontent.com/rdpeng/courses/master/02_RProgramming/OverviewHistoryR/index.Rmd)
 
-The R Language 
-==============
-```{r}
-# comment
-help("help") # retrieve help about a topic
-?plot # or function
-fred <- "Flinstone" # <- assignment, 
-barney <- c(1,2,3) # c(), concatenate create vector
-wilma <- 1:4 # : range operator
-wilma
-```
-The R Language 
-==============
-```{r}
-rubbles <- 6:3 # range also works in reverse order
-rubbles
-```
-The R Language 
-==============
-```{r}
-fred <- seq(10, 100, 10) # generate sequences with a certain step size
-fred
+The R Language: Help 
+====================
+- `#` is the comment character
+- use the `help` function for help
+```{r eval=FALSE}
+help("plot") 
+?plot
 ```
 
-The R Language 
+Logicals 
+========
+```{r}
+TRUE
+FALSE
+```
+
+Characters
+==========
+```{r}
+"Hello, world!" 
+```
+
+Numeric Values 
 ==============
-- fred = `r fred`
-- wilma = `r wilma`
-- fred*wilma = `r fred*wilma`
+```{r}
+13.37
+37
+```
+
+Not Available 
+=============
+- `r NA`, R's representation of missing data
+```{r}
+NA
+```
+
+Vectors
+=======
+- `c()`, 'concatenate', creates a vector
+- can hold values of a single type
+- coercion takes place
+```{r}
+c(1,2,3) 
+c(1, TRUE, "Flinstone") 
+```
+
+Indexing Vectors
+================
+```{r}
+c(1,2)[1]
+c(3,4)[2]
+c()[1]
+```
+
+Lists
+=====
+- can hold values of different types 
+```{r}
+list(1,TRUE)
+```
+
+Lists (II)
+==========
+```{r}
+str(list(1,TRUE))
+```
+
+Indexing Lists
+=============
+```{r}
+list(1,TRUE)[[2]]
+```
+
+Ranges
+======
+- `:` range operator
+```{r}
+1:4
+```
+- range operator also works in reverse order
+```{r}
+6:3
+```
+
+Sequences
+==============
+- generate sequences with a certain step size
+```{r}
+seq(0, 1, 0.21) 
+```
+
+Vector Operations 
+=================
+- fred = `r 1:3`
+- wilma = `r 3:6`
+- fred * wilma = `r (1:3)*(3:6)`
 - almost all operations can be performed on vectors
 
-The R Language 
-==============
+Vector Dimensions
+=================
 ```{r}
-a <- c(TRUE,FALSE) # also has booleans
+a <- 1:4
+dim(a)
+dim(a) <- c(2,2)
 a
-b <- c("Hello,", "world!") # strings
-b
-seq(0, 1, 0.3) # doubles
 ```
-The R Language 
-==============
+
+Factors 
+=======
 - factors, R's representation of categorical data
 ```{r}
-d <- factor(c("Medium", "High"), c("Low", "Medium", "High"), ordered= TRUE)
-d
+factor(c("Medium", "High"), c("Low", "Medium", "High"), ordered= TRUE)
 ```
-The R Language 
-==============
+
+Data Frames 
+===========
 - data frames, a type that represents tabular data
 ```{r}
-c <- data.frame(a, b, d)
-names(c) <- c("Truth", "Out.there", "Satisfaction")
+c <- data.frame(married=c(TRUE,NA), medication=c("a", "b"), satisfaction=c(1,2))
 c
 ```
 
-The R Language 
-==============
+Indexing Data Frames
+====================
+- can be indexed using numbers
 ```{r}
-c[,1] # can be indexed using numbers
-c[, "Truth"] # can be index using column names
+c[,1] 
+```
+- can be index using column names
+```{r}
+c[, "married"] 
 ```
 
-The R Language 
-==============
+Indexing Data Frames (II) 
+=========================
+- can be indexed using the `$` operator
 ```{r}
-c$Out.there # can be index using the $ operator
-c[1, 2:3] # can be indexed using vectors
+c$medication 
+```
+- can be indexed using vectors
+```{r}
+c[1, 2:3] 
+```
+
+Data Frames: Column Names
+=========================
+```{r}
+names(c)
+names(c)[1] <- "marital.status"
+names(c)
 ```
 
 Getting Data
 ============
+- files, CSV, delimited
+- databases, SQL, MongoDb
+- webpages
+- JSON
+- Excel, SAS, SPSS, Stata, systat, Minitab
 
+Reading CSV Files
+=================
 ```{bash, eval=FALSE}
 git clone git://git.kernel.org/.../linux-stable.git
 cd linux-stable
@@ -231,94 +320,102 @@ openbsd <- read.csv("openbsd-5.8.csv")
 minix <- read.csv("minix-3.3.csv")
 ```
 
-Getting To Know Data
+Data structure
 ====================
 ```{r}
-str(freebsd) # show the 'structure' of the argument
+str(linux) # show the 'structure' of the argument
 ```
 
-Getting To Know Data
-====================
+Looking At Data
+===============
 ```{r}
-head(freebsd) # show the first couple of rows
+head(linux, 3) # show the first couple of rows
 ```
-
-Getting To Know Data
-====================
+Looking At Data
+===============
 ```{r}
-summary(freebsd$files) # summarize the data
+tail(linux, 3) # show the last couple of rows
 ```
 
-Getting To Know Data
-====================
+Summarizing Data
+================
+```{r}
+summary(linux$files) # summarize the data
+```
+
+Summarizing Data
+================
 ```{r}
 library(Hmisc) # load the previously installed "Hmisc" package
-t(t(describe(freebsd$files)$counts))
+t(t(describe(linux$files)$counts))
 ```
 
-Getting To Know Data
-====================
+Summarizing Data
+================
 ```{r}
 library(pastecs)
 options(digits = 3)
-t(t(stat.desc(freebsd$files, basic=FALSE)))
-```
-Getting To Know Data
-====================
-```{r}
-t(t(stat.desc(freebsd$files, basic=FALSE, desc=FALSE,norm=TRUE)))
+t(t(stat.desc(linux$files, basic=FALSE)))
 ```
 
-Getting To Know Data
-====================
+Summarizing Data
+================
 ```{r}
-colSums(freebsd[,c(1,3:5)])
+t(t(stat.desc(linux$files, basic=FALSE, desc=FALSE,norm=TRUE)))
 ```
 
-Getting To Know Data
-====================
+Summarizing Data
+================
 ```{r}
-lines.per.file <- rowSums(freebsd[,3:5])/freebsd[,1]
+colSums(linux[,c(1,3:5)])
+```
+
+Summarizing Data
+================
+```{r}
+lines.per.file <- rowSums(linux[,3:5])/linux[,1]
 mean(lines.per.file)
 ```
 
-Getting To Know Data
+Extending Your Data
 ====================
 ```{r}
-total.lines <- rowSums(freebsd[,3:5])
-freebsd$total.lines <- total.lines
-head(freebsd[,3:6], 3)
+total.lines <- rowSums(linux[,3:5])
+linux$total.lines <- total.lines
+head(linux[,3:6], 3)
 ```
 
-Getting To Know Data
+Sorting Data
 ====================
 ```{r}
-head(freebsd[
-  order(freebsd$total.lines, 
+head(linux[
+  order(linux$total.lines, 
       decreasing=TRUE),
     c(2,1,6)])
 ```
+
 Merging Data
-====================
+============
 ```{r}
-freebsd$project <- c("FreeBSD 10.2")
-head(freebsd[,c(1,7)],4)
+linux$project <- c("linux 4.3.3")
+head(linux[,c(1,7)],4)
 ```
 ```{r,echo=FALSE}
-freebsd <- read.csv("freebsd-10.2.csv")
+linux <- read.csv("linux-4.3.3.csv")
 freebsd$project <- c("FreeBSD 10.2")
 minix$project <- c("minix 3.3")
 linux$project <- c("linux 4.3.3")
 openbsd$project <- c("OpenBSD 5.8")
 ```
 Merging Data
-====================
+============
 ```{r}
 all <- rbind(freebsd, minix, linux, openbsd)
 total.lines <- rowSums(all[,3:5])
 all$total.lines <- total.lines
 head(all[,5:7], 3)
 ```
+
 Plots
 =====
 ```{r}
@@ -336,6 +433,7 @@ par(mar=c(3,7,1,1))
 barplot(totalsPerProject$x, names=totalsPerProject$Group.1, las=1)
 par(opar)  
 ```
+
 Plots
 =====
 ```{r eval=FALSE}
@@ -346,30 +444,6 @@ opar <- par(no.readonly = TRUE)
 par(mar=c(15,2,1,1))
 barplot(sort(table(all$language), decreasing = TRUE), las=2)
 par(opar)  
-```
-Plots
-=====
-```{r}
-set.seed(1234) # set the seed for reproducibility
-x <- seq(-10,10, 0.1)
-y <- -2 + 3*rnorm(201) # generate some random variables taken from the normal distribution
-```
-Plots
-=====
-```{r}
-plot(x,y)
-abline(lm(y~x)) # draw the linear regression line
-```
-Plots
-=====
-```{r}
-hist(y) # plot a histogram of y
-```
-
-Plots
-=====
-```{r}
-plot(density(y)) # a density plot of y
 ```
 
 Plots
@@ -384,28 +458,20 @@ linux.only <- all[all$project=="linux 4.3.3",]
 with(linux.only, barplot(total.lines, names=language, las=2, log ="y"))
 par(opar)  
 ```
+
 Plots
 =====
 ```{r}
 with(all, boxplot(total.lines ~ project, log="y",col=rainbow(4)))
 ```
-Plots
-=====
-```{r eval=FALSE}
-with(all, boxplot(total.lines ~ language, log="y", las=2)) 
-```
-```{r echo=FALSE}
-opar <- par(no.readonly = TRUE)
-par(mar=c(15,7,1,1))
-with(all, boxplot(total.lines ~ language, log="y", las=2))
-par(opar)
-```
+
 Plots
 =====
 ```{r}
 grouped <- aggregate(all[,c(3,4,5)], by=list(all$project), sum)
 names(grouped)[1] <- "project"
 ```
+
 Plots
 =====
 ```{r}
@@ -414,16 +480,106 @@ names(bars) <- grouped$project
 totals <- colSums(bars)
 relative <- t(t(bars)/totals)
 ```
+
 Plots
 =====
 ```{r}
 barplot(as.matrix(relative), col=rainbow(3), legend.text = row.names(relative))
 ```
+
 Plots
 =====
 ```{r}
 barplot(sort(relative[2,], decreasing =TRUE))
 ```
-[r]: https://www.r-project.org/
-[rstudio]: https://www.rstudio.com/
-[rmd]: http://rmarkdown.rstudio.com/
+
+Plots
+=====
+```{r}
+set.seed(1234) # set the seed for reproducibility
+x <- seq(-10,10, 0.1)
+y <- -2 + 3*rnorm(201) # generate some random variables taken from the normal distribution
+```
+
+Plots
+=====
+```{r}
+plot(x,y)
+abline(lm(y~x)) # draw the linear regression line
+```
+
+Plots
+=====
+```{r}
+hist(y) # plot a histogram of y
+rug(y) 
+```
+
+Plots
+=====
+```{r}
+plot(density(y)) # a density plot of y
+```
+
+Plots
+=====
+```{r}
+par(fig=c(0,0.8,0,0.8), new=TRUE)
+plot(x,y)
+par(fig=c(0.65,1,0,0.8),new=TRUE)
+boxplot(y, axes=FALSE)
+```
+
+The R Ecosystem
+===============
+- a large set of packages available
+- packages can be installed using:
+  ```{r eval=FALSE}
+  install.packages("RUnit")
+  ```
+- use installed packages using:
+  ```{r eval=FALSE}
+  library(RUnit)
+  ```
+The R Ecosystem
+===============
+- IDE's:
+  - [RStudio](https://www.rstudio.com/)
+  - [RKWard](https://rkward.kde.org/)
+  - [ESS (“Emacs Speaks Statistics”)](http://ess.r-project.org/)
+
+Reproducible research
+=====================
+- [knitr](http://yihui.name/knitr/)
+- [rmarkdown](http://rmarkdown.rstudio.com/)
+- [Coursera course: Reproducible Research](https://www.coursera.org/learn/reproducible-research)
+
+Learning R: Free Texts 
+======================
+- [R manuals](https://cran.r-project.org/manuals.html)
+- [Using R for Data Analysis and Graphics](http://cran.r-project.org/doc/contrib/usingR.pdf)
+- [The R Guide](http://cran.r-project.org/doc/contrib/Owen-TheRGuide.pdf)
+- [An Introduction to R](An Introduction to R)
+
+Learning R: Learning by doing
+=============================
+- [swirl](http://swirlstats.com/) : teaches R like e.g. vimtutor 
+- [RStudio Online learning](http://stackoverflow.com/questions/tagged/r)
+- [Datacamp.com: Free Introduction to R](https://www.datacamp.com/courses/free-introduction-to-r)
+- [codeschool.com: Try R](http://tryr.codeschool.com/)
+- [Coursera Data Science specialization](https://www.coursera.org/specializations/jhu-data-science)
+
+Learning R: Online resources
+============================
+- [Google](https://Www.google.com)
+- [StackOverflow tag: r](http://stackoverflow.com/questions/tagged/r)
+- [CrossValidated](http://stats.stackexchange.com/)
+- [Quick R](http://www.statmethods.net/)
+
+Learning R: Books
+=================
+- [R in Action](https://www.manning.com/books/r-in-action-second-edition?a_bid=5c2b1e1d&a_aid=RiA2ed)
+- [The Art of R Programming](http://www.amazon.com/Art-Programming-Statistical-Software-Design/dp/1593273843/ref=sr_1_1?s=books&ie=UTF8&qid=1453743811&sr=1-1&keywords=r+programming)
+- [R Cookbook](http://www.amazon.com/Cookbook-OReilly-Cookbooks-Paul-Teetor/dp/0596809158/ref=sr_1_2?s=books&ie=UTF8&qid=1453743811&sr=1-2&keywords=r+programming)
+- [The R Book](http://www.amazon.co.uk/gp/product/0470973927)
+
