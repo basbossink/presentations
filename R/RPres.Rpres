@@ -7,21 +7,33 @@ Agenda
 ======
 ```{r, echo=FALSE}
 library(knitr)
-#setwd("~/Dropbox/projects/presentations2/R")
+setwd("~/Dropbox/projects/presentations2/R")
 opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
 ```
 - Introduction
-- History
+  - What is R?
+  - History
 - The R Language
 - Getting Data
-- Getting To Know Data
+- Getting to Know Data
+
+Agenda (II)
+===========
 - Plots
+- Reproducible Research
 - The R Ecosystem
+- Resources
 
 Introduction
 ============
-- License
-  - [Creative Commons Attribution 3](http://creativecommons.org/licenses/by/3.0/nl/)
+
+Introduction
+============
+- License: [Creative Commons Attribution 3](http://creativecommons.org/licenses/by/3.0/nl/)
+- available at:
+  [http://basbossink.github.io/presentations/](http://basbossink.github.io/presentations/)
+- sources available at:
+  [github](https://github.com/basbossink/presentations/tree/master/R)
 - build using:
   - [R](https://www.r-project.org/)
   - [RStudio](https://www.rstudio.com/)
@@ -144,6 +156,10 @@ Features of R (cont'd)
   (Both in the sense of beer and in the sense of speech.)
 - End of content from [Coursera: R-Programming](https://raw.githubusercontent.com/rdpeng/courses/master/02_RProgramming/OverviewHistoryR/index.Rmd)
 
+The R Language 
+==============
+
+
 The R Language: Help 
 ====================
 - `#` is the comment character
@@ -152,6 +168,9 @@ The R Language: Help
 help("plot") 
 ?plot
 ```
+
+Demo
+====
 
 Logicals 
 ========
@@ -184,9 +203,14 @@ Vectors
 =======
 - `c()`, 'concatenate', creates a vector
 - can hold values of a single type
-- coercion takes place
 ```{r}
 c(1,2,3) 
+```
+
+Vectors (II)
+============
+- coercion takes place
+```{r}
 c(1, TRUE, "Flinstone") 
 ```
 
@@ -229,7 +253,7 @@ Ranges
 ```
 
 Sequences
-==============
+=========
 - generate sequences with a certain step size
 ```{r}
 seq(0, 1, 0.21) 
@@ -298,6 +322,9 @@ names(c)
 
 Getting Data
 ============
+
+Getting Data
+============
 - files, CSV, delimited
 - databases, SQL, MongoDb
 - webpages
@@ -320,8 +347,11 @@ openbsd <- read.csv("openbsd-5.8.csv")
 minix <- read.csv("minix-3.3.csv")
 ```
 
-Data structure
+Getting to Know Data
 ====================
+
+Data structure
+==============
 ```{r}
 str(linux) # show the 'structure' of the argument
 ```
@@ -347,7 +377,7 @@ Summarizing Data
 ================
 ```{r}
 library(Hmisc) # load the previously installed "Hmisc" package
-t(t(describe(linux$files)$counts))
+data.frame(describe(linux$files)$counts)
 ```
 
 Summarizing Data
@@ -355,13 +385,17 @@ Summarizing Data
 ```{r}
 library(pastecs)
 options(digits = 3)
-t(t(stat.desc(linux$files, basic=FALSE)))
+stats <- data.frame(stat.desc(linux$files, basic=FALSE))
+names(stats) <- ""
+stats
 ```
 
 Summarizing Data
 ================
 ```{r}
-t(t(stat.desc(linux$files, basic=FALSE, desc=FALSE,norm=TRUE)))
+stats <- data.frame(stat.desc(linux$files, basic=FALSE, desc=FALSE,norm=TRUE))
+names(stats) <- ""
+stats
 ```
 
 Summarizing Data
@@ -415,6 +449,9 @@ total.lines <- rowSums(all[,3:5])
 all$total.lines <- total.lines
 head(all[,5:7], 3)
 ```
+
+Plots
+=====
 
 Plots
 =====
@@ -530,9 +567,37 @@ par(fig=c(0.65,1,0,0.8),new=TRUE)
 boxplot(y, axes=FALSE)
 ```
 
+Reproducible Research
+=====================
+
+
+Reproducible Research
+=====================
+- make research reproducible:
+  - independently repeated
+  - validated
+- 'open-source' research:
+  - provide all code
+  - provide all data
+
+Reproducible Research Resources
+===============================
+- [Reproducible Research](http://reproducibleresearch.net/)
+- [Coursera course: Reproducible Research](https://www.coursera.org/learn/reproducible-research)
+
+Reproducible Research Tools
+===========================
+- [knitr](http://yihui.name/knitr/)
+- [rmarkdown](http://rmarkdown.rstudio.com/)
+- [CRAN Task View: Reproducible Research](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+
 The R Ecosystem
 ===============
-- a large set of packages available
+
+The R Ecosystem
+===============
+- a large set of packages available on [CRAN](https://cran.r-project.org/)
+  - [The Comprehensive R Archive Network](https://cran.r-project.org/)
 - packages can be installed using:
   ```{r eval=FALSE}
   install.packages("RUnit")
@@ -541,6 +606,7 @@ The R Ecosystem
   ```{r eval=FALSE}
   library(RUnit)
   ```
+  
 The R Ecosystem
 ===============
 - IDE's:
@@ -548,11 +614,8 @@ The R Ecosystem
   - [RKWard](https://rkward.kde.org/)
   - [ESS (“Emacs Speaks Statistics”)](http://ess.r-project.org/)
 
-Reproducible research
-=====================
-- [knitr](http://yihui.name/knitr/)
-- [rmarkdown](http://rmarkdown.rstudio.com/)
-- [Coursera course: Reproducible Research](https://www.coursera.org/learn/reproducible-research)
+Resources
+=========
 
 Learning R: Free Texts 
 ======================
@@ -583,3 +646,15 @@ Learning R: Books
 - [R Cookbook](http://www.amazon.com/Cookbook-OReilly-Cookbooks-Paul-Teetor/dp/0596809158/ref=sr_1_2?s=books&ie=UTF8&qid=1453743811&sr=1-2&keywords=r+programming)
 - [The R Book](http://www.amazon.co.uk/gp/product/0470973927)
 
+Podcasts
+========
+- [Linear Digressions](http://lineardigressions.com/)
+- [The R-Podcast](https://r-podcast.org/)
+- [R Talk Podcast](http://rtalk.org/)
+- [Not So Standard Deviations](https://soundcloud.com/nssd-podcast)
+
+Questions?
+==========
+
+Thank you
+=========

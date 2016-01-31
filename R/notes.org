@@ -1,0 +1,44 @@
+#+TITLE: R
+#+AUTHOR:    Bas Bossink
+#+EMAIL:     bas.bossink@gmail.com
+#+LANGUAGE:  nl
+#+OPTIONS:   num:nil toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+STARTUP: context
+** Agenda
+- Introduction
+  - What is R?
+  - History of R?
+- The R language
+- Getting Data
+- Getting To Know Data
+- Plots
+- The R Ecosystem
+** Introduction
+*** What is R?
+**** Intro
+    - een omgeving voor statistiek en grafieken
+    - vergelijkbaar met matlab of octave
+    - demo
+**** R-Programming
+- waarom zelf verzinnen wanneer je kunt lenen
+- Coursera cursus R-Programming
+- Creative Commons Attribution NonCommercial ShareAlike license
+***** Hoezo heet het pakket R?
+- Omdat het een dialect is van S
+***** Wat is S?
+- een taal ontwikkeld door John Chambers en anderen in Bell Labs
+- onstaan in 1976 als een aantal Fortran bibliotheken
+- in 1988 herschreven in C
+***** S Philosophy
+- geslaagd, je kunt veel doen met weinig hoge niveau functies
+***** Back to R
+- GNU GPL
+- actief ontwikkeld
+- laatste release december 2015
+***** Demo R
+- help("plot")
+- ?plot
