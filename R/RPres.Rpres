@@ -353,24 +353,24 @@ Getting to Know Data
 Data structure
 ==============
 ```{r}
-str(linux) # show the 'structure' of the argument
+str(linux)
 ```
 
 Looking At Data
 ===============
 ```{r}
-head(linux, 3) # show the first couple of rows
+head(linux, 3)
 ```
 Looking At Data
 ===============
 ```{r}
-tail(linux, 3) # show the last couple of rows
+tail(linux, 3)
 ```
 
 Summarizing Data
 ================
 ```{r}
-cbind(summary(linux$files)) # summarize the data
+cbind(summary(linux$files))
 ```
 
 Summarizing Data
@@ -393,7 +393,7 @@ Summarizing Data
 library(pastecs)
 options(digits = 3)
 stats <- data.frame(stat.desc(linux$files, basic=FALSE))
-names(stats) <- ""
+names(stats) <- "Value"
 ```
 
 Summarizing Data
@@ -550,29 +550,29 @@ barplot(sort(relative[2,], decreasing =TRUE))
 Plots
 =====
 ```{r}
-set.seed(1234) # set the seed for reproducibility
+set.seed(1234)
 x <- seq(-10,10, 0.1)
-y <- -2 + 3*rnorm(201) # generate some random variables taken from the normal distribution
+y <- -2 + 3*rnorm(201)
 ```
 
 Plots
 =====
 ```{r}
 plot(x,y)
-abline(lm(y~x)) # draw the linear regression line
+abline(lm(y~x))
 ```
 
 Plots
 =====
 ```{r}
-hist(y) # plot a histogram of y
+hist(y)
 rug(y) 
 ```
 
 Plots
 =====
 ```{r}
-plot(density(y)) # a density plot of y
+plot(density(y))
 ```
 
 Plots
