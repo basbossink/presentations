@@ -370,14 +370,21 @@ tail(linux, 3) # show the last couple of rows
 Summarizing Data
 ================
 ```{r}
-summary(linux$files) # summarize the data
+cbind(summary(linux$files)) # summarize the data
 ```
 
 Summarizing Data
 ================
 ```{r}
-library(Hmisc) # load the previously installed "Hmisc" package
-data.frame(describe(linux$files)$counts)
+library(Hmisc)
+desc <- data.frame(describe(linux$files)$counts)
+names(desc) <- "Value"
+```
+
+Summarizing Data
+================
+```{r}
+desc
 ```
 
 Summarizing Data
@@ -387,6 +394,11 @@ library(pastecs)
 options(digits = 3)
 stats <- data.frame(stat.desc(linux$files, basic=FALSE))
 names(stats) <- ""
+```
+
+Summarizing Data
+================
+```{r}
 stats
 ```
 
@@ -394,7 +406,12 @@ Summarizing Data
 ================
 ```{r}
 stats <- data.frame(stat.desc(linux$files, basic=FALSE, desc=FALSE,norm=TRUE))
-names(stats) <- ""
+names(stats) <- "Value"
+```
+
+Summarizing Data
+================
+```{r}
 stats
 ```
 
