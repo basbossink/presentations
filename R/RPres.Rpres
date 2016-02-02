@@ -7,6 +7,7 @@ Agenda
 ======
 ```{r, echo=FALSE}
 library(knitr)
+options(digits = 3)
 setwd("~/Dropbox/projects/presentations2/R")
 opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
 ```
@@ -156,6 +157,9 @@ Features of R (cont'd)
   (Both in the sense of beer and in the sense of speech.)
 - End of content from [Coursera: R-Programming](https://raw.githubusercontent.com/rdpeng/courses/master/02_RProgramming/OverviewHistoryR/index.Rmd)
 
+Demo
+====
+
 The R Language 
 ==============
 
@@ -168,9 +172,6 @@ The R Language: Help
 help("plot") 
 ?plot
 ```
-
-Demo
-====
 
 Logicals 
 ========
@@ -190,13 +191,6 @@ Numeric Values
 ```{r}
 13.37
 37
-```
-
-Not Available 
-=============
-- `r NA`, R's representation of missing data
-```{r}
-NA
 ```
 
 Vectors
@@ -261,10 +255,13 @@ seq(0, 1, 0.21)
 
 Vector Operations 
 =================
-- fred = `r 1:3`
-- wilma = `r 3:6`
-- fred * wilma = `r (1:3)*(3:6)`
-- almost all operations can be performed on vectors
+- all operations can be performed on vectors
+- values are 'recycled'
+```{r}
+fred <- 1:3
+wilma <- 3:6
+fred * wilma
+```
 
 Vector Dimensions
 =================
@@ -273,6 +270,29 @@ a <- 1:4
 dim(a)
 dim(a) <- c(2,2)
 a
+```
+
+Not Available 
+=============
+- `r NA`, R's representation of missing data
+```{r}
+NA
+```
+
+Not Available 
+=============
+- can be used in calculations
+```{r}
+v <- c(1, NA, 3)
+sum(v)
+```
+
+Not Available 
+=============
+- many functions support `na.rm` parameter
+```{r}
+v <- c(1, NA, 3)
+sum(v, na.rm = TRUE)
 ```
 
 Factors 
@@ -356,12 +376,13 @@ Data structure
 str(linux)
 ```
 
-Looking At Data
+Looking at Data
 ===============
 ```{r}
 head(linux, 3)
 ```
-Looking At Data
+
+Looking at Data
 ===============
 ```{r}
 tail(linux, 3)
@@ -391,7 +412,6 @@ Summarizing Data
 ================
 ```{r}
 library(pastecs)
-options(digits = 3)
 stats <- data.frame(stat.desc(linux$files, basic=FALSE))
 names(stats) <- "Value"
 ```
@@ -655,6 +675,7 @@ Learning R: Learning by doing
 Learning R: Online resources
 ============================
 - [Google](https://Www.google.com)
+- [The R Journal](https://journal.r-project.org/)
 - [StackOverflow tag: r](http://stackoverflow.com/questions/tagged/r)
 - [CrossValidated](http://stats.stackexchange.com/)
 - [Quick R](http://www.statmethods.net/)

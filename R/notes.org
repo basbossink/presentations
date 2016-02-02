@@ -16,13 +16,21 @@
 - Getting Data
 - Getting To Know Data
 - Plots
+- Reproducible Research
 - The R Ecosystem
+- Resources
 ** Introduction
+- Licentie CC 3 nl
+- beschikbaar online via github pages
+- source code beschikbaar op github
+- presentatie zou niet mogelijk zijn geweest zonder
+  - R
+  - RStudio de gebruikte IDE
+  - RMarkdown: om Markdown met R code te converteren naar een presentatie
 *** What is R?
 **** Intro
-    - een omgeving voor statistiek en grafieken
-    - vergelijkbaar met matlab of octave
-    - demo
+- een omgeving voor statistiek en grafieken
+- vergelijkbaar met matlab, octave, python/julia notebooks
 **** R-Programming
 - waarom zelf verzinnen wanneer je kunt lenen
 - Coursera cursus R-Programming
@@ -34,11 +42,222 @@
 - onstaan in 1976 als een aantal Fortran bibliotheken
 - in 1988 herschreven in C
 ***** S Philosophy
-- geslaagd, je kunt veel doen met weinig hoge niveau functies
+- geslaagd:
+  - je kunt veel doen met weinig hoge niveau functies
+  - toch heb je een volledige programmeertaal tot je beschikking
+  - vooral de packages zorgen voor grote stappen snel thuis
+
 ***** Back to R
-- GNU GPL
+- GNU GPL v2 or (at your option) any later version
 - actief ontwikkeld
 - laatste release december 2015
 ***** Demo R
-- help("plot")
+****** R
+- help()
 - ?plot
+****** RStudio
+- demo("graphics")
+**** The R Language 
+***** Logicals
+- boolean waardes gespeld met hoofdletters
+***** Characters
+- strings, gebruiken enkele of dubbele quotes, dubbele hebben de
+  voorkeur
+***** Numeric Values
+- getallen, R kent:
+  - gehele getallen
+  - doubles
+  - complexe getallen
+***** Vectors
+- c afkorting voor concateneer, plak aan elkaar
+- vector zijn te vergelijken met arrays in andere talen
+- R is een zwak, dynamisch getypeerde taal gelijk b.v. JavaScript
+- index is 1 gebaseerd, gelijk matlab
+- geen bounds checks, null word geretourneerd
+***** Lists
+- lijsten kunnen objecten van verschillende types bevatten
+- indexeren, weer 1 gebaseerd maar nu met dubbele haken
+***** Ranges
+- korte manier om een vector van op/aflopende gehele getallen te maken
+***** Sequences
+- korte manier om vector te maken van op/aflopende getallen te maken
+  met vaste afstand er tusssen
+***** Vector operaties
+- alle standaard berekeningen werken op vectoren
+- als een vector te kort is worden zijn waardes 'gerecycled'
+***** Vector Dimensions
+- ranges, en vectoren hebben initial geen explicite dimensie
+- dimensies kunnen worden toegewezen door een waarde te assignen aan
+  het resultaat van een functie call
+***** Not Available
+- essentieel in data analyze
+- gedraagd zich zoals je zou willen
+- veel functies ondersteunen na.rm als argument
+***** Factors
+- denk categorien:
+  - ongeordend
+  - geordend
+***** Data Frames
+- denk tabellen, excell sheet
+- kolom hebben namen
+- rijen hebben ook namen
+***** Indexing Data Frames
+- indexeren als een matrix
+- niet alle indices hoeven ingevuld te worden
+- indexeren kan ook met namen
+- indexeren kan ook met $
+- indexeren kan ook met vectoren
+***** Data Frames: Column Names
+- names functie
+- als dim kan er ook aan worden toegewezen
+**** Getting Data
+- vele manieren van input
+- ook REST wordt ondersteund
+- eenvoudigst is csv of ander separated files
+***** Reading CSV Files
+- wat leuker dan statistiek doen met source code
+- een aantal OS kernels bekijken
+- cloc is een tool om line-counts mee te doen, in dit geval levert
+  deze een regel per taal die wordt herkent met wat metrieken per taal
+**** Getting to Know Data
+***** Data Structure
+- str afkorting voor structure, structuur
+- output wat onduidelijk wegens word-wrap
+- obs: observations, observaties, rijen
+- variables, kollommen
+***** Looking at Data
+- head gelijk head shell commando
+- tweede parameter is aantal observaties
+***** Looking at Data
+- tail gelijk tails shell commando
+- tweede parameter is het aantal observaties
+***** Summarizing Data
+- summary, samenvatting
+- cbind om weergave te doen als kolom
+- Min.: minimum
+- 1st Qu.: eerste quartiel, rangschik de waarneming van hoog naar laag
+  en verdeel deze in 4 gelijke stukken, waar is de bovengrens van de
+  eerste groep
+- median: mediaan, middelste waarneming wanneer gesorteerd
+- 3rd Qu.: derde quartiel, ondergrens derde groep
+- Max.: maximum
+- Hmisc package laden
+  The Hmisc library contains many functions useful for data analysis,
+  high-level graphics, utility operations, functions for computing
+  sample size and power, translating SAS datasets into R, imputing
+  missing values, advanced table making, variable clustering,
+  character string manipulation, conversion of R objects to LaTeX
+  code, recoding variables, and bootstrap repeated measures
+  analysis. 
+- describe functie bepaalt een aantal statistieken:
+  - counts:
+    - n: aantal waarnemingen
+    - missing: het aantal missende waarnemingen
+    - unique: het aantal unieke waarnemingen
+    - Info: For numeric variables, describe adds an item called Info
+    which is a relative information measure using the relative
+    efficiency of a proportional odds/Wilcoxon test on the variable
+    relative to the same test on a variable that has no ties. Info is
+    related to how continuous the variable is, and ties are less
+    harmful the more untied values there are.
+    - Mean: gemiddelde
+    - percentielen: hetzelfde als quartielen maar dan voor groep per
+      weergegeven breuk
+  - frequencies: hoe vaak komt een zekere waarneming voor even
+    weggelaten wegens ruimte gebrek
+- pastecs package laden
+  Regulation, decomposition and analysis of space-time series.
+  - SE.mean: Standard Error of the mean
+    standaard afwijking gedeeld door de sample grootte, is de
+    standaard afwijking van het gemeten gemiddelde van het
+    daadwerkelijke gemiddelde van de gehele populatie
+  - CI.mean: Confidence Interval mean 0.95
+    Betrouwbaarheidsinterval om het gemmiddelde waarvan de kans de het
+    'echte' gemiddelde erin licht 0.95 is
+  - var: variantie, maat voor de spreiding van een steekproef
+  - std.dev: standaarddeviatie ook een maat voor de spreiding wortel
+    van de variantie
+  - coef.var: variatie coefficient: de standaarddeviatie gedeeld door
+    het gemiddelde
+  - skewness: een maat voor de asymmetrie van de verdeling.
+    Hoe hard heeft Jerommeke tegen de mooie symmetrische berg van de
+    normale verdeling geduwd
+  - skew.2SE: significantie criterium voor de skewness skew.2SE > 1
+    betekent skewness is significant verschillend van 0
+  - kurtosis: maat voor de piekvormigheid van de verdeling
+  - kurt.2SE: zelfde opmerking als skew.2SE
+  - normtest.W: Shapiro-Wilk test van normaliteit
+  - normtest.p: de overschrijdings kans van de test, p < 0.05 betekent
+    normaliteit verwerpen
+  - colSums: sommeer de rijen per kolom, totalen
+  - rowSums: sommeer de kolommen voor iedere rij
+***** Extending Your Data
+- toewijzen aan een niet bestaande index voegt een kolom toe
+***** Sorting Data
+- order levert een vector van indices op die de juiste
+  sorteer-volgorde weergeeft
+***** Merging Data
+- eerst data sets identificeer baar maken bij naam
+- ook hier weer gebruikmaken van 'recyclen'
+- rbind, betekent row bind, verbind de rijen met elkaar
+***** Plots
+- with, zodat je niet steeds all$ hoeft te typen
+- aggregate, aggregeer per, tweede parameter, in dit geval per project 
+- sum, wordt hier als functie meegegeven
+- bereken de totale line count per project
+- barplot, een standaard staafdiagram
+- las = 1, zodat de labels op de y-as loodrecht op de as komen te staan
+- table, tel het aantal keer dat waarneming x voorkomt
+- sort, sorteer deze vector, van groot naar klein
+- las = 2, zodat de labels op beide assen loodrecht op de as komen te
+  staan
+- dit geeft een beeld van welke talen door meerdere projecten worden
+  gebruikt en welke niet
+- indexeren kan ook met een predicaat, denk where clausule
+- log = "y", gebruik voor de y as een logaritmische schaal
+- boxplot, geeft een beeld van de verdeling van de data bedenk dat de
+  waarnemingen zijn de verschillende gebruikte talen
+- rainbow, levert een set van kleuren op
+- grouped, voor ieder van de kolommen bereken de totalen per project
+- bars, maak een tabel van het gespiegelde van kolommen 2 tot 4 van
+  grouped
+- totals bereken de totalen per kolom
+- relative, welk deel van de code bestaat uit whitespace, commentaar,
+  code
+- as.matrix, converter de data naar een matrix
+- legend.text, vul de texten in de legende met de rij namen van
+  relative
+- minix houd minder van wit regels
+- linux meeste wit regels
+- commentaar?
+- minix bevat het meeste commentaar
+- linux op de laatste plaats
+- set.seed, zet het seed van de random number generator
+- rnorm, geef me 201 willekeurige getallen getrokken uit een normale verdeling
+- plot, generieke plot functie
+- abline, voeg een lijn toe aan een plot
+- lm, bereken het lineaire model, bepaal de regressie lijn
+- hist, teken een histogram, verdeel de waarnemingen in een aantal
+  bakjes en tel het aantal waarnemingen per bakje
+- rug, teke een streepje op de x-as voor iedere waarneming
+- density, bepaal de dichtheid van y
+- meerdere plots in een diagram
+**** Reproducible Research
+- bekijk de source van deze presentatie
+- data, plus code, worden samen geregen tot een document,presentatie
+**** The R Ecosystem
+- R wordt steeds populairder
+- data analist groeiende beroepsgroep
+- ja je kunt je R code ook unit testen
+- RStudio beste IDE
+- RKWard, doet zijn naam eer aan:
+  - point en click is niet het efficientste interface voor R
+**** Resources
+- veel vrij en gratis materiaal te vinden
+- deze de moeite waard
+- interactief, ook leuk
+- StackOverflow, actieve community
+- CrossValidated, ook vooral statistiek vragen
+- ik heb alleen pas de eerste helft van R in Action gelezen ok
+- podcasts vind ik een fijn medium:
+  - Linear Digressions: vaak uitleg over een onderwerp lekker kort
