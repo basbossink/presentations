@@ -8,7 +8,6 @@ Agenda
 ```{r, echo=FALSE}
 library(knitr)
 options(digits = 3)
-setwd("~/Dropbox/projects/presentations2/R")
 opts_chunk$set(fig.path='figure/beamer-',fig.align='center',fig.show='hold',size='footnotesize')
 ```
 - Introduction
