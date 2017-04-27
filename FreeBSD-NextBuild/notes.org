@@ -1,0 +1,98 @@
+#+TITLE: FreeBSD the lesser known workhorse of the internet
+#+AUTHOR:    Bas Bossink
+#+EMAIL:     bas.bossink@divverence.com
+#+LANGUAGE:  en
+#+OPTIONS:   num:nil toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+STARTUP: context
+* FreeBSD the lesser known workhorse of the internet
+** Outline
+*** Introduction
+**** Me
+**** title
+**** tools
+*** Overview
+*** What is FreeBSD?
+**** Products
+***** PF-sense
+***** OpPNSense
+***** FreeNAS/TrueNAS
+***** MacOS
+**** Complete OS
+***** Consistent
+**** No distributions
+***** TrueOS
+***** HardenedBSD
+***** NanoBSD
+***** BSD Router project
+*** History
+**** AT&T Unix
+**** 4BSD
+**** NetBSD
+**** OpenBSD
+*** Licensing
+*** Community
+**** Development model
+**** Core team
+**** Conferences
+**** BSDnow.tv
+*** Features
+**** ABI stability
+**** Stability
+**** Documentation
+***** Handbook
+***** man pages
+***** Books
+**** OpenZFS
+**** bhyve
+**** Dtrace
+**** Jails
+**** Ports
+***** packages
+***** build once update all, prodriere
+**** PF
+**** Linux emulation
+**** Clang
+**** Simple configuration
+***** No Systemd
+**** Security
+**** Binary updates
+**** Test suite
+**** Supported architectures
+- amd64
+- i386
+- ia64
+- pc98
+- powerpc
+- sparc64
+- ARM
+  - Raspberry Pi 1&2
+  - Beaglebone White & Black
+  - Banana Pi, Cubieboard 1&2
+- ARM64
+  - Rasberry Pi 3
+- MIPS
+  - Ubiquity Networks Router-Station
+- Xen/EC2
+** Images attribution
+*** PDP-8
+By Florian Schäffer (Own work) [<a href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3ADigital_pdp8-e2.jpg">via Wikimedia Commons</a>
+*** Nuvola apps bookcase
+By Althiphika (Own work) [<a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a> or <a href="http://creativecommons.org/licenses/by-sa/4.0-3.0-2.5-2.0-1.0">CC BY-SA 4.0-3.0-2.5-2.0-1.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3ANuvola_apps_bookcase_Ic%C3%B4ne_HS.svg">via Wikimedia Commons</a>
+*** Unix history
+By Eraserhead1 [<a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a> or <a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>], <a href="https://commons.wikimedia.org/wiki/File%3AUnix_history-simple.png">via Wikimedia Commons</a>
+*** Berkeley Software Distribution Timeline
+Copyright (C) 2010 Donjan Rodic
+Copyright (C) 2016-2017 Fabio Loli
+http://futurist.se/gldt/2010/09/20/bsd-timeline-up-for-grabs/
+
+https://github.com/FabioLolix/BSD-timeline
+*** OpenZFS
+By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain], <a href="https://commons.wikimedia.org/wiki/File%3AOpenzfs.svg">via Wikimedia Commons</a>
+*** GPL icon
+By User:ZyMOS (Open Icon Library) [Public domain], <a href="https://commons.wikimedia.org/wiki/File%3ALicense_icon-gpl-2.svg">via Wikimedia Commons</a>
+*** BSD license icon
+By User:ZyMOS (Open Icon Library) [Public domain or Public domain], <a href="https://commons.wikimedia.org/wiki/File%3ALicense_icon-bsd.svg">via Wikimedia Commons</a>
