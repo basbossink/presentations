@@ -2,66 +2,76 @@
 #+AUTHOR:    Bas Bossink
 #+EMAIL:     bas.bossink@divverence.com
 #+LANGUAGE:  en
-#+OPTIONS:   num:nil toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc num:nil toc:nil e:t date:nil f:nil
+#+UNNUMBERED:t
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+STARTUP: context
-* FreeBSD the lesser known workhorse of the internet
-** Outline
-*** Introduction
-**** Me
-**** title
-**** tools
-*** Overview
-*** What is FreeBSD?
-**** Products
-***** PF-sense
-***** OpPNSense
-***** FreeNAS/TrueNAS
-***** MacOS
-**** Complete OS
-***** Consistent
-**** No distributions
-***** TrueOS
-***** HardenedBSD
-***** NanoBSD
-***** BSD Router project
-*** History
-**** AT&T Unix
-**** 4BSD
-**** NetBSD
-**** OpenBSD
-*** Licensing
-*** Community
-**** Development model
-**** Core team
-**** Conferences
-**** BSDnow.tv
-*** Features
-**** ABI stability
-**** Stability
-**** Documentation
-***** Handbook
-***** man pages
-***** Books
-**** OpenZFS
-**** bhyve
-**** Dtrace
-**** Jails
-**** Ports
-***** packages
-***** build once update all, prodriere
-**** PF
-**** Linux emulation
-**** Clang
-**** Simple configuration
-***** No Systemd
-**** Security
-**** Binary updates
-**** Test suite
-**** Supported architectures
+#+REVEAL_ROOT: http://localhost:2015/reveal.js
+#+REVEAL_THEME: white
+* Introduction
+** FreeBSD the lesser known workhorse of the internet
+#+ATTR_REVEAL: :frag (appear)
+- Netflix 37% of internet traffic
+- Netflix Open Connect cache at ISP runs FreeBSD
+- WhatsApp runs FreeBSD
+** What is FreeBSD?
+ #+ATTR_REVEAL: :frag (appear)
+    - a UNIX® like operating system
+    - derived from BSD (Berkeley Software Distribution)
+    - developed and maintained by a large community
+
+*** Poll                                                           :noexport:
+ - Who heard about FreeBSD before this talk?
+ - Who has used FreeBSD?
+ - Who has used a Playstation 4?
+* History
+** AT&T Unix
+** 4BSD
+** NetBSD
+** OpenBSD
+** Licensing
+** Community
+* Products
+** PF-sense
+** OPNSense
+** FreeNAS/TrueNAS
+** MacOS
+** Playstation 3 &4
+** Complete OS
+** Consistent
+** No distributions
+*** TrueOS
+*** HardenedBSD
+*** NanoBSD
+*** BSD Router project
+* Development model
+** Core team
+** Conferences
+** BSDnow.tv
+** Features
+*** ABI stability
+*** Stability
+* Documentation
+** Handbook
+** man pages
+** Books
+** OpenZFS
+** bhyve
+** Dtrace
+** Jails
+** Ports
+*** packages
+*** build once update all, prodriere
+** PF
+** Linux emulation
+** Clang
+** Simple configuration
+*** No Systemd
+** Security
+** Binary updates
+** Test suite
+** Supported architectures
 - amd64
 - i386
 - ia64
