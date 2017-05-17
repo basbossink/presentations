@@ -9,62 +9,153 @@
 #+STARTUP: context
 #+REVEAL_ROOT: http://localhost:2015/reveal.js
 #+REVEAL_THEME: white
-#+BEGIN_EXPORT html
+#+begin_export html
 <section>
-<img class="stretch" src="images/FREEBSD_Logo_Vert_Pos_RGB.png" style="border: 0;" />
-<div style="font-size:40pt;font-weight:900;font-family: Montserrat">
-the lesser known workhorse of the internet
-</div>
+  <img class="stretch" src="images/FREEBSD_Logo_Vert_Pos_RGB.png" style="border: 0;" />
+  <div style="font-size:40pt;font-weight:900;font-family: Montserrat">
+    the lesser known workhorse of the internet
+  </div>
+  <aside class="notes">
+    <ol>
+      <li>
+        Birth Timo 2005, first OpenBSD server 3.5
+      </li>
+      <li>
+        Timo is preparing a lecture about 9-11
+      </li>
+      <li>
+        be kind to fellow human, regardless of:
+        <ol>
+          <li>gender</li>
+          <li>race</li>
+          <li>
+            religion
+          </li>
+          <li>
+            political conviction
+          </li>
+          <li>
+            sexual orientation
+          </li>
+          <li>
+            editor of choice
+          </li>
+          <li>
+            programming language of choice
+          </li>
+          <li>
+            operating system of choice
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </aside>
 </section>
-#+END_EXPORT
+#+end_export
+
 * Introduction
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/daemon-phk.png" />
-#+END_EXPORT
+#+end_export
 ** FreeBSD the lesser known workhorse of the internet
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Who heard about FreeBSD before this talk?
+    </li>
+    <li>
+      Who has used FreeBSD?
+    </li>
+    <li>
+      Who has used a Playstation 4?
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** FreeBSD the lesser known workhorse of the internet
-#+BEGIN_EXPORT html
+#+begin_export html
 <div style="text-align:center;">
 <img style="border:0;width:200px;display:inline-block;margin-left:auto;margin-right:auto;" src="images/Netflix-Logo-Print_CMYK.jpg" />
 <img style="border:0;width:200px;display:inline-block;margin-left:auto;margin-right:auto;" src="images/WhatsApp_Logo_1.png"/>
 </div>
-#+END_EXPORT
-*** Notes                                                          :noexport:
-- Netflix 37% of internet traffic
-- Netflix Open Connect cache at ISP runs FreeBSD
-- WhatsApp runs FreeBSD
+#+end_export
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Netflix 37% of internet traffic
+    </li>
+    <li>
+      WhatsApp runs FreeBSD
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** What is FreeBSD?
- #+ATTR_REVEAL: :frag (appear)
+ #+attr_reveal: :frag (appear)
     - a UNIX® like operating system
     - derived from BSD (Berkeley Software Distribution)
     - developed and maintained by a large community
-
-*** Poll                                                           :noexport:
- - Who heard about FreeBSD before this talk?
- - Who has used FreeBSD?
- - Who has used a Playstation 4?
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Unix is a registered trademark
+    </li>
+    <li>
+      compliance to a standard needs to established
+    </li>
+  </ol>
+</aside>
+#+end_export
 * History
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/pdp8.jpg" />
-#+END_EXPORT
-
+#+end_export
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      How can tell what this is?
+    </li>
+    <li>
+      PDP8
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** Genealogy
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/Unix-history-simple.svg" />
 <div style="font-size: 8pt;font-family: Roboto">
-By Eraserhead1 <a href="http://creativecommons.org/licenses/by-sa/3.0">
-            CC BY-SA 3.0</a> or
-            <a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>,
-            <a href="https://commons.wikimedia.org/wiki/File%3AUnix_history-simple.png">via Wikimedia Commons</a>
+  By Eraserhead1 <a href="http://creativecommons.org/licenses/by-sa/3.0">
+    CC BY-SA 3.0</a> or
+  <a href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>,
+  <a href="https://commons.wikimedia.org/wiki/File%3AUnix_history-simple.png">via Wikimedia Commons</a>
 </div>
-#+END_EXPORT
+<aside class="notes">
+  <ol>
+    <li>
+      History starts around 1970 at Bell Labs AT&T
+    </li>
+    <li>
+      BSD shippes tapes, asking if you have an AT&T source license
+    </li>
+    <li>
+      Linux kernel pre-dates FreeBSD by about 1 year
+    </li>
+  </ol>
+</aside>
+#+end_export
+
 *** History                                                        :noexport:
 **** AT&T Unix
 **** 4BSD
 **** NetBSD
 **** OpenBSD
 ** History FreeBSD
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/bsdt_v17.01.svg" />
 <div style="font-size: 8pt;font-family: Roboto">
 Copyright (C) 2010 Donjan Rodic<br/>
@@ -74,20 +165,19 @@ Copyright (C) 2016-2017 Fabio Loli<br/>
 <br/>
 <a href="https://github.com/FabioLolix/BSD-timeline">
 https://github.com/FabioLolix/BSD-timeline</a>
-
 </div>
-#+END_EXPORT
+#+end_export
 * License
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/License_icon-bsd.svg" />
 <div style="font-size: 8pt;font-family: Roboto">
 By User:ZyMOS (Open Icon Library) [Public domain or Public domain],
 <a href="https://commons.wikimedia.org/wiki/File%3ALicense_icon-bsd.svg">
 via Wikimedia Commons</a>
 </div>
-#+END_EXPORT
+#+end_export
 ** Small
-#+BEGIN_EXPORT html
+#+begin_export html
 <div id="contentwrap" style="font-size:8pt;font-family: Roboto;text-align: left">
 
     <p>Copyright 1992-2017
@@ -129,7 +219,7 @@ via Wikimedia Commons</a>
       interpreted as representing official policies, either
       expressed or implied, of the FreeBSD Project.</p>
 </div>
-#+END_EXPORT
+#+end_export
 ** Simple
 - retain or reproduce the copyright notice
 - you can't sue us
@@ -137,41 +227,41 @@ via Wikimedia Commons</a>
 - not required to /give back/
 - sharing is highly appreciated
 * Community
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/community-909149_960_720.jpg" />
-#+END_EXPORT
+#+end_export
 ** Community lead
 - Democratic
 - Core team
 - Committers
 - Contributors
 
-#+BEGIN_EXPORT html
+#+begin_export html
 </section>
 <section>
 <img class="stretch" src="images/FREEBSDF_Logo_Pos_RGB.png" />
-#+END_EXPORT
+#+end_export
 ** Conferences
 - BSDCan
 - AsiaBSDcon
 - EuroBSDcon
 - Cambridge Developer’s Summit
 ** [[http://www.bsdnow.tv/][BSDnow.tv]]
-#+BEGIN_EXPORT html
-<img class="stretch" src="images/bsd_now_logo_vector.png" />
-#+END_EXPORT
+#+begin_export html
+<img class="stretch" src="images/BSDNow_Logo_Vector_nobg.png" />
+#+end_export
 ** [[https://www.freebsdfoundation.org/journal/][FreeBSD Journal]]
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/FreeBSDJournal.jpg" />
-#+END_EXPORT
+#+end_export
 ** [[https://bsdmag.org/][BSD Magazine]]
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/bsdmagazine.jpg" />
-#+END_EXPORT
+#+end_export
 * Documentation
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/doc.jpg" />
-#+END_EXPORT
+#+end_export
 ** [[https://www.freebsd.org/docproj/][FreeBSD Documentation Project]]
 ** man pages
 - extensive
@@ -184,9 +274,9 @@ via Wikimedia Commons</a>
 - numerous articles
 - [[https://www.michaelwlucas.com/][Michael W. Lucas]]
 * Features
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/power.jpg" />
-#+END_EXPORT
+#+end_export
 ** Complete OS
 - BSD not a distribution
 - kernel and user land tools
@@ -196,17 +286,17 @@ via Wikimedia Commons</a>
   - across major versions the ABI can be changed
 * Notable Applications
 ** ZFS
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/Openzfs.svg"/>
 <div style="font-size: 8pt;font-family: Roboto">
 By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
  <a href="https://commons.wikimedia.org/wiki/File%3AOpenzfs.svg">via Wikimedia Commons</a>
 </div>
-#+END_EXPORT
+#+end_export
 ** Dtrace
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/dtracepony.png"/>
-#+END_EXPORT
+#+end_export
 ** bhyve
 - Hypervisor
 ** Jails
@@ -217,9 +307,9 @@ By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
 ** Linux emulation
 - up to kernel version: 2.6.18
 * Availability
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/powerlogo.gif" />
-#+END_EXPORT
+#+end_export
 ** Commercial support
 - [[https://www.freebsd.org/commercial/consult.html][Consulting]]
 - [[https://www.freebsd.org/commercial/hardware.html][Hardware Vendors]]
@@ -233,19 +323,19 @@ By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
 - Virtual Machine Images (vhd, vmdk, qcow2, raw)
 - SD Card Images (Rasberry Pi, BeagleBone, ....)
 * Pain Points
-#+BEGIN_EXPORT html
+#+begin_export html
 <img class="stretch" src="images/Québec_D-320.svg"/>
 <div style="font-size: 8pt;font-family: Roboto">
 <a title="See page for author [Public domain], via Wikimedia Commons"
 href="https://commons.wikimedia.org/wiki/File%3AQu%C3%A9bec_D-320.svg">
 See page for author [Public domain], via Wikimedia Commons</a>
 </div>
-#+END_EXPORT
+#+end_export
 ** Hardware support
 - wireless
 - graphics
 
-#+BEGIN_EXPORT html
+#+begin_export html
 </section>
 </section>
 <section>
@@ -254,7 +344,7 @@ See page for author [Public domain], via Wikimedia Commons</a>
 the somewhat known workhorse of the internet
 </div>
 </section>
-#+END_EXPORT
+#+end_export
 * Products                                                         :noexport:
 ** PF-sense
 ** OPNSense
