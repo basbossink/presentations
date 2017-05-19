@@ -15,49 +15,39 @@
   <div style="font-size:40pt;font-weight:900;font-family: Montserrat">
     the lesser known workhorse of the internet
   </div>
+  <div style="font-size:8pt;font-family:Roboto;text-align:right;right-margin:0;left-margin:auto">
+  Bas Bossink<br/> 2017-05-20
+  </div>
   <aside class="notes">
     <ol>
       <li>
         Birth Timo 2005, first OpenBSD server 3.5
       </li>
       <li>
-        Timo is preparing a lecture about 9-11
+        Text based installer
       </li>
       <li>
-        be kind to fellow human, regardless of:
-        <ol>
-          <li>gender</li>
-          <li>race</li>
-          <li>
-            religion
-          </li>
-          <li>
-            political conviction
-          </li>
-          <li>
-            sexual orientation
-          </li>
-          <li>
-            editor of choice
-          </li>
-          <li>
-            programming language of choice
-          </li>
-          <li>
-            operating system of choice
-          </li>
-        </ol>
+        A lot of people/bots tried but it didn't get hacked
       </li>
     </ol>
   </aside>
 </section>
 #+end_export
-
 * Introduction
 #+begin_export html
 <img class="stretch" src="images/daemon-phk.png" />
+<aside class="notes">
+  <ol>
+    <li>
+      Why this title?
+    </li>
+    <li>
+      What is FreeBSD?
+    </li>
+  </ol>
+</aside>
 #+end_export
-** FreeBSD the lesser known workhorse of the internet
+** FreeBSD?
 #+begin_export html
 <aside class="notes">
   <ol>
@@ -73,7 +63,7 @@
   </ol>
 </aside>
 #+end_export
-** FreeBSD the lesser known workhorse of the internet
+** Workhorse of the internet
 #+begin_export html
 <div style="text-align:center;">
 <img style="border:0;width:200px;display:inline-block;margin-left:auto;margin-right:auto;" src="images/Netflix-Logo-Print_CMYK.jpg" />
@@ -101,26 +91,37 @@
 <aside class="notes">
   <ol>
     <li>
+      From the FreeBSD website
+    </li>
+    <li>
       Unix is a registered trademark
     </li>
     <li>
       compliance to a standard needs to established
+    </li>
+    <li>
+      University of California, Berkeley
     </li>
   </ol>
 </aside>
 #+end_export
 * History
 #+begin_export html
-<img class="stretch" src="images/pdp8.jpg" />
-#+end_export
-#+begin_export html
+<img class="stretch" src="images/Pdp7-oslo-2005.jpeg" />
+<div style="font-size:8pt;font-family:Roboto">
+  <a title="By en:User:Toresbe [CC SA 1.0
+            (http://creativecommons.org/licenses/sa/1.0/)], via Wikimedia Commons"
+     href="https://commons.wikimedia.org/wiki/File%3APdp7-oslo-2005.jpeg">
+    By en:User:Toresbe [CC SA 1.0
+    (http://creativecommons.org/licenses/sa/1.0/)], via Wikimedia Commons</a>
+</div>
 <aside class="notes">
   <ol>
     <li>
-      How can tell what this is?
+      What is this is?
     </li>
     <li>
-      PDP8
+      PDP-7
     </li>
   </ol>
 </aside>
@@ -140,6 +141,9 @@
       History starts around 1970 at Bell Labs AT&T
     </li>
     <li>
+      BSD developped TCP/IP for DARPA
+    </li>
+    <li>
       BSD shippes tapes, asking if you have an AT&T source license
     </li>
     <li>
@@ -148,7 +152,6 @@
   </ol>
 </aside>
 #+end_export
-
 *** History                                                        :noexport:
 **** AT&T Unix
 **** 4BSD
@@ -158,23 +161,50 @@
 #+begin_export html
 <img class="stretch" src="images/bsdt_v17.01.svg" />
 <div style="font-size: 8pt;font-family: Roboto">
-Copyright (C) 2010 Donjan Rodic<br/>
-Copyright (C) 2016-2017 Fabio Loli<br/>
-<a href="http://futurist.se/gldt/2010/09/20/bsd-timeline-up-for-grabs/">
-  http://futurist.se/gldt/2010/09/20/bsd-timeline-up-for-grabs/</a>
-<br/>
-<a href="https://github.com/FabioLolix/BSD-timeline">
-https://github.com/FabioLolix/BSD-timeline</a>
+  Copyright (C) 2010 Donjan Rodic<br/>
+  Copyright (C) 2016-2017 Fabio Loli<br/>
+  <a href="http://futurist.se/gldt/2010/09/20/bsd-timeline-up-for-grabs/">
+    http://futurist.se/gldt/2010/09/20/bsd-timeline-up-for-grabs/</a>
+  <br/>
+  <a href="https://github.com/FabioLolix/BSD-timeline">
+    https://github.com/FabioLolix/BSD-timeline</a>
+  <aside class="notes">
+    <ol>
+      <li>Quite a number of forks over the years</li>
+      <li>
+        NetBSD also forked 386BSD
+      </li>
+      <li>
+        OpenBSD forked NetBSD to focus on security
+      </li>
+      <li>
+        Firewall's starting with Moonwall
+      </li>
+      <li>
+        NAS appliances starting with FreeNAS
+      </li>
+      <li>
+        PC-BSD, recently renamed to TrueOS, desktop oriented spin
+      </li>
+    </ol>
+  </aside>
 </div>
 #+end_export
 * License
 #+begin_export html
 <img class="stretch" src="images/License_icon-bsd.svg" />
 <div style="font-size: 8pt;font-family: Roboto">
-By User:ZyMOS (Open Icon Library) [Public domain or Public domain],
-<a href="https://commons.wikimedia.org/wiki/File%3ALicense_icon-bsd.svg">
-via Wikimedia Commons</a>
+  By User:ZyMOS (Open Icon Library) [Public domain or Public domain],
+  <a href="https://commons.wikimedia.org/wiki/File%3ALicense_icon-bsd.svg">
+    via Wikimedia Commons</a>
 </div>
+<aside class="notes">
+  <ol>
+    <li>
+      Disclaimer, I'm not a lawyer
+    </li>
+  </ol>
+</aside>
 #+end_export
 ** Small
 #+begin_export html
@@ -225,7 +255,7 @@ via Wikimedia Commons</a>
 - you can't sue us
 ** Liberal
 - not required to /give back/
-- sharing is highly appreciated
+- sharing still occurs
 * Community
 #+begin_export html
 <img class="stretch" src="images/community-909149_960_720.jpg" />
@@ -235,7 +265,6 @@ via Wikimedia Commons</a>
 - Core team
 - Committers
 - Contributors
-
 #+begin_export html
 </section>
 <section>
@@ -284,32 +313,164 @@ via Wikimedia Commons</a>
 - ABI stability
   - all binaries that run on 11.0 will run on 11.x
   - across major versions the ABI can be changed
-* Notable Applications
-** ZFS
+- easy administration
 #+begin_export html
-<img class="stretch" src="images/Openzfs.svg"/>
-<div style="font-size: 8pt;font-family: Roboto">
-By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
- <a href="https://commons.wikimedia.org/wiki/File%3AOpenzfs.svg">via Wikimedia Commons</a>
-</div>
+</section>
+</section>
+<section>
+  <section>
+    <img class="stretch" src="images/White_Stars_4.svg"/>
+    <div style="font-size:8pt;font-family: Roboto">
+      <a title="By White_Stars_3.svg: *Empty_Star.svg: Kbolino
+                White_Stars_2.svg: *Empty_Star.svg: Kbolino derivative work:
+                Pixeltoo (talk) derivative work: Pixeltoo (talk) derivative
+                work: Pixeltoo (White_Stars_3.svg) [Public domain], via
+                Wikimedia Commons"
+         href="https://commons.wikimedia.org/wiki/File%3AWhite_Stars_4.svg">
+        [Public domain], via Wikimedia Commons</a>
+    </div>
+    <aside class="notes">
+      Warning, the next few topics each deserve an 2 hour long talk, as an
+      introduction
+
+    </aside>
+  </section>
+  <section>
+    <h3>ZFS</h3>
+    <img class="stretch" src="images/Openzfs.svg"/>
+    <div style="font-size: 8pt;font-family: Roboto">
+      By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
+      <a href="https://commons.wikimedia.org/wiki/File%3AOpenzfs.svg">via Wikimedia Commons</a>
+      <aside class="notes">
+        <ol>
+          <li>
+            Zetta byte filesystem
+          </li>
+          <li>
+            Copy on write, compression, de-duplication, checksumming
+          </li>
+          <li>
+            Cheap snapshots
+          </li>
+          <li>
+            Software RAID
+          </li>
+          <li>
+            Volume management; data-sets, partitions without fixed size
+          </li>
+          <li>
+            Easy backup with zfs-send and zfs-recieve
+          </li>
+        </ol>
+      </aside>
+    </div>
 #+end_export
 ** Dtrace
 #+begin_export html
 <img class="stretch" src="images/dtracepony.png"/>
+<aside class="notes">
+  <ol>
+    <li>
+      Dynamic tracing, developped at Sun for Solaris
+    </li>
+    <li>
+      kernel level tracing at lower runtime cost
+    </li>
+    <li>
+      trace system calls, with callstacks, arguments
+    </li>
+    <li>
+      awk/c like language D
+    </li>
+    <li>
+      lookup dtrace, Brian Cantrill
+    </li>
+    <li>
+      Used by Joyent to 'debug' node performance
+    </li>
+  </ol>
+</aside>
 #+end_export
 ** bhyve
 - Hypervisor
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Since FreeBSD 10.0
+    </li>
+    <li>
+      Supports: BSD's, Windows and GNU/Linux
+    </li>
+    <li>
+      Supported  by libvirt
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** Jails
-- Container technology after Solaris zones
+- Operating system level virtualization
+- Since 2000
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Same kernel
+    </li>
+    <li>
+      Similar to Docker
+    </li>
+    <li>
+      Great combination with ZFS
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** A modified port of OpenBSD's Packet Filter
 - firewall
 - traffic shaping
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>Based on OpenBSD 4.5</li>
+    <li>
+      Modified for multi-core throughput
+    </li>
+    <li>
+      Industrial grade firewall
+    </li>
+  </ol>
+</aside>
+#+end_export
 ** Linux emulation
-- up to kernel version: 2.6.18
+#+begin_export html
+<aside class="notes">
+  <ol>
+    <li>
+      Linux binaries run without recompilation
+    </li>
+    <li>
+      Don't expect latest kernel features
+    </li>
+  </ol>
+</aside>
+#+end_export
 * Availability
 #+begin_export html
 <img class="stretch" src="images/powerlogo.gif" />
 #+end_export
+** Supported architectures
+- amd64, i386, ia64, pc98, powerpc, sparc64
+- ARM
+  - Raspberry Pi 1&2
+  - Beaglebone White & Black
+  - Banana Pi, Cubieboard 1&2
+- ARM64
+  - Rasberry Pi 3
+- MIPS
+  - Ubiquity Networks Router-Station
+- MIPS64
+  - Ubiquiti EdgeRouter Lite
 ** Commercial support
 - [[https://www.freebsd.org/commercial/consult.html][Consulting]]
 - [[https://www.freebsd.org/commercial/hardware.html][Hardware Vendors]]
@@ -318,23 +479,14 @@ By OpenZFS (http://open-zfs.org/OpenZFS%20Guidelines.pdf) [Public domain],
 - [[https://azure.microsoft.com/nl-nl/blog/freebsd-now-available-in-azure-marketplace/][Microsoft Azure]]
 - [[https://www.cyberciti.biz/faq/howto-deploying-freebsd11-unix-on-google-cloud/][Google Cloud Platform]]
 - [[https://www.digitalocean.com/products/linux-distribution/freebsd/][Digital Ocean]]
-** Downloads
+** Downloads                                                       :noexport:
 - Installer Images
 - Virtual Machine Images (vhd, vmdk, qcow2, raw)
 - SD Card Images (Rasberry Pi, BeagleBone, ....)
-* Pain Points
-#+begin_export html
-<img class="stretch" src="images/Québec_D-320.svg"/>
-<div style="font-size: 8pt;font-family: Roboto">
-<a title="See page for author [Public domain], via Wikimedia Commons"
-href="https://commons.wikimedia.org/wiki/File%3AQu%C3%A9bec_D-320.svg">
-See page for author [Public domain], via Wikimedia Commons</a>
-</div>
-#+end_export
+* Challenges
 ** Hardware support
 - wireless
 - graphics
-
 #+begin_export html
 </section>
 </section>
@@ -392,19 +544,11 @@ By User:ZyMOS (Open Icon Library) [Public domain or Public domain], <a href="htt
 href="https://commons.wikimedia.org/wiki/File%3AQu%C3%A9bec_D-320.svg"><img
 width="128" alt="Québec D-320"
 src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Qu%C3%A9bec_D-320.svg/128px-Qu%C3%A9bec_D-320.svg.png"/></a>
-** Supported architectures                                         :noexport:
-- amd64
-- i386
-- ia64
-- pc98
-- powerpc
-- sparc64
-- ARM
-  - Raspberry Pi 1&2
-  - Beaglebone White & Black
-  - Banana Pi, Cubieboard 1&2
-- ARM64
-  - Rasberry Pi 3
-- MIPS
-  - Ubiquity Networks Router-Station
-- Xen/EC2
+*** PDP-7
+#+begin_export html
+<a title="By en:User:Toresbe [CC SA 1.0
+(http://creativecommons.org/licenses/sa/1.0/)], via Wikimedia Commons"
+href="https://commons.wikimedia.org/wiki/File%3APdp7-oslo-2005.jpeg"><img
+width="512" alt="Pdp7-oslo-2005"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Pdp7-oslo-2005.jpeg/512px-Pdp7-oslo-2005.jpeg"/></a>
+#+end_export
