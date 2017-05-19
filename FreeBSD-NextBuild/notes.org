@@ -331,8 +331,7 @@
     </div>
     <aside class="notes">
       Warning, the next few topics each deserve an 2 hour long talk, as an
-      introduction
-
+      introduction.
     </aside>
   </section>
   <section>
