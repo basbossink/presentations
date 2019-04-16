@@ -1,0 +1,174 @@
+#+TITLE: 5 Languages in 30 minutes 1/5: Python
+#+AUTHOR: Bas Bossink
+#+EMAIL:     bas.bossink@divverence.com
+#+DATE:      2019-04-16
+#+LANGUAGE:  en
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation,t]
+#+OPTIONS:   H:2 num:t toc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+startup: beamer
+#+LATEX_HEADER_EXTRA: \newminted{python}{fontsize=\scriptsize,linenos,numbersep=8pt, gobble=4,frame=lines, bgcolor=bg, framesep=3mm}
+* Introduction
+** Why series?
+- Short
+- Interesting?
+- Broaden horizon
+
+* Python
+** Why Python?
+- TIOBE Hall of Fame 2018
+- TIOBE Index 4
+- Dutch origins
+
+** What is Python
+- Interpreted
+- Multi-paradigm:
+  - Imperative
+  - Object oriented
+  - Functional
+  - Aspect oriented
+  - Metaprogramming
+- Strongly, dynamically typed
+- Garbage collected
+- Scripting language
+- Batteries included
+- Significant whitespace
+- Easily extendable
+- Embeddable
+
+** History
+- Born: 1990
+  - Amsterdam (CWI)
+  - Guido van Rossum
+- Goals:
+  - Readabillity
+
+** [[https://www.python.org/dev/peps/pep-0020/][The Zen of Python]]
+- Beautiful is better than ugly
+- Explicit is better than implicit
+- Simple is better than complex
+- Complex is better than complicated
+- Readability counts
+
+** In Practice (1/2)
+- REPL: Read Eval Print Loop
+- python version manager: pyenv
+- package manager: pip (113,000 packages)
+- very large standard library included:
+  - http server
+    #+begin_src sh exports: code
+    python -m SimpleHTTPServer 8000
+    #+end_src
+  - smtp server
+    #+begin_src sh exports: code
+    python -m smtpd -n -c DebuggingServer 127.0.0.1:10025
+    #+end_src
+  - csv parser
+  - fractions
+  - asyncio
+  - unittest
+  - doctest
+- very portable (Windows, MacOS, Linux, BSD's)
+
+** In Practice (2/2)
+- IDE's:
+  - PyCharm (Jetbrains)
+  - IDLE (included)
+  - every decent editor
+- also for GUI's:
+  - PyQt
+  - PyGtk
+  - WxPython
+- cloud:
+  - one of the original google cloud platform languages
+  - available on AWS, and Azure
+
+** Notable features
+- Multiple assignment
+- Slices
+*** List comprehensions
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :BEAMER_env: block
+    :END:
+#+begin_src python :exports both :results output
+a = [x**2 for x in range(5)]
+print(a)
+#+end_src
+
+#+RESULTS:
+: [0, 1, 4, 9, 16]
+
+** Notable libraries
+*** Numpy, SciPy
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+#+begin_src python :exports both :results output
+import numpy as np
+a = np.random.random(4).reshape(2,2)
+print("a :", a)
+print("a' :", a.transpose())
+#+end_src
+
+** Notable libraries
+*** Matplotlib
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+begin_src python :exports code
+import matplotlib.pyplot as plt
+import numpy as np
+plt.rc('text', usetex=True)
+plt.rc('font', family='sans serif')
+x = np.linspace(-15, 15, 500)
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
+plt.plot(x, np.sin(x)/x, label=r'$y = \frac{\sin (x)}{x}$')
+plt.grid(True)
+axis = plt.gca()
+axis.legend()
+plt.tight_layout(0)
+plt.savefig('images/python-matplot-fig.pdf', dpi=600)
+#+end_src
+
+#+RESULTS:
+: None
+
+** Result
+#+attr_latex: :width 200px
+[[file:images/python-matplot-fig.pdf]]
+
+** Notable libraries
+- Scikit-Learn (Machine learning)
+- TensorFlow (Machine learning)
+- Gym (Reinforcement learning)
+- Django (CMS)
+- Flask (Web framework)
+- Twisted (event-driven network programming)
+
+** Usages
+- Scientific computing
+- Extension language
+  - GIMP
+  - Inkscape
+  - GNU Debugger
+- Web Apps
+- Machine learning
+- Installer (Ubiquity, Anaconda)
+- Software development:
+  - SCons
+  - Buildbot
+  - robotframework
+  - cookiecutter
+
+** Rusty washers
+- Performance, options
+  - use native libraries if needed
+  - PyPy
+- 2.x vs 3.x
