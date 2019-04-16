@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-04-16 Tue 13:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>5 Languages in 30 minutes 1/5: Python</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Bas Bossink" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">5 Languages in 30 minutes 1/5: Python</h1>
+<div id="outline-container-org79818b8" class="outline-2">
+<h2 id="org79818b8"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org06cb265" class="outline-3">
+<h3 id="org06cb265"><span class="section-number-3">1.1</span> Why series?</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Short</li>
+<li>Interesting?</li>
+<li>Broaden horizon</li>
+<li><a href="https://insights.stackoverflow.com/survey/2019">Stackoverflow developer survey 2019</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7ed041d" class="outline-2">
+<h2 id="org7ed041d"><span class="section-number-2">2</span> Python</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org1b2043d" class="outline-3">
+<h3 id="org1b2043d"><span class="section-number-3">2.1</span> Why Python?</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>TIOBE Hall of Fame 2018</li>
+<li>TIOBE Index \(4^{th}\)</li>
+<li>SO most loved \(2^{nd}\)</li>
+<li>SO most wanted \(1^{st}\)</li>
+<li>Dutch origins</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9ff8927" class="outline-3">
+<h3 id="org9ff8927"><span class="section-number-3">2.2</span> What is Python</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Interpreted</li>
+<li>Multi-paradigm:
+<ul class="org-ul">
+<li>Imperative</li>
+<li>Object oriented</li>
+<li>Functional</li>
+<li>Aspect oriented</li>
+<li>Metaprogramming</li>
+</ul></li>
+<li>Strongly, dynamically typed</li>
+<li>Garbage collected</li>
+<li>Scripting language</li>
+<li>Batteries included</li>
+<li>Significant whitespace</li>
+<li>Easily extendable</li>
+<li>Embeddable</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1fa60be" class="outline-3">
+<h3 id="org1fa60be"><span class="section-number-3">2.3</span> Implementations</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>CPython</li>
+<li>Jython (on the JVM)</li>
+<li>IronPython (on .NET)</li>
+<li>PyPy (fast, JIT compiled)</li>
+<li>Stackless (microthreads)</li>
+<li>MicroPython (running on microcontrollers)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5ca2356" class="outline-3">
+<h3 id="org5ca2356"><span class="section-number-3">2.4</span> History</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li>Born: 1990
+<ul class="org-ul">
+<li>Amsterdam (CWI)</li>
+<li>Guido van Rossum</li>
+</ul></li>
+<li>Goals:
+<ul class="org-ul">
+<li>It should be an easy and intuitive language, just as powerful as major competitors.</li>
+<li>It should be open source, so anyone can contribute to its development.</li>
+<li>Its code should be understandable as plain English.</li>
+<li>It should be suitable for everyday tasks, allowing for short development times.Readabillity</li>
+</ul></li>
+<li>16 October 2000: Python 2.0</li>
+<li>3 December 2008: Python 3.0</li>
+<li>current:
+<ul class="org-ul">
+<li>3.7.3</li>
+<li>2.7.16</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9ebc106" class="outline-3">
+<h3 id="org9ebc106"><span class="section-number-3">2.5</span> <a href="https://www.python.org/dev/peps/pep-0020/">The Zen of Python</a></h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Beautiful is better than ugly</li>
+<li>Explicit is better than implicit</li>
+<li>Simple is better than complex</li>
+<li>Complex is better than complicated</li>
+<li>Readability counts</li>
+</ul>
+<p>
+&#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-org2aba16a" class="outline-3">
+<h3 id="org2aba16a"><span class="section-number-3">2.6</span> In Practice (1/2)</h3>
+<div class="outline-text-3" id="text-2-6">
+<ul class="org-ul">
+<li>REPL: Read Eval Print Loop</li>
+<li>python version manager: pyenv (anaconda)</li>
+<li>package manager: pip (176,172 packages)</li>
+<li>very large standard library included:
+<ul class="org-ul">
+<li><p>
+http server
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">python -m SimpleHTTPServer 8000
+</pre>
+</div></li>
+<li><p>
+smtp server
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">python -m smtpd -n -c DebuggingServer 127.0.0.1:10025
+</pre>
+</div></li>
+<li>csv parser</li>
+<li>fractions</li>
+<li>asyncio</li>
+<li>unittest</li>
+<li>doctest</li>
+</ul></li>
+<li>very portable (Windows, MacOS, Linux, BSD's)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge76f3bc" class="outline-3">
+<h3 id="orge76f3bc"><span class="section-number-3">2.7</span> In Practice (2/2)</h3>
+<div class="outline-text-3" id="text-2-7">
+<ul class="org-ul">
+<li>PEP: Python Enhancement Proposal</li>
+<li>Documentation: doc strings, Sphinx</li>
+<li>IDE's:
+<ul class="org-ul">
+<li>PyCharm (Jetbrains)</li>
+<li>IDLE (included)</li>
+<li>every decent editor</li>
+</ul></li>
+<li>also for GUI's:
+<ul class="org-ul">
+<li>PyQt</li>
+<li>PyGtk</li>
+<li>WxPython</li>
+</ul></li>
+<li>cloud:
+<ul class="org-ul">
+<li>one of the original google cloud platform languages</li>
+<li>available on AWS, and Azure</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc577d33" class="outline-3">
+<h3 id="orgc577d33"><span class="section-number-3">2.8</span> Notable features</h3>
+<div class="outline-text-3" id="text-2-8">
+<ul class="org-ul">
+<li>Multiple assignment</li>
+<li>Slices</li>
+</ul>
+</div>
+<ol class="org-ol">
+<li><a id="orge864c82"></a>List comprehensions<br />
+<div class="outline-text-4" id="text-2-8-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #657b83; background-color: #fdf6e3;">a</span> = [x**<span style="color: #657b83; background-color: #fdf6e3;">2</span> <span style="color: #859900; font-weight: bold;">for</span> x <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #657b83; font-weight: bold;">range</span>(<span style="color: #657b83; background-color: #fdf6e3;">5</span>)]
+print(a)
+</pre>
+</div>
+
+<pre class="example">
+[0, 1, 4, 9, 16]
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgaf0ebd2" class="outline-3">
+<h3 id="orgaf0ebd2"><span class="section-number-3">2.9</span> Notable libraries</h3>
+<div class="outline-text-3" id="text-2-9">
+</div>
+<ol class="org-ol">
+<li><a id="orga447ffe"></a>Numpy, SciPy<br />
+<div class="outline-text-4" id="text-2-9-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+<span style="color: #657b83; background-color: #fdf6e3;">a</span> = np.random.random(<span style="color: #657b83; background-color: #fdf6e3;">4</span>).reshape(<span style="color: #657b83; background-color: #fdf6e3;">2</span>,<span style="color: #657b83; background-color: #fdf6e3;">2</span>)
+print(<span style="color: #2aa198;">"a :\n"</span>, a)
+print(<span style="color: #2aa198;">"a' :\n"</span>, a.transpose())
+</pre>
+</div>
+
+<pre class="example">
+a :
+ [[0.37962069 0.79621324]
+ [0.81778917 0.16035819]]
+a' :
+ [[0.37962069 0.81778917]
+ [0.79621324 0.16035819]]
+</pre>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org3f082f3" class="outline-3">
+<h3 id="org3f082f3"><span class="section-number-3">2.10</span> Notable libraries</h3>
+<div class="outline-text-3" id="text-2-10">
+</div>
+<ol class="org-ol">
+<li><a id="org0d29a20"></a>Matplotlib<br />
+<div class="outline-text-4" id="text-2-10-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> matplotlib.pyplot <span style="color: #859900; font-weight: bold;">as</span> plt
+<span style="color: #859900; font-weight: bold;">import</span> numpy <span style="color: #859900; font-weight: bold;">as</span> np
+plt.rc(<span style="color: #2aa198;">'text'</span>, <span style="color: #657b83; background-color: #fdf6e3;">usetex</span>=<span style="color: #859900; font-weight: bold;">True</span>)
+plt.rc(<span style="color: #2aa198;">'font'</span>, <span style="color: #657b83; background-color: #fdf6e3;">family</span>=<span style="color: #2aa198;">'sans serif'</span>)
+<span style="color: #657b83; background-color: #fdf6e3;">x</span> = np.linspace(-<span style="color: #657b83; background-color: #fdf6e3;">15</span>, <span style="color: #657b83; background-color: #fdf6e3;">15</span>, <span style="color: #657b83; background-color: #fdf6e3;">500</span>)
+plt.xlabel(r<span style="color: #2aa198;">'$x$'</span>)
+plt.ylabel(r<span style="color: #2aa198;">'$y$'</span>)
+plt.plot(x, np.sin(x)/x, <span style="color: #657b83; background-color: #fdf6e3;">label</span>=r<span style="color: #2aa198;">'$y = \frac{\sin (x)}{x}$'</span>)
+plt.grid(<span style="color: #859900; font-weight: bold;">True</span>)
+<span style="color: #657b83; background-color: #fdf6e3;">axis</span> = plt.gca()
+axis.legend()
+plt.tight_layout(<span style="color: #657b83; background-color: #fdf6e3;">0</span>)
+plt.savefig(<span style="color: #2aa198;">'images/python-matplot-fig.png'</span>, <span style="color: #657b83; background-color: #fdf6e3;">dpi</span>=<span style="color: #657b83; background-color: #fdf6e3;">600</span>)
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb55a6b1" class="outline-3">
+<h3 id="orgb55a6b1"><span class="section-number-3">2.11</span> Result</h3>
+<div class="outline-text-3" id="text-2-11">
+
+<div class="figure">
+<p><img src="images/python-matplot-fig.png" alt="python-matplot-fig.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org85315c2" class="outline-3">
+<h3 id="org85315c2"><span class="section-number-3">2.12</span> Notable libraries</h3>
+<div class="outline-text-3" id="text-2-12">
+<ul class="org-ul">
+<li>Scikit-Learn (Machine learning)</li>
+<li>TensorFlow (Machine learning)</li>
+<li>Gym (Reinforcement learning)</li>
+<li>Django (CMS)</li>
+<li>Flask (Web framework)</li>
+<li>Twisted (event-driven network programming)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3cf1d9a" class="outline-3">
+<h3 id="org3cf1d9a"><span class="section-number-3">2.13</span> Usages</h3>
+<div class="outline-text-3" id="text-2-13">
+<ul class="org-ul">
+<li>Scientific computing</li>
+<li>Extension language
+<ul class="org-ul">
+<li>GIMP</li>
+<li>Inkscape</li>
+<li>GNU Debugger</li>
+<li>Blender</li>
+</ul></li>
+<li>Web Apps</li>
+<li>Machine learning</li>
+<li>Installer (Ubiquity, Anaconda)</li>
+<li>Software development:
+<ul class="org-ul">
+<li>SCons</li>
+<li>Buildbot</li>
+<li>robotframework</li>
+<li>cookiecutter</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf3bc4eb" class="outline-3">
+<h3 id="orgf3bc4eb"><span class="section-number-3">2.14</span> Rusty washers</h3>
+<div class="outline-text-3" id="text-2-14">
+<ul class="org-ul">
+<li>Performance, options
+<ul class="org-ul">
+<li>use native libraries if needed</li>
+<li>PyPy</li>
+</ul></li>
+<li>2.x vs 3.x</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org34cbf3d" class="outline-3">
+<h3 id="org34cbf3d"><span class="section-number-3">2.15</span> Resources</h3>
+<div class="outline-text-3" id="text-2-15">
+<ul class="org-ul">
+<li><a href="https://www.python.org/">Python.org</a></li>
+<li><a href="https://www.python.org/doc/">Official documentation</a></li>
+<li><a href="https://pypi.org/">Python Package Index</a></li>
+<li><a href="http://www.sphinx-doc.org/en/master/">Sphinx documentation generator</a></li>
+<li><a href="https://www.anaconda.com/distribution/">Anaconda</a> scientific computing distribution</li>
+<li><a href="https://wiki.python.org/moin/BeginnersGuide">Python Beginners Guide</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Python_Programming">Python Programming Wikibook</a></li>
+<li><a href="https://www.pluralsight.com/search?q=Python">Pluralsight courses</a></li>
+<li><a href="https://ipython.org/">IPython, better REPL</a></li>
+<li><a href="https://thonny.org/">Thonny beginner freindly IDE</a></li>
+<li><a href="https://www.jetbrains.com/pycharm/">PyCharm</a> Jetbrains IDE</li>
+<li><a href="https://www.spyder-ide.org/">Spyder Scientific Development Environment</a></li>
+<li><a href="https://code.visualstudio.com/docs/languages/python">Python using VS Code</a></li>
+<li><a href="https://jupyter.org/">Jupyter Notebooks</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2019-04-16</p>
+<p class="author">Author: Bas Bossink</p>
+<p class="date">Created: 2019-04-16 Tue 13:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
