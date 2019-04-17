@@ -12,6 +12,7 @@
 #+COLUMNS: %45ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
 #+startup: beamer
 #+LATEX_HEADER_EXTRA: \newminted{python}{fontsize=\scriptsize,linenos,numbersep=8pt, gobble=4,frame=lines, bgcolor=bg, framesep=3mm}
+#+LaTeX_HEADER_EXTRA: \hypersetup{linktoc = all, colorlinks = true, urlcolor=blue}
 * Introduction
 ** Why series?
 - Short
@@ -59,14 +60,14 @@
   - It should be an easy and intuitive language, just as powerful as major competitors.
   - It should be open source, so anyone can contribute to its development.
   - Its code should be understandable as plain English.
-  - It should be suitable for everyday tasks, allowing for short development times.Readabillity
+  - It should be suitable for everyday tasks, allowing for short development times.
 - 16 October 2000: Python 2.0
 - 3 December 2008: Python 3.0
 - current:
   - 3.7.3
   - 2.7.16
 
-** [[https://www.python.org/dev/peps/pep-0020/][The Zen of Python]]
+** The Zen of Python
 - Beautiful is better than ugly
 - Explicit is better than implicit
 - Simple is better than complex
@@ -205,6 +206,7 @@ plt.savefig('images/python-matplot-fig.png', dpi=600)
 ** Resources
 - [[https://www.python.org/][Python.org]]
 - [[https://www.python.org/doc/][Official documentation]]
+- [[https://www.python.org/dev/peps/pep-0020/][The Zen of Python]]
 - [[https://pypi.org/][Python Package Index]]
 - [[http://www.sphinx-doc.org/en/master/][Sphinx documentation generator]]
 - [[https://www.anaconda.com/distribution/][Anaconda]] scientific computing distribution
