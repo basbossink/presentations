@@ -1,0 +1,221 @@
+#+TITLE: 5 Languages in 30 minutes 1/5: Clojure
+#+AUTHOR: Bas Bossink
+#+EMAIL:     bas.bossink@divverence.com
+#+DATE:      2019-11-06
+#+LANGUAGE:  en
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation,t]
+#+OPTIONS:   H:2 num:t toc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+startup: beamer
+#+LATEX_HEADER_EXTRA: \newminted{python}{fontsize=\scriptsize,linenos,numbersep=8pt, gobble=4,frame=lines, bgcolor=bg, framesep=3mm}
+#+LaTeX_HEADER_EXTRA: \hypersetup{linktoc = all, colorlinks = true, urlcolor=blue}
+* Introduction
+** Why series?
+- Short
+- Interesting?
+- Broaden horizon
+- [[https://insights.stackoverflow.com/survey/2019][Stackoverflow developer survey 2019]]
+
+* Python
+** Why Python?
+- TIOBE Hall of Fame 2018
+- TIOBE Index $4^{th}$
+- SO most loved $2^{nd}$
+- SO most wanted $1^{st}$
+- Dutch origins
+
+** What is Python
+- Interpreted
+- Multi-paradigm:
+  - Imperative
+  - Object oriented
+  - Functional
+  - Aspect oriented
+  - Metaprogramming
+- Strongly, dynamically typed
+- Garbage collected
+- Scripting language
+- Batteries included
+- Significant whitespace
+- Easily extendable
+- Embeddable
+
+** Implementations
+- CPython
+- Jython (on the JVM)
+- IronPython (on .NET)
+- PyPy (fast, JIT compiled)
+- Stackless (microthreads)
+- MicroPython (running on microcontrollers)
+
+** History
+- Born: 1990
+  - Amsterdam (CWI)
+  - Guido van Rossum
+- Goals:
+  - It should be an easy and intuitive language, just as powerful as major competitors.
+  - It should be open source, so anyone can contribute to its development.
+  - Its code should be understandable as plain English.
+  - It should be suitable for everyday tasks, allowing for short development times.
+- 16 October 2000: Python 2.0
+- 3 December 2008: Python 3.0
+- current:
+  - 3.7.3
+  - 2.7.16
+
+** The Zen of Python
+- Beautiful is better than ugly
+- Explicit is better than implicit
+- Simple is better than complex
+- Complex is better than complicated
+- Readability counts
+- ...
+** In Practice (1/2)
+- REPL: Read Eval Print Loop
+- python version manager: pyenv (anaconda)
+- package manager: pip (176,172 packages)
+- very large standard library included:
+  - http server
+    #+begin_src sh exports: code
+    python -m SimpleHTTPServer 8000
+    #+end_src
+  - smtp server
+    #+begin_src sh exports: code
+    python -m smtpd -n -c DebuggingServer 127.0.0.1:10025
+    #+end_src
+  - csv parser
+  - fractions
+  - asyncio
+  - unittest
+  - doctest
+- very portable (Windows, MacOS, Linux, BSD's)
+
+** In Practice (2/2)
+- PEP: Python Enhancement Proposal
+- Documentation: doc strings, Sphinx
+- IDE's:
+  - PyCharm (Jetbrains)
+  - IDLE (included)
+  - every decent editor
+- also for GUI's:
+  - PyQt
+  - PyGtk
+  - WxPython
+- cloud:
+  - one of the original google cloud platform languages
+  - available on AWS, and Azure
+
+** Notable features
+- Multiple assignment
+- Slices
+*** List comprehensions
+    :PROPERTIES:
+    :BEAMER_col: 0.45
+    :BEAMER_env: block
+    :END:
+#+begin_src python :exports both :results output
+a = [x**2 for x in range(5)]
+print(a)
+#+end_src
+
+#+RESULTS:
+: [0, 1, 4, 9, 16]
+
+** Notable libraries
+*** Numpy, SciPy
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+#+begin_src python :exports both :results output
+import numpy as np
+a = np.random.random(4).reshape(2,2)
+print("a :\n", a)
+print("a' :\n", a.transpose())
+#+end_src
+
+#+RESULTS:
+: a :
+:  [[0.71257844 0.92661164]
+:  [0.81012854 0.94959446]]
+: a' :
+:  [[0.71257844 0.81012854]
+:  [0.92661164 0.94959446]]
+
+** Notable libraries
+*** Matplotlib
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+
+#+begin_src python :exports code
+import matplotlib.pyplot as plt
+import numpy as np
+plt.rc('text', usetex=True)
+plt.rc('font', family='sans serif')
+x = np.linspace(-15, 15, 500)
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
+plt.plot(x, np.sin(x)/x, label=r'$y = \frac{\sin (x)}{x}$')
+plt.grid(True)
+axis = plt.gca()
+axis.legend()
+plt.tight_layout(0)
+plt.savefig('images/python-matplot-fig.png', dpi=600)
+#+end_src
+
+#+RESULTS:
+: None
+
+** Result
+#+attr_latex: :width 200px
+[[file:images/python-matplot-fig.png]]
+
+** Notable libraries
+- Scikit-Learn (Machine learning)
+- TensorFlow (Machine learning)
+- Gym (Reinforcement learning)
+- Django (CMS)
+- Flask (Web framework)
+- Twisted (event-driven network programming)
+
+** Usages
+- Scientific computing
+- Extension language
+  - GIMP
+  - Inkscape
+  - GNU Debugger
+  - Blender
+- Web Apps
+- Machine learning
+- Installer (Ubiquity, Anaconda)
+- Software development:
+  - SCons
+  - Buildbot
+  - robotframework
+  - cookiecutter
+
+** Rusty washers
+- Performance, options
+  - use native libraries if needed
+  - PyPy
+- 2.x vs 3.x
+** Resources
+- [[https://www.python.org/][Python.org]]
+- [[https://www.python.org/doc/][Official documentation]]
+- [[https://www.python.org/dev/peps/pep-0020/][The Zen of Python]]
+- [[https://pypi.org/][Python Package Index]]
+- [[http://www.sphinx-doc.org/en/master/][Sphinx documentation generator]]
+- [[https://www.anaconda.com/distribution/][Anaconda]] scientific computing distribution
+- [[https://wiki.python.org/moin/BeginnersGuide][Python Beginners Guide]]
+- [[https://en.wikibooks.org/wiki/Python_Programming][Python Programming Wikibook]]
+- [[https://www.pluralsight.com/search?q=Python][Pluralsight courses]]
+- [[https://ipython.org/][IPython, better REPL]]
+- [[https://thonny.org/][Thonny beginner freindly IDE]]
+- [[https://www.jetbrains.com/pycharm/][PyCharm]] Jetbrains IDE
+- [[https://www.spyder-ide.org/][Spyder Scientific Development Environment]]
+- [[https://code.visualstudio.com/docs/languages/python][Python using VS Code]]
+- [[https://jupyter.org/][Jupyter Notebooks]]
