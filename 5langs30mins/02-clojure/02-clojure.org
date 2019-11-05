@@ -1,0 +1,127 @@
+#+TITLE: 5 Languages in 30 minutes 2/5: Clojure
+#+AUTHOR: Bas Bossink
+#+EMAIL:     bas.bossink@divverence.com
+#+DATE:      2019-11-06
+#+LANGUAGE:  en
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [presentation]
+#+OPTIONS:   H:2 num:t toc:nil
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+BEAMER_THEME: Madrid
+#+COLUMNS: %45ITEM %10BEAMER_env(Env) %9BEAMER_envargs(Env Args) %4BEAMER_col(Col) %10BEAMER_extra(Extra)
+#+startup: beamer
+#+LATEX_HEADER_EXTRA: \titlegraphic{\includegraphics[width=.3\textwidth]{resources/Clojure_logo.svg.png}}
+#+LATEX_HEADER_EXTRA: \newminted{clojure}{fontsize=\scriptsize,linenos,numbersep=8pt, gobble=4,frame=lines, bgcolor=bg, framesep=3mm}
+#+LATEX_HEADER_EXTRA: \hypersetup{linktoc = all, colorlinks = true, urlcolor=blue, pdfstartview={Fit}}
+* Introduction
+** Why series?
+- Short
+- Interesting?
+- Broaden horizon
+- [[https://insights.stackoverflow.com/survey/2019][Stackoverflow developer survey 2019]]
+
+* Clojure
+** Why Clojure?
+- SO most loved $7^{nd}$
+- SO most wanted $24^{st}$
+- SO Top Paying Technologies $1^{st}$
+
+** What is Clojure
+- Dynamic
+- General purpose
+- Compiled
+- a LISP
+- on the JVM
+
+** Implementations
+- Clojure (on the JVM)
+- Clojure CLR (on .NET)
+- ClojureScript (compiles to JavaScript)
+
+** History
+- Born: 2007
+  - Rich Hickey
+- Goals:
+  - a Lisp
+  - for Functional Programming
+  - symbiotic with an established Platform
+  - designed for Concurrency
+- 4 May 2009: Clojure 1.0
+- current:
+  - 6 June 2019: Clojure 1.10.1
+
+** In Practice (1/2)
+- REPL: Read Eval Print Loop
+- leiningen (project, dependency manager)
+- 25246 packages
+- very portable (Windows, MacOS, Linux, BSD's)
+
+** In Practice (2/2)
+- Documentation: doc strings
+- IDE's:
+  - Cursive (commercial IntelliJ extension)
+  - Emacs + Cider
+  - Eclipse + CounterClockWise
+- cloud:
+  - since JVM is well supported so is Clojure
+  - available on AWS, Google Cloud, Oracle Java Cloud Service, and
+    Azure
+
+** Notable features
+- Immutable data structures
+- Software Transactional Memory
+- Channels
+- Macros & Homoiconicity
+** Notable features: Homoiconicity
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+#+begin_src clojure :session multimethod :exports code
+(+ 2 35) ;; => 37
+(quote (+ 2 35)) ;; => (+ 2 35)
+(eval (cons (quote *)  (rest (quote (+ 2 35))))) ;; => 70
+#+end_src
+
+#+RESULTS:
+: nil37(+ 2 35)70
+
+** Notable features: Multimethods
+    :PROPERTIES:
+    :BEAMER_env: block
+    :END:
+#+begin_src clojure :session multimethod :exports both :results pp
+(defmulti encounter
+    (fn [x y] [(:Species x) (:Species y)]))
+(defmethod encounter
+    [:Bunny :Lion] [b l] :run-away)
+(defmethod encounter
+    [:Lion :Bunny] [l b] :eat)
+(defmethod encounter
+    [:Lion :Lion] [l1 l2] :fight)
+(defmethod encounter
+    [:Bunny :Bunny] [b1 b2] :mate)
+(def b1 {:Species :Bunny :other :stuff})
+(def b2 {:Species :Bunny :other :stuff})
+(def l1 {:Species :Lion :other :stuff})
+(def l2 {:Species :Lion :other :stuff})
+(encounter b1 b2)
+#+end_src
+
+#+RESULTS:
+: :mate
+** Usages
+- Data processing
+- Web development
+- Machine learning
+
+** Rusty washers
+- Error messages
+- Documentation
+
+** Resources
+- [[https://clojure.org/][Clojure.org]]
+- [[https://clojure.org/about/rationale][Rationale]]
+- [[https://clojure.org/guides/getting_started][Getting Started]]
+- [[https://github.com/razum2um/awesome-clojure][Awesome Clojure]]
+- [[http://clojure-doc.org/][Community-driven documentation site]]
